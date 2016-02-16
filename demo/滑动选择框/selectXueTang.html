@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link type="text/css" rel="stylesheet" href="swiper-3.3.0.min.css"/>
+	<script type="text/javascript" src="jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="swiper-3.3.0.min.js"></script>
+	<style>
+	.selection{
+		position:relative;
+		width:640px;
+		height:300px;
+		background-color:#fff;
+		text-align:center;
+		border:solid 1px #ccc;
+	}
+	.option{
+		line-height:60px;
+	}
+	.border{
+		position:absolute;
+		top:50%;
+		left:50%;
+		width:100%;
+		height:60px;
+		-moz-transform:translate(-50%,-50%);
+		border:solid 1px #ccc;
+	}
+	.zhezhao{
+		z-index:1;
+		position:absolute;
+		left:0;
+		width:100%;
+		height:100%;
+		top:0;
+		background:-moz-linear-gradient(top,rgba(255,255,255,0.9) 0%,rgba(255,255,255,0.6) 25%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.6) 75%,rgba(255,255,255,0.9) 100%);
+	}
+	.swiper-slide-active{
+		font-size:22px;
+		border-top:solid 1px #ccc;
+		border-bottom:solid 1px #ccc;
+	}
+	</style>
+	<script>
+	   $(document).ready(function(){
+	   	// 滑动初始化
+	   	var mySwiper = new Swiper ('.swiper-container', {
+		    direction: 'vertical',
+		    centeredSlides:true,
+		    slidesPerView : 5,
+		    loop: true,
+		    scrollbar:'.swiper-scrollbar',
+		    scrollbarHide:'auto',
+		    scrollbarDraggable:'true',
+		    scrollbarSnapOnRelease:'true' ,
+		    // onSlideChangeStart: function(swiper){
+      // 			// 中间框中字体变大
+	   		// 	$('.swiper-slide-active').animate({fontSize:"22px"});
+    		// }
+	  });
+	   	
+
+	   });  
+	 
+  </script>
+</head>
+<body>
+	<div class="swiper-container selection">
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide option">&lt;7.1mmol/L</div>
+	        <div class="swiper-slide option">&lt;7.2mmol/L</div>
+	        <div class="swiper-slide option">&lt;7.3mmol/L</div>
+	        <div class="swiper-slide option">&lt;7.4mmol/L</div>
+	        <div class="swiper-slide option">&lt;7.5mmol/L</div>
+	        <div class="swiper-slide option">&lt;7.6mmol/L</div>
+	        <div class="swiper-slide option">&lt;7.7mmol/L</div>
+	        <div class="swiper-slide option">&lt;7.8mmol/L</div>
+	        <div class="swiper-slide option">&lt;7.9mmol/L</div>
+	        <div class="swiper-slide option">&lt;8.0mmol/L</div>
+	        <div class="swiper-slide option">&lt;8.1mmol/L</div>
+	        <div class="swiper-slide option">&lt;8.2mmol/L</div>
+	        <div class="swiper-slide option">&lt;8.3mmol/L</div>
+	        <div class="swiper-slide option">&lt;8.4mmol/L</div>
+	        <div class="swiper-slide option">&lt;8.5mmol/L</div>
+	        <div class="swiper-slide option">&lt;8.6mmol/L</div>
+	        <div class="swiper-slide option">&lt;8.7mmol/L</div>
+	    </div>
+	     <!-- 滚动条 -->
+	    <div class="swiper-scrollbar"></div>
+	     <!-- 居中的选择框 -->
+	    <!-- <div class="border"></div> -->
+	     <!-- 遮罩层 -->
+	    <div class="zhezhao"></div>
+	</div>
+
+</body>
+</html>
