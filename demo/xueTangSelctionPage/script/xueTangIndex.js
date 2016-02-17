@@ -1,6 +1,9 @@
 $(document).ready(function(){
-	   	// 滑动初始化
-	   	var mySwiper = new Swiper ('.swiper-container', {
+	// 滑动初始化
+			
+		$('#select').click(function(){
+		$('.selectValue').show();
+		var mySwiper = new Swiper('.swiper-container', {
 		    direction: 'vertical',
 		    centeredSlides:true,
 		    slidesPerView : 5,
@@ -9,9 +12,10 @@ $(document).ready(function(){
 		    scrollbarHide:'auto',
 		    scrollbarDraggable:'true',
 		    scrollbarSnapOnRelease:'true' ,
-		    // onSlideChangeStart: function(swiper){
-      // 			// 中间框中字体变大
-	   		// 	$('.swiper-slide-active').animate({fontSize:"22px"});
-    		// }
 	  });
+		});
+		$('.selectValue a[title="confirm"]').click(function(){
+			$('.controlGoal ul span').text($('.swiper-slide-active').text());
+		});
+
 	   });  

@@ -1,5 +1,12 @@
 html{
 	min-height:100%;
+
+}
+body{
+	font-family: "微软雅黑","Microsoft Yahei";
+}
+.hidden{
+	display:none;
 }
 .viewport{
 	position:relative;
@@ -9,15 +16,17 @@ html{
 }
 header{
 	z-index:0;
-	position:relative;
+	position:fixed;
+	top:0;
+	width:100%;
 	height:70px;
 	background-color:#3E90FF;
 	text-align:center;
 }
 .header-back{
 	float:left;
-	width:50px;
-	padding-top:10px;
+	width:40px;
+	padding-top:16px;
 	padding-left:10px;
 }
 .header-back img{
@@ -33,12 +42,12 @@ header h1{
 }
 .controlGoal{
 	width:100%;
+	margin-top:70px;
 }
 .controlGoal h3{
 	height:50px;
 	line-height:70px;
 	font-size:22px;
-	font-weight:normal;
 	text-indent:17px;
 	background-color:#ccc;
 }
@@ -48,7 +57,7 @@ header h1{
 .controlGoal li{
 	width:98%;
 	margin:0 auto;
-	line-height:60px;
+	line-height:55px;
 	border-bottom:solid 2px #ccc;
 }
 .controlGoal ul strong{
@@ -65,15 +74,16 @@ header h1{
 .controlGoal i{
 	float:right;
 	display:inline-block;
-	width:32px;
-	height:32px;
+	width:30px;
+	height:30px;
 	margin-top:13px;
-	margin-left:5px;
+	margin-left:-3px;
 	background:url(../images/iconfont-arrowright.png) no-repeat;
 }
+/*选择数值层*/
 .selectValue{
 	z-index:1;
-	position:absolute;
+	position:fixed;
 	top:0;
 	left:0;
 	width:100%;
@@ -85,34 +95,41 @@ header h1{
 	width:100%;
 	bottom:0;
 }
+.selectValue-wrap header{
+	z-index:0;
+	position:relative;
+	height:40px;
+	background:#fff;
+	text-align:center;
+}
+.selectValue-wrap header h3{
+	z-index:-1;
+	position:absolute;
+	width:100%;
+	line-height:40px;
+}
+.selectValue-wrap header a{
+	text-decoration:underline;
+	padding-top:12px;
+}
 .selectValue-wrap a[title="cancle"]{
 	float:left;
+	padding-left:12px;
 }
 .selectValue-wrap a[title="confirm"]{
 	float:right;
+	padding-right:12px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 .selection{
 	position:relative;
 	width:100%;
-	height:300px;
+	height:250px;
 	background-color:#fff;
 	text-align:center;
 	border:solid 1px #ccc;
 }
 .option{
-	line-height:60px;
+	line-height:50px;
 }
 .border{
 	position:absolute;
