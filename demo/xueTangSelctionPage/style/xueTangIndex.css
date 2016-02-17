@@ -1,0 +1,142 @@
+html,body{
+	width:100%;
+	height:100%;
+}
+.viewport{
+	position:relative;
+	width:100%;
+	height:100%;
+	overflow:scroll;
+	max-width:640px;
+	margin:0 auto;
+}
+header{
+	z-index:0;
+	position:relative;
+	height:70px;
+	background-color:#3E90FF;
+	text-align:center;
+}
+.header-back{
+	float:left;
+	width:50px;
+	padding-top:10px;
+	padding-left:10px;
+}
+.header-back img{
+	width:100%;
+}
+header h1{
+	z-index:-1;
+	position:absolute;
+	width:100%;
+	line-height:70px;
+	font-size:30px;
+	color:#fff;
+}
+.controlGoal{
+	width:100%;
+}
+.controlGoal h3{
+	height:50px;
+	line-height:70px;
+	font-size:22px;
+	font-weight:normal;
+	text-indent:17px;
+	background-color:#ccc;
+}
+.controlGoal ul{
+	width:100%;
+}
+.controlGoal li{
+	width:98%;
+	margin:0 auto;
+	line-height:60px;
+	border-bottom:solid 2px #ccc;
+}
+.controlGoal ul strong{
+	display:inline-block;
+	font-size:28px;
+	font-weight:normal;
+	padding-left:10px;
+}
+.controlGoal ul span{
+	display:inline-block;
+	float:right;
+	font-size:20px;
+}
+.controlGoal i{
+	float:right;
+	display:inline-block;
+	width:32px;
+	height:32px;
+	margin-top:13px;
+	margin-left:5px;
+	background:url(../images/iconfont-arrowright.png) no-repeat;
+}
+.selectValue{
+	z-index:1;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:rgba(107,102,94,0.5);
+}
+.selectValue-wrap{
+	position:absolute;
+	width:100%;
+	bottom:0;
+}
+.selectValue-wrap a[title="cancle"]{
+	float:left;
+}
+.selectValue-wrap a[title="confirm"]{
+	float:right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.selection{
+	position:relative;
+	width:100%;
+	height:300px;
+	background-color:#fff;
+	text-align:center;
+	border:solid 1px #ccc;
+}
+.option{
+	line-height:60px;
+}
+.border{
+	position:absolute;
+	top:50%;
+	left:50%;
+	width:100%;
+	height:60px;
+	-moz-transform:translate(-50%,-50%);
+	border:solid 1px #ccc;
+}
+.zhezhao{
+	z-index:1;
+	position:absolute;
+	left:0;
+	width:100%;
+	height:100%;
+	top:0;
+	background:-moz-linear-gradient(top,rgba(255,255,255,0.9) 0%,rgba(255,255,255,0.6) 25%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.6) 75%,rgba(255,255,255,0.9) 100%);
+}
+.swiper-slide-active{
+	font-size:22px;
+	border-top:solid 1px #ccc;
+	border-bottom:solid 1px #ccc;
+}
