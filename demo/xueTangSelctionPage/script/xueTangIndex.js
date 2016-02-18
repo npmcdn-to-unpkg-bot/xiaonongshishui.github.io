@@ -1,8 +1,8 @@
-$(document).ready(function(){
-	// 滑动初始化
-			
+$(document).ready(function(){			
 		$('#select').click(function(){
+		// 选择数值层出现
 		$('.selectValue').show();
+		// 滑动选择初始化
 		var mySwiper = new Swiper('.swiper-container', {
 		    direction: 'vertical',
 		    centeredSlides:true,
@@ -11,11 +11,13 @@ $(document).ready(function(){
 		    scrollbar:'.swiper-scrollbar',
 		    scrollbarHide:'auto',
 		    scrollbarDraggable:'true',
-		    scrollbarSnapOnRelease:'true' ,
-	  });
+		    scrollbarSnapOnRelease:'true' , });
+		//点击确定
+			$('.selectValue a[title="confirm"]').click(function(){
+			$(this).prev().text($('.swiper-slide-active').text());
 		});
-		$('.selectValue a[title="confirm"]').click(function(){
-			$('.controlGoal ul span').text($('.swiper-slide-active').text());
+
 		});
+		
 
 	   });  
