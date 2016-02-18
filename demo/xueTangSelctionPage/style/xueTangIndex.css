@@ -75,7 +75,7 @@ header h1{
 .controlGoal i{
 	font-style:normal;
 }
-.controlGoal #select{
+.controlGoal i.select{
 	float:right;
 	display:inline-block;
 	width:30px;
