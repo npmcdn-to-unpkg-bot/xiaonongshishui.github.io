@@ -1,5 +1,5 @@
 $(document).ready(function(){			
-		$('i.select').click(function(){
+		$('.controlGoal ul span').click(function(){
 			var option = this;
 		// 选择数值层出现
 		$('.selectValue').show();
@@ -16,7 +16,7 @@ $(document).ready(function(){
 		    scrollbarSnapOnRelease:'true' , });
 		//点击确定
 			$('.selectValue a[title="confirm"]').click(function(event){
-			$(option).prev().text($('.swiper-slide-active').text());
+			$(option).children('i.text').text($('.swiper-slide-active').text());
 			$('.selectValue').hide();
 			event.preventDefault();
 			option = null;
