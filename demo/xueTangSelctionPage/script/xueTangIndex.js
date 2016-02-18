@@ -1,6 +1,7 @@
-$(document).ready(function(){			
+$(document).ready(function(){	
+		var option;		
 		$('.controlGoal ul span').click(function(){
-			var option = this;
+			option = this;
 		// 选择数值层出现
 		$('.selectValue').show();
 		$('.selectValue header h3').text($(this).parents('li').children('strong').text());
@@ -19,12 +20,13 @@ $(document).ready(function(){
 			$(option).children('i.text').text($('.swiper-slide-active').text());
 			$('.selectValue').hide();
 			event.preventDefault();
-			option = null;
+			console.log(option+"点击确定");
+			// option = null;
 		});
 			$('.selectValue a[title="cancle"]').click(function(event){
 				$('.selectValue').hide();
 				event.preventDefault();
-				option = null;
+				// option = null;
 			});
 
 		});
