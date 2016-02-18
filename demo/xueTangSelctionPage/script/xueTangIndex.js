@@ -17,7 +17,7 @@ $(document).ready(function(){
 		    scrollbarSnapOnRelease:'true' , });
 		//点击确定
 			$('.selectValue a[title="confirm"]').click(function(){
-			.prev().text($('.swiper-slide-active').text());
+			option.prev('i.text').text($('.swiper-slide-active').text());
 		});
 			$('.selectValue a[title="cancle"]').click(function(){
 				$('.selectValue').hide();
