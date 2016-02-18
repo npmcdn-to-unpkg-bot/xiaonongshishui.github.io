@@ -1,5 +1,5 @@
 $(document).ready(function(){			
-		$('i.select').click(function(){
+		$('i').click(function(){
 			var $option = $(this);
 		// 选择数值层出现
 		$('.selectValue').show();
@@ -9,20 +9,22 @@ $(document).ready(function(){
 		    direction: 'vertical',
 		    centeredSlides:true,
 		    slidesPerView : 5,
-		    loop: true,
+		    loop: false,
 		    scrollbar:'.swiper-scrollbar',
 		    scrollbarHide:'auto',
 		    scrollbarDraggable:'true',
 		    scrollbarSnapOnRelease:'true' , });
 		//点击确定
-			$('.selectValue a[title="confirm"]').click(function(){
+			$('.selectValue a[title="confirm"]').click(function(event){
 			$option.prev().text($('.swiper-slide-active').text());
 			$('.selectValue').hide();
-			return false;
+			event.preventDefault();
+			
 		});
-			$('.selectValue a[title="cancle"]').click(function(){
+			$('.selectValue a[title="cancle"]').click(function(event){
 				$('.selectValue').hide();
-				return false;
+				event.preventDefault();
+				$option = null;
 			});
 
 		});
