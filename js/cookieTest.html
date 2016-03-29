@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cookieTest</title>
+	<script type="text/javascript">
+		
+	</script>
+</head>
+<body>
+	<p>This page just created a cookie!</p>
+	<script type="text/javascript">
+	// var date = new Date();
+	// var newDate = date.setMonth(date.getMonth() + 10);
+	// document.write(date + "<br/>");
+	// document.write(date.toGMTString() + "<br/>");
+	setCookie("name","helurong","","");
+	setCookie("age","25","","");
+	setCookie("name","bob","","");
+	alert(document.cookie);
+		function setCookie(cookieName,cookieValue,cookiePath,cookieExpires){
+			cookieValue = escape(cookieValue);
+			if(cookieExpires == ""){
+				var nowDate = new Date();
+				nowDate.setMonth(nowDate.getMonth() + 6);
+				cookieExpires = nowDate.toGMTString();
+			}
+			if(cookiePath != ""){
+				cookiePath = ";Path=" + cookiePath;
+			}
+			document.cookie = cookieName + "=" + cookieValue + ";expires=" +cookieExpires + cookiePath;
+		}
+	</script>
+</body>
+</html>
