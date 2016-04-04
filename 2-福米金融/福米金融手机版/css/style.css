@@ -116,12 +116,11 @@ body{
 }
 .hongbao{
 	margin:0 auto;
-	margin-top:-20px;
 	width:65%;
 	max-width:74px;
 }
 .hongbao img{
-	width:100%;
+	width:0.5rem;
 }
 .hongbao-text{
 	color:#f44242;
@@ -168,4 +167,32 @@ body{
 	height: 0.3rem;
 	right: 0.1rem;
 	top:40%;
+}
+.fashionPlan>div>p>img {
+	width: 1.4rem;
+	height: 0.23rem;
+}
+.fashionPlan>div>h4>img {
+	width: 0.9rem;
+	height: 0.9rem;
+}
+.earning {
+	display: inline-block;
+	font-size: 10px;
+	margin-left: 30px;
+}
+.earning b{
+	display: inline-block;
+	border-radius: 100%;
+	background-color: #ffbd02;
+	color: white;
+	width: 18px;
+	height: 18px;
+	text-align: center;
+	line-height: 18px;
+}
+.clearOut {
+	background: url(../images/clearOut.png) no-repeat;
+	background-size: 50% 50%;
+	background-position: 100% 100%; 
 }
