@@ -28,7 +28,6 @@ $(document).ready(function(){
 				event.preventDefault();
 				// option = null;
 			});
-
 		});
 		
 
