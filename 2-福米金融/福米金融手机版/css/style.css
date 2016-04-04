@@ -52,6 +52,55 @@ body{
  .f-red{
 	color: #d73037;
  }
+ /*小三角*/
+ .circle{
+ 	position:relative;
+ 	width:20px;
+ 	height:20px;
+ 	border-radius:10px;
+ }
+ .circle_red{
+ 	border:1px solid #fe6767;
+ }
+ .circle_blue{
+ 	border:1px solid #4da6f1;
+ }
+ .circle_orange{
+ 	border:1px solid #f1874d;
+ }
+ .circle_green{
+ 	border:1px solid #0ecc51;
+ }
+ .triangle_border_right{
+ 	position:absolute;
+ 	top:50%;
+ 	right:50%;
+ 	margin-top:-5px;
+ 	margin-right:-3.5px;
+    width:0;
+    height:0;
+    border-width:5px 0 5px 5px;
+    border-style:solid;
+}
+.triangle_blank{
+	position:absolute;
+	top:0;
+	left:-7px;
+	border-color:transparent transparent transparent #fff;
+}
+.triangle_red{
+	border-color:transparent transparent transparent #fe6767;
+}
+.triangle_blue{
+	border-color:transparent transparent transparent #4da6f1;
+}
+.triangle_orange{
+	border-color:transparent transparent transparent #f1874d;
+}
+.triangle_green{
+	border-color:transparent transparent transparent #0ecc51;
+}
+
  
 /*---------福米金融首页-----------*/
 .navbar-brand img{
