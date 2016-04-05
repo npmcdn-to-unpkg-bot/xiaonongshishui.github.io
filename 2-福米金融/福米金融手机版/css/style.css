@@ -329,11 +329,11 @@ a:focus, a:hover{
 	font-size: 15px;
 }
 .listItem h4{
-	font-size:0.28rem;
+	font-size:18px;
 	font-weight:bold;
 }
 .listItem span{
-	font-size:0.25rem;
+	font-size:15px;
 }
 .listItem img{
 	width: 0.48rem;
@@ -443,7 +443,7 @@ ul.list li:last-child{
 	margin-bottom:0;
 }
 
-/*------------产品购买----------------*/
+/*------------产品购买页----------------*/
 .buyPro-money{
 	padding:12px 0 1px!important;
 }
