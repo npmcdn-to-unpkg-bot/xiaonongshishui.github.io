@@ -1,20 +1,59 @@
 body{
 	background:#edeced;
 }
+a:focus, a:hover{
+	text-decoration:none;
+}
+/*---------颜色类------------*/
 .fs1{
 	font-size:19px;
 }
 .fs2{
 	font-size:32px;
 }
+.fs3{
+	font-size:30px;
+}
+.fs4{
+	font-size:22px;
+}
+.f-orange{
+ 	color: #ff6622;
+ }
+ .f-blue{
+	color:#0a5dab;
+ }
+ .f-green{
+ 	color:#1e950e;
+ }
+ .bg-green{
+ 	background-color:#1e950e;
+ }
+ /*-----------按钮类-------------*/
+ /*确认大按钮*/
+.btn-confirm{
+	width:80%;
+	height:60px;
+	margin:0 auto;
+	background-color:#ff593d;
+	text-align:center;
+	line-height:60px;
+	color:#fff;
+	font-size:21px;
+	border-radius:6px;
+}
 .btn-pull{
 	margin-left:-10px;
 }
-.panel {
+/*--------------------------------*/
+.carousel-inner img{
+	width:100%;
+}
+.panel{
 	position: relative;
 }
 .panel-heading{
-	font-size:20px;
+	font-size:24px;
 }
 .panel-body{
 	padding:5px 8px;
@@ -41,6 +80,9 @@ body{
  .f-orange{
  	color: #ff6622;
  }
+ .f-blue{
+	color:#0a5dab;
+ }
 .panel-red{
 	border-color: #d73037;
 }
@@ -57,7 +99,7 @@ body{
  .f-red{
 	color: #d73037;
  }
- /*小三角*/
+ /*-------------小三角箭头------------*/
  .circle{
  	position: absolute;
  	right: 0.15rem;
@@ -108,7 +150,7 @@ body{
 .triangle_green{
 	border-color:transparent transparent transparent #0ecc51;
 }
-
+/*---------小三角箭头结束----------*/
  
 /*---------福米金融首页-----------*/
 .navbar-brand img{
@@ -125,11 +167,15 @@ body{
 }
 .index-guide{
 	float:right;
+	background:none!important;
 	color:#323232;
 	font-size:20px;
 	border:none;
 	padding:9px 0;
 	margin:8px 0;
+}
+.index-guide:focus,.index-guide:hover{
+	background:none!important;
 }
 .index-safe{
 	background:#fff;
@@ -226,7 +272,8 @@ body{
 	width: 0.3rem;
 	height: 0.3rem;
 	right: 0.3rem;
-	top:40%;
+	top:50%;
+	margin-top:-0.15rem;
 }
 .fashionPlan>div>p>img {
 	width: 1.4rem;
@@ -236,7 +283,12 @@ body{
 	width: 0.9rem;
 	height: 0.9rem;
 }
+.fashionPlan span{
+	font-size:0.28rem;
+}
 .earning {
+	float:right;
+	clear:both;
 	display: inline-block;
 	font-size: 10px;
 	margin-left: 30px;
@@ -253,27 +305,36 @@ body{
 }
 .clearOut {
 	background: url(../images/clearOut.png) no-repeat;
-	background-size: 50% 50%;
+	background-size: 1.15rem 0.74rem;
 	background-position: 100% 100%; 
-	margin-left: -15px;
+	margin-left: -17px;
 }
 .panel-head-top,.panel-head-bottom{
 	overflow: hidden;
 }
+.panel-head-bottom a{
+	color:#fff!important;
+}
 .panel-head-left {
-	float: left;
+	float:left;
 	font-size: 15px;
 }
 .panel-head-left h3 {
 	margin: 0;
-	font-size: 25px;
+	font-size: 24px;
 }
 .panel-head-right {
 	float: right;
 	text-align: right;
 	font-size: 15px;
 }
-
+.listItem h4{
+	font-size:0.28rem;
+	font-weight:bold;
+}
+.listItem span{
+	font-size:0.25rem;
+}
 .listItem img{
 	width: 0.48rem;
 	position: absolute;
@@ -284,6 +345,41 @@ body{
 .sisa>div>div:first-child {
 	border-right: 1px solid #e1e1e1;
 }
+/*-------------header---------------*/
+.header{
+  z-index:0;
+  position:relative;
+  width:100%;
+  height:0.88rem;
+  background:#e26e48;
+}
+.header .lastStep{
+  background:url(../images/back.png) no-repeat 0 center;
+  background-size:100% 100%;
+  width:0.21rem;
+  height:0.37rem;
+  font-size:0.28rem;
+  float:left;
+  margin:0.29rem 0 0 0.4rem;
+}
+.header .home{
+  background:url(../images/home.png) no-repeat 0 center;
+  background-size:100% 100%;
+  width:0.36rem;
+  height:0.36rem;
+  font-size:0.28rem;
+  float:right;
+  margin:0.29rem 0.4rem 0 0.28rem;
+}
+.header h1{
+  z-index:-1;
+  position:absolute;
+  text-align:center;
+  width:100%;
+  font-size:0.35rem;
+  color:#fff;
+}
+/*----------首页footer----------------*/
 footer .panel {
 	background: #dedede;
 }
@@ -300,10 +396,104 @@ footer div[class^=col-xs-3]:nth-of-type(2) {
 footer p {
 	margin: 0;
 }
+footer .footer-bottom p{
+	font-size:14px;
+	margin-bottom:3px;
+}
 .vsealImg {
 	position: absolute;
 	top: 50%;
 	height: 0.6rem;
 	margin-top: -0.3rem;
 	left: 70%;
+}
+
+
+/*------------列表组------------------*/
+ul.list{
+	list-style:none outside;
+	background:#fff;
+	padding-left:0;
+}
+ul.list li{
+	position:relative;
+	padding:1px 5px;
+	border-bottom:solid 1px #e1e1e1;
+}
+ul.list li:last-child{
+	border-bottom:none;
+}
+.list-title{
+	text-indent:1.5em;
+}
+.list-title2{
+	text-indent:35px;
+}
+.list-padding{
+	padding-top:20px!important;
+}
+.list-padding2{
+	padding-top:10px!important;
+}
+.list-height{
+	height:50px;
+}
+.list-height p{
+	line-height:50px;
+	margin-bottom:0;
+}
+
+/*------------产品购买----------------*/
+.buyPro-money{
+	padding:12px 0 1px!important;
+}
+/*-----增减盒------*/
+.moreOrLess{
+	position:relative;
+	width:45%;
+	height:60px;
+	margin:0 auto 10px;
+	border-top:1px solid #d2d2d2;
+	border-bottom:1px solid #d2d2d2;
+}
+.moreOrLessBtn{
+	position:absolute;
+	top:-1px;
+	width:60px;
+	height:60px;
+	color:#fff;
+	background-color:#d2d2d2;
+	line-height:60px;
+	text-align:center;
+	font-size:50px;
+}
+.moreBtn{
+	left:-60px;
+}
+.lessBtn{
+	right:-60px;
+}
+.moreOrLess input{
+	width:80%;
+	height:58px;
+	text-align:center;
+	border:none;
+	outline:none;
+}
+/*---------------------------*/
+.confirm{
+	margin:30px auto;
+	text-align:center;
+}
+.confirm a{
+	color:#ed4949;
+}
+/*-------------产品列表页-----------*/
+.hot{
+	background:url(../images/hot.png) 10px center no-repeat;
+	background-size:23px;
+}
+.old{
+	background:url(../images/old.png) 14px center no-repeat;
+	background-size:19px;
 }

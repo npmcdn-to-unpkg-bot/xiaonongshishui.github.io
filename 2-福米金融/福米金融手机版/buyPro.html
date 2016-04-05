@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>产品购买</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript">
+	new function (){
+            var _self = this;
+            _self.width = 640;//设置默认最大宽度
+            _self.fontSize = 100;//默认字体大小
+            _self.widthProportion = function(){var p = document.getElementsByTagName("html")[0].offsetWidth/_self.width;return p>1?1:p<0.5?0.5:p;};
+            _self.changePage = function(){
+                document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+_self.widthProportion()*_self.fontSize+"px !important");
+            };
+            _self.changePage();
+            window.addEventListener("resize",function(){_self.changePage();},false);
+        };
+	</script>
+</head>
+<body>
+	<header class="header clearfix">
+        <a href="javascript:location.href='history.back()'" class="lastStep" title="上一步"></a>
+        <h1>产品购买</h1>
+        <a href="index.html" class="home"></a>
+    </header>
+	
+		<h4 class="list-title">保房盈11-上海住宅区...</h4>
+		<ul class="list">
+			<li>
+				<div class="row text-center">
+					<div class="col-xs-4">
+						<h1 class="f-orange fs2"><span id="rate">10.5</span>%</h1>
+			   			<p>年化收益</p>
+					</div>
+					<div class="col-xs-4">
+						<h1 class="fs2"><span id="duration">180</span><small style="font-size:16px;">天</small></h1>
+		   				<p>期限</p>
+					</div>
+					<div class="col-xs-4">
+						<h1 class="fs2"><span id="moneyPerFra">1</span><small>元</small></h1>
+			   			<p>起投金额</p>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="row text-center">
+					<div class="col-xs-4">
+						<h1 style="font-size:15px;">到期一次还本付息</h1>
+					</div>
+					<div class="col-xs-4">
+						<h1 class="fs4"><span id="limit">10000</span><small>元</small></h1>
+					</div>
+					<div class="col-xs-4">
+						<h1 class="f-blue fs4">325.48<small>元</small></h1>
+					</div>
+				</div>
+				<div class="row text-center">
+					<div class="col-xs-4">
+			   			<p>还款方式</p>
+					</div>
+					<div class="col-xs-4">
+		   				<p>限购份额</p>
+					</div>
+					<div class="col-xs-4">
+			   			<p>可用余额</p>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<ul class="list">
+			<li class="list-padding">
+				<div class="progress">
+				  <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+				</div>
+				<div class="row text-center">
+					<div class="col-xs-5">
+						<p>投资进度：<span class="f-green">60%</span></p>
+					</div>
+					<div class="col-xs-7" style="padding-left:-0;">
+						<p>剩余可投金额：12563.00元</p>
+					</div>
+				</div>
+			</li>
+			<li class="list-padding2">
+				<div class="row text-center">
+					<div class="col-xs-4">
+						<p>起息日期</p>
+					</div>
+					<div class="col-xs-4">
+					</div>
+					<div class="col-xs-4">
+						<p>2016-04-05</p>
+					</div>
+				</div>
+				<div class="row text-center">
+					<div class="col-xs-4">
+						<p>到期日期</p>
+					</div>
+					<div class="col-xs-4">
+					</div>
+					<div class="col-xs-4">
+						<p>2016-07-04</p>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<ul class="list">
+			<li class="list-height">
+				<div class="row text-center">
+					<div class="col-xs-4 ">
+					<p>项目信息</p>
+					</div>
+					<span class="jiantou"></span>
+				</div>
+			</li>
+			<li class="list-height">
+				<div class="row text-center">
+					<div class="col-xs-4 ">
+					<p>红包/加息券</p>
+					</div>
+					<span class="jiantou"></span>
+				</div>
+			</li>
+		</ul>
+		<ul class="list">
+			<li class="buyPro-money">
+				<!-- 增减点击改变金额 -->
+				<div class="moreOrLess">
+					<div id="more" class="moreOrLessBtn moreBtn">
+						+
+					</div>
+					<div id="less" class="moreOrLessBtn lessBtn">
+						-
+					</div>
+					<form action="" method="post">
+						<input type="text" id="money" value="1000">元
+					</form>
+				</div><!-- 增减盒div结束 -->
+				<p class="text-center">预期收益：<span id="expecReturn">0.00</span>元</p>
+			</li>
+		</ul>
+		<div class="confirm">
+			<p>点击确认即代表同意<a href="#">《福米金融投资协议》</a></p>
+			<div id ="" class="btn-confirm">立即抢购</div>
+		</div>
+<footer class="text-center">
+	<div class="footer-bottom">
+		<p>客服电话：400-788-5018</p>
+		<p>&copy;2015 福米金融  All right Reserved </p>
+	</div>
+</footer>
+
+<script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/fumi.js"></script>
+</body>
+</html>
