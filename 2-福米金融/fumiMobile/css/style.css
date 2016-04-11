@@ -476,9 +476,13 @@ ul.list li:last-child{
 .form-list li{
 	position:relative;
 	height:50px;
+	line-height:50px;
 }
 .form-list li.forText{
 	padding-left:6%;
+}
+.forText .li-wrap{
+
 }
 .form-list li span{
 	display:inline-block;
