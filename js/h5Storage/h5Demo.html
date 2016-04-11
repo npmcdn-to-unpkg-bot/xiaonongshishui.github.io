@@ -3,16 +3,156 @@
 <head>
 	<meta charset="UTF-8">
 	<title>h5</title>
+	<link rel="stylesheet" type="text/css" href="http://libs.baidu.com/bootstrap/2.3.2/css/bootstrap.min.css">
 </head>
 <body>
+	<form class="form-inline" style="margin-top:20px;"action="">
+		<div class="form-group">
+			<label for="name">姓名：</label>
+			<input id="name" type="text" placeholder="请输入姓名">
+			<label for="tel">电话：</label>
+			<input id="tel" type="text" placeholder="请输入电话号码">
+			<label for="addr">地址：</label>
+			<input id="address" type="text" placeholder="请输入地址">
+			<button  id="add" class="btn btn-default" type="button">添加</button>
+		<button  id="delete" class="btn btn-default" type="button">删除数据库</button>
+		</div>
+		<br />
+		姓名：<input type="text">
+		<button  class="btn btn-default" type="button">查询</button>
+	</form>
+	<table class="table table-striped">
+		<thead style="background-color:#ddd">
+			<tr>
+				<th>姓名</th>
+				<th>电话</th>
+				<th>地址</th>
+				<th>删除</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>
 	<script type="text/javascript">
-		var img = document.createElement('img');
-		//当图片加载完成的时候触发回调函数
-		img.addEnventListener('load',function(){
-			var imgCanvas = document.createElement('canvas');
-			var imgContext = imgCanvas.getContext('2d');
-		});
+		window.onload = function(){
+
+		}
+		var count;
+		//添加数据功能
+		document.getElementById('add').onclick = function(){
+			var name = document.getElementById('name').value,
+				telephone = document.getElementById('tel').value,
+				address = document.getElementById('address').value;
+				if(name == ""||telephone == "" ||address == ""){
+					alert("输入不完整，请重新输入！");
+					return false;
+				}
+				else{
+					var data = {
+						"name":name,
+						"telephone":telephone,
+						"address":address
+						} 
+					var dataStr = JSON.stringify(data);
+
+					localStorage.setItem("第"+count+"组",dataStr);
+					count++;
+					add(dataStr);
+					
+				}
+
+
+				function add(dataStr){
+					var data = JSON.parse(dataStr);
+					var tr = document.createElement('tr');
+					for(var i in data){
+						var td = document.createElement('td');
+						var tdText = document.createTextNode(data[i]);
+						td.appendChild(tdText);
+						tr.appendChild(td);
+					}
+					document.getElementsByTagName('tbody')[0].appendChild(tr);
+				}
+				
+
+
+
+				var db;
+				var arrayKey = [];
+				var openRequest;
+				var indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.msIndexedDB;
+				var dbName = "person";
+				var tableName = "testTable";
+				function init(){
+					openRequest = indexedDB.open(dbName);
+					openRequest.onupgradeneeded = function(e){
+						var thisDb = e.target.result;
+						
+					}
+				}
+		}
 	</script>
+
+
+
+
+	<script type="text/javascript">
+	// var src = "head.jpg";
+	// function set(key){
+
+	// 	var img = document.createElement('img');
+	// 	//当图片加载完成的时候触发回调函数
+	// 	img.addEventListener('load',function(){
+	// 		var imgCanvas = document.createElement('canvas'),
+	// 		imgContext = imgCanvas.getContext('2d');
+	// 		//确保canvas元素的大小和图片尺寸一致
+	// 		imgCanvas.width = this.width;
+	// 		imgCanvas.height = this.height;
+			
+	// 		//渲染图片到canvas中
+	// 		imgContext.drawImage(this,0,0,this.width,this.height);
+	// 		//用data url的形式取出
+	// 		var imgAsDataURL = imgCanvas.toDataURL('img/png');
+	// 		//alert(imgAsDataURL);
+	// 		//保存到本地存储
+	// 		try{
+	// 			localStorage.setItem(key,imgAsDataURL);
+	// 		}
+	// 		catch(e){
+	// 			alert("Storage failed:" + e);
+	// 		}
+	// 	},false);
+	// 	img.src = src;
+	// 	alert(img.src);
+	// }
+	// function get(key){
+	// 	var srcStr = localStorage.getItem(key);
+	// 	var imgObj = document.createElement('img');
+	// 	imgObj.src = srcStr;
+	// 	document.body.appendChild(imgObj);
+	// }
+	</script>
+
+	<script type="text/javascript">
+		// function set(key,v){
+		// 	var curTime = new Date().getTime();
+		// 	alert(curTime);
+		// 	localStorage.setItem(key,JSON.stringify({data:v,time:curTime}));
+		// }
+		// function get(key,exp){
+		// 	//exp是过期时间段
+		// 	var data = localStorage.getItem(key);
+		// 	var dataObj = JSON.parse(data);
+		// 	if(new Date().getTime() - dataObj.time > exp){
+		// 		alert('expires');
+		// 	}
+		// 	else{
+		// 		alert("data="+dataObj.data);
+		// 	}
+		// }
+	</script>
+
 	
 </body>
 </html>

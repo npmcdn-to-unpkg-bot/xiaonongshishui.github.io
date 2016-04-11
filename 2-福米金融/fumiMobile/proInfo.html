@@ -26,7 +26,6 @@
 	<script src="dist/photoswipe.min.js"></script> 
 	<!-- UI JS file -->
 	<script src="dist/photoswipe-ui-default.min.js"></script> 
-
 </head>
 <body>
 	<header class="header clearfix">
@@ -34,7 +33,7 @@
         <h1>项目信息</h1>
         <a href="index.html" class="home"></a>
     </header>
-<div class="container-fluid wrap">
+<div class="container-fluid wrap proInfo-section">
 
 	<!-- 项目介绍 -->
 	<div class="panel panel-silver">
@@ -108,20 +107,7 @@
      <p>该笔应收账款转让已在中登网登记。</p>
 	  </div>
 	</div>
-	<!-- 相关资料 -->
-	<div class="panel panel-silver">
-	  <div class="panel-heading">
-	  	<span class="proInfo-head">相关资料</span>
-	  </div>
-	  <div class="panel-body">
-     	<div id="layer-photos-demo" class="layer-photos-demo">
-	  		<img layer-pid="图片id，可以不写" layer-src="Product/20160405113403752.jpg" src="Product/thumb_20160405113403752.jpg" alt="图片名">
-	  		<img layer-pid="图片id，可以不写" layer-src="Product/20160405113417334.jpg" src="Product/thumb_20160405113417334.jpg" alt="图片名">
-	  		<img layer-pid="图片id，可以不写" layer-src="Product/20160405113421956.jpg" src="Product/thumb_20160405113421956.jpg" alt="图片名">
-	  		<img layer-pid="图片id，可以不写" layer-src="Product/20160405113424933.jpg" src="Product/thumb_20160405113424933.jpg" alt="图片名">
-		</div>
-	  </div>
-	</div><!-- 相关资料div结束 -->
+	
 
 	<!-- 相关资料 -->
 	<div class="panel panel-silver">
@@ -130,7 +116,7 @@
 	  </div>
 	  <div class="panel-body">
 
-		<div class="my-gallery" itemscope>
+		<div class="my-gallery text-center" itemscope>
 		    <figure itemprop="associatedMedia" itemscope >
 		        <a href="Product/20160405113403752.jpg" itemprop="contentUrl" data-size="727x1000">
 		            <img src="Product/thumb_20160405113403752.jpg" itemprop="thumbnail" alt="Image description" />
@@ -157,10 +143,51 @@
 		        <figcaption itemprop="caption description">第四张图片</figcaption>
 		    </figure>
 		</div><!-- my-gallery  div结束 -->
-
-
 	  </div>
 	</div><!-- 相关资料div结束 -->
+
+    <!-- 相关资料 -->
+    <div class="panel panel-silver">
+      <div class="panel-heading">
+        <span class="proInfo-head">投资记录</span>
+      </div>
+      <div class="panel-body text-center">
+        <table class="table table-striped ">
+            <thead >
+                <tr>
+                    <th class="text-center">认购人</th>
+                    <th class="text-center">认购金额</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>王**</td><td>15000.00</td></tr>
+                <tr><td>王**</td><td>15000.00</td></tr>
+                <tr><td>王**</td><td>15000.00</td></tr>
+                <tr><td>王**</td><td>15000.00</td></tr>
+            </tbody>
+        </table>
+        <!-- 分页 -->
+        <nav>
+            <ul class="pagination">
+            <li>
+              <a href="#">
+                <span>&laquo;</span>
+              </a>
+            </li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+              <a href="#">
+                <span>&raquo;</span>
+              </a>
+            </li>
+            </ul>
+        </nav>
+      </div>
+    </div>
 
 </div>
 
@@ -437,37 +464,14 @@ initPhotoSwipeFromDOM('.my-gallery');
 </script>
 
 <footer class="text-center">
-	<div class="panel">
-		<div class="panel-body">
-			<div class="col-xs-3 col-xs-offset-2">
-			<h6>关注微信</h6>
-			<img src="images/weixinQR.jpg" alt="">
-			</div>
-			<div class="col-xs-3">
-				<h6>关注微博</h6>
-				<img src="images/weiboQR.png" alt="">
-			</div>
-			<img src="images/vseal.gif" alt="" class="vsealImg">
-		</div>
-	</div>
 	<div class="footer-bottom">
 		<p>客服电话：400-788-5018</p>
-		<p>&copy;福米金融  All right Reserved 沪ICP备15025008号-1</p>
-		<p>福米互联网金融信息服务（上海）有限公司</p>
+		<p>&copy;福米金融  All right Reserved </p>
 	</div>
 </footer>
 
 <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="layer/layer.js"></script>
-<script type="text/javascript">
-	layer.config({extend: 'extend/layer.ext.js'});
-	layer.ready(function(){ 
-	  layer.photos({
-	    photos: '#layer-photos-demo',
-	    height: 'auto'
-	  });
-	});  
-</script>
+
 </body>
 </html>
