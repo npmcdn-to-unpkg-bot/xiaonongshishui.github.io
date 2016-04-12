@@ -44,7 +44,7 @@ sup {
 	text-align:center;
 	line-height:50px;
 	color:#fff;
-	font-size:18px;
+	font-size:17px;
 	border-radius:6px;
 }
 .btn-red{
@@ -437,6 +437,9 @@ ul.list{
 	background:#fff;
 	padding-left:0;
 }
+.firstList{
+	margin-top:14px;
+}
 ul.list li{
 	position:relative;
 	padding:1px 5px;
@@ -466,7 +469,6 @@ ul.list li:last-child{
 }
 /*---------------表单列表组-------------*/
 .form-list input{
-	height:100%;
 	outline:none;
 	border:none;
 }
@@ -476,18 +478,55 @@ ul.list li:last-child{
 .form-list li{
 	position:relative;
 	height:50px;
-}
-.form-list li.forText{
 	padding-left:6%;
 }
 .form-list li span{
+	line-height:50px;
+}
+.form-list li span.indicate{
+	float:right;
+	margin-right:5%;
+}
+.form-list li.noText{
+	padding-left:7%;
+}
+.form-list li.forText{
+	padding-left:7%;
+}
+.form-list li.bC{
+	padding-left:7%;
+}
+.form-list li.bC span{
+	display:inline-block;
+	vertical-align:middle;
+	width:25%;
+}
+.form-list li.forText span{
 	display:inline-block;
 	text-align:justify;
-	width:25%;
+	width:21%;
+}
+.form-list li.setPW{
+	padding-left:2%;
+}
+.form-list li.setPW span{
+	display:inline-block;
+	width:37%;
 }
 .form-list li input{
 	width:58%;
 }
+.form-list li .code{
+	display:inline-block;
+	vertical-align:middle;
+	color:#fff;
+	padding:5px 20px;
+	margin-left:10%;
+	height:30px;
+	background:#ea522b;
+	border-radius:5px;
+}
+
 
 /*表单列表组中的按钮类*/
 
@@ -591,6 +630,13 @@ ul.list li:last-child{
 .logIn-btn{
 	margin-top:50px;
 }
+.logIn-btn-top{
+	font-size:14px;
+	color:#878787;
+}
+.logIn-btn-top a{
+	color:#e94834;
+}
 .logIn-info{
 	margin-top:10px;
 	margin-bottom:50px;
@@ -612,6 +658,34 @@ ul.list li:last-child{
 	background:url(../images/protect.png) no-repeat 0 center;
 	background-size:0.3rem;
 	text-indent:0.3rem;
+}
+.step{
+	width:50px;
+	height:50px;
+	margin:0 auto;
+	border-radius:100%;
+	background:#c0c0c0;
+	color:#fff;
+	line-height:50px;
+	text-align:center;
+}
+.active{
+	background:#e94834;
+}
+.steps hr{
+	float:left;
+	width:12%;
+	border-color:#c0c0c0;
+}
+.steps hr.on{
+	border-color: #e94834 ;
+}
+.set-hint{
+	padding:10px 0;
+	color:#acacac;
+}
+.set-btn-top a{
+	color:#63dcff;
 }
 
 

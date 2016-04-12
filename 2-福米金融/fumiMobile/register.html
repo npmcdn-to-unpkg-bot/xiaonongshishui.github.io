@@ -3,11 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<title>登录/注册</title>
+	<title>注册</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="apprise/apprise-v2.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-
 	<script type="text/javascript">
 	new function (){
             var _self = this;
@@ -27,29 +25,30 @@
 		<div class="logo-head text-center">
 		<img src="images/logo.png" title="福米金融">
 	</div>
-	<p class="logIn-hint text-center">请输入手机号码进行登录</p>
+	<p class="logIn-hint text-center">验证码已发送到<span>135****1256</span>手机号</p>
 
 	<form  action="" method="post" accept-charset="utf-8">
 		<ul class="list form-list">
-			<li class="forText">
-				<span class="text-right">手机号码</span>
-				<input id="tel" type="text" placeholder="请输入手机号码">
+			<li class="noText">
+				<input id="noteCode" type="text" placeholder="请输入短信验证码">
+				<div class="code">47秒</div>
 			</li>
-			<li class="forText">
-				<span>验 证 码</span>
-				<input id="txtCode" type="text" placeholder="请输入验证码(点击可刷新)">
-				<img src='images/verify.png' class="verify" title="点击换一个校验码" id="verifyCode" onclick="this.src=this.src+'?t='+Math.random()"/>
+			<li class="noText">
+				<input id="inviteCode" type="text" placeholder="请输入邀请码(如有)">
 			</li>
 		</ul>
 	</form>
+	<div class="logIn-btn">
+		<p class="text-center logIn-btn-top">注册即代表同意<a href="#">《用户服务协议》</a></p>
+		<div class="btn-confirm btn-red ">
+			注册	
+		</div>
+		<div class="logIn-info text-left">
+			<span class="info1">福米金融不会在任何地方泄露您的信息</span>
+			<span class="info2">账户资金由银行、新浪支付共同保障</span>
+		</div>
+	</div>
 	
-	<div id="next"class="btn-confirm btn-red logIn-btn">
-		下一步	
-	</div>
-	<div class="logIn-info text-left">
-		<span class="info1">福米金融不会在任何地方泄露您的信息</span>
-		<span class="info2">账户资金由银行、新浪支付共同保障</span>
-	</div>
 	
 
 <footer class="text-center">
@@ -64,33 +63,5 @@
 
 <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="apprise/apprise-v2.js"></script>
-<script type="text/javascript">
-
-	$("#next").click(function(){
-		var tel = $("#tel").val();
-		var telRegex = /^(13|14|15|18|17)[0-9]{9}$/;//手机号码格式
-		var verifyCode =$('#verifyCode').val();
-		if (tel == '') {
-         	return Apprise('手机号码不能为空');
-        }
-		if(!telRegex.test(tel)){
-			return Apprise('请输入有效的手机号码');
-		}
-		 if (verifyCode == '') {
-            return Apprise('验证码不能为空');
-        }
-        
-
-
-
-	});
-
-
-	
-
-
-
-</script>
 </body>
 </html>

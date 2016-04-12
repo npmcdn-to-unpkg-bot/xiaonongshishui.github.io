@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>实名认证</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript">
+	new function (){
+            var _self = this;
+            _self.width = 640;//设置默认最大宽度
+            _self.fontSize = 100;//默认字体大小
+            _self.widthProportion = function(){var p = document.getElementsByTagName("html")[0].offsetWidth/_self.width;return p>1?1:p<0.5?0.5:p;};
+            _self.changePage = function(){
+                document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+_self.widthProportion()*_self.fontSize+"px !important");
+            };
+            _self.changePage();
+            window.addEventListener("resize",function(){_self.changePage();},false);
+        };
+	</script>
+</head>
+<body>
+	<section class="logIn">
+		<ul class="list firstList steps list-padding2">
+			<li>
+				<div class="row text-center">
+					<div class="col-xs-3">
+						<div class="step active">1</div>
+					</div>
+					<hr class="on"/>
+					<div class="col-xs-3">
+						<div class="step active">2</div>
+					</div>
+					<hr class="on"/>
+					<div class="col-xs-3">
+						<div class="step active">3</div>
+					</div>
+				</div>
+				<div class="row text-center" style=" font-size:16px;margin-top:15px">
+					<div class="col-xs-4" style="padding-left:10px;padding-right:0">
+						<p>设置交易密码</p>
+					</div>
+					<div class="col-xs-4">
+						<p>实名认证</p>
+					</div>
+					<div class="col-xs-4">
+						<p>绑定银行卡</p>
+					</div>
+				</div>
+			</li>
+		</ul>
+	<div class="text-center set-hint">
+		<p>绑定银行卡</p>
+	</div>
+	<form  action="" method="post" accept-charset="utf-8">
+		<ul class="list form-list">
+			<li class="bC">
+				<span>选择银行</span>
+				<span class="indicate" >请选择银行</span>
+				<i class="jiantou"></i>
+			</li>
+			<li class="bC">
+				<span>借记卡卡号</span>
+				<input id="inviteCode" type="text" placeholder="请输入16-19位借记卡卡号">
+			</li>
+		</ul>
+		<ul class="list form-list">
+			<li class="bC">
+				<span>手机号码</span>
+				<input id="noteCode" type="text" placeholder="请输入银行预留手机号">
+			</li>
+			<li class="bC">
+				<span>验证码</span>
+				<input id="inviteCode" type="text" placeholder="请输入验证码" style="width:30%">
+				<div class="code">获取</div>
+			</li>
+		</ul>
+	</form>
+	<div class="logIn-btn">
+		<p class="text-center logIn-btn-top set-btn-top"><a href="#">先去逛逛</a></p>
+		<div class="btn-confirm btn-red ">
+			确定	
+		</div>
+		<div class="logIn-info text-left">
+			<span class="info1">福米金融不会在任何地方泄露您的信息</span>
+			<span class="info2">账户资金由银行、新浪支付共同保障</span>
+		</div>
+	</div>
+	
+	
+
+<footer class="text-center">
+	
+	<div class="footer-bottom section-footer">
+		<p>客服电话：400-788-5018</p>
+		<p>&copy;福米金融  All right Reserved </p>
+	</div>
+</footer>
+	</section>
+	
+
+<script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</body>
+</html>
