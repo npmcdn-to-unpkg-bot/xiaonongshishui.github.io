@@ -1,0 +1,30 @@
+首页
+index.html
+
+
+产品购买
+proList.html 产品列表页
+proInfo.html 产品信息页
+buyPro.html 购买产品页
+
+
+登录注册
+logIn.html 登录注册统一接口页
+register.html 注册页
+landing.html 登录页
+三步曲
+setPassword.html 设置交易密码页
+authenticate.html 实名认证页
+bindCard.html 绑定银行卡页
+
+
+充值提现
+充值
+rechargeIndex.html 充值页
+rechargeInputPW.html 充值填写交易密码页
+rechargeComplete.html 充值完成页
+rechargeBTLComplete.html 线下充值完成页
+
+
+
+

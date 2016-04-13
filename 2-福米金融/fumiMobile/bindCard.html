@@ -62,18 +62,18 @@
 			</li>
 			<li class="bC">
 				<span>借记卡卡号</span>
-				<input id="inviteCode" type="text" placeholder="请输入16-19位借记卡卡号">
+				<input id="bankCard" type="text" placeholder="请输入16-19位借记卡卡号">
 			</li>
 		</ul>
 		<ul class="list form-list">
 			<li class="bC">
 				<span>手机号码</span>
-				<input id="noteCode" type="text" placeholder="请输入银行预留手机号">
+				<input id="tel" type="text" placeholder="请输入银行预留手机号">
 			</li>
 			<li class="bC">
 				<span>验证码</span>
-				<input id="inviteCode" type="text" placeholder="请输入验证码" style="width:30%">
-				<div class="code">获取</div>
+				<input id="smsCode" type="text" placeholder="请输入验证码" style="width:30%">
+				<div id="sendSMSTip" class="code">获取</div>
 			</li>
 		</ul>
 	</form>
@@ -87,20 +87,52 @@
 			<span class="info2">账户资金由银行、新浪支付共同保障</span>
 		</div>
 	</div>
-	
-	
-
-<footer class="text-center">
-	
-	<div class="footer-bottom section-footer">
-		<p>客服电话：400-788-5018</p>
-		<p>&copy;福米金融  All right Reserved </p>
-	</div>
-</footer>
+	<footer class="text-center">
+		
+		<div class="footer-bottom section-footer">
+			<p>客服电话：400-788-5018</p>
+			<p>&copy;福米金融  All right Reserved </p>
+		</div>
+	</footer>
 	</section>
 	
 
 <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	var telRegex = /^(13|14|15|18|17)[0-9]{9}$/;
+	$("#sendSMSTip").click(function(){
+		sendSMSTip();
+		this.text(leftscond+"秒");
+	});
+	function sendMobileValidSMSCode(){
+		var tel = $.trim($("#tel").val());
+		var leftscond,timer;
+		$("#sendSMSTip").text("短信发送中");
+		if(telRegex.test(tel)){
+			$.ajax({
+				url:"",
+				type:"post",
+				dataType:"json",
+				data:{"",tel},
+				success:function(){
+					$("#tel").attr("readonly", true);
+					$("#sendSMSTip").removeAttr("onclick");
+					leftsecond = 60;
+					clearInterval(timer);
+                    timer = setInterval('setLeftTime()', 1000);
+				}
+			});
+		}
+
+	}
+	function setLeftTime(){
+		leftsecond--;
+		if(leftsecond < 1){
+			$("#sendSMSTip").text("获取");
+			clearInterval(timer);
+		}
+	}
+</script>
 </body>
 </html>
