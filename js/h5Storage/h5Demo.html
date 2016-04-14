@@ -63,7 +63,13 @@
 				}
 
 
-				function add(dataStr){
+				
+				
+
+
+
+		}
+		function add(dataStr){
 					var data = JSON.parse(dataStr);
 					var tr = document.createElement('tr');
 					for(var i in data){
@@ -74,7 +80,7 @@
 					}
 					document.getElementsByTagName('tbody')[0].appendChild(tr);
 				}
-				
+
 
 
 
@@ -82,16 +88,26 @@
 				var arrayKey = [];
 				var openRequest;
 				var indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.msIndexedDB;
-				var dbName = "person";
-				var tableName = "testTable";
+				var dbName = "person";//数据库名称
+				var tableName = "testTable";//表的名称
+				init();
 				function init(){
 					openRequest = indexedDB.open(dbName);
+					//console.log(openRequest);
 					openRequest.onupgradeneeded = function(e){
+						console.log("running onupgradeneeded");
 						var thisDb = e.target.result;
+						console.log(thisDB);
+						console.log(thisDB.version);
+						if(!thisDB.objectStoreNames.contains(tableName)){
+							console.log("i need to create the objectstore");
+							var objectStore = thisDb.createObjectStore(tableName,{keyPath:"id",autoIncrement:true});
+							objectStore.
+						}
+
 						
 					}
 				}
-		}
 	</script>
 
 

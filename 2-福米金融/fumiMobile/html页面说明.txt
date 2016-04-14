@@ -20,10 +20,17 @@ bindCard.html 绑定银行卡页
 
 充值提现
 充值
-rechargeIndex.html 充值页
-rechargeInputPW.html 充值填写交易密码页
+rechargeIndex.html 充值页+新浪支付弹出框
+rechargeInputPW.html 充值输入交易密码页
 rechargeComplete.html 充值完成页
+线下充值
+rechargeBTLIndex.html 线下充值页
 rechargeBTLComplete.html 线下充值完成页
+提现
+withdrawIndex.html 提现页+新浪支付弹出框
+withdrawInputPW.html 提现输入交易密码页
+withdrawComplete.html 提现完成页
+
 
 
 

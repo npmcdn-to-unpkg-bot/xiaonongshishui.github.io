@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<title>注册</title>
+	<title>充值</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script type="text/javascript">
@@ -24,19 +24,19 @@
 	<section class="logIn">
 	<form  action="" method="post" accept-charset="utf-8">
 		<ul class="list form-list firstList clearfix">
-			<li class="recharge">
+			<li class="infoItem">
 				<span>账户余额</span>
 				<span >5元</span>
 			</li>
-			<li class="recharge">
+			<li class="infoItem">
 				<span>充值金额</span>
 				<span><input type="text">元</span>
 			</li>
-			<li class="recharge">
+			<li class="infoItem">
 				<span>借记卡号</span>
 				<span >建设银行(尾号0164)</span>
 			</li>
-			<li class="recharge">
+			<li class="infoItem">
 				<span>银行预留手机号</span>
 				<span >135****0164</span>
 			</li>
@@ -49,10 +49,9 @@
 		</div>
 		<p class="set-btn-top text-center" style="margin-top:5px"><a href="#">线下充值</a></p>
 		<div class="logIn-btn-hint">
-			<p>温馨提示</p>
+			<p>温馨提示：</p>
 			<p>最低充值金额是100元</p>
 		</div>
-		
 		<div class="logIn-info text-left">
 			<span class="info1">福米金融不会在任何地方泄露您的信息</span>
 			<span class="info2">账户资金由银行、新浪支付共同保障</span>
@@ -65,6 +64,8 @@
 		</div>
 	</footer>
 	</section>
+
+	
 	
 
 <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
@@ -76,7 +77,7 @@
 		layer.open(
 			{
     			style: 'border:none;border-radius:5px;background-color:#fff; color:#323232;',
-			    content: '<p>充值正在处理中...</p>',
+			    content: '<div class="sinaPay"><div class="sinaCircle"></div><div><img src="images/sinaPay.png"></div></div><p class="sinaInfo">充值正在处理中...</p>',
 			    shade:true,
 			    shadeClose: false,
 			    anim:true,

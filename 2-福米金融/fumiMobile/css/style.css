@@ -448,6 +448,22 @@ ul.list li{
 ul.list li:last-child{
 	border-bottom:none;
 }
+.list-head{
+	height:50px;
+	line-height:50px;
+	margin:0;
+	padding-left:7%;
+	color:#a2a2a2;
+	font-size:15px;
+}
+.list-head2{
+	height:45px;
+	line-height:45px;
+	margin:0;
+	padding-left:7%;
+	color:#e94834;
+	font-size:12px;
+}
 .list-title{
 	text-indent:1.5em;
 }
@@ -466,6 +482,21 @@ ul.list li:last-child{
 .list-height p{
 	line-height:50px;
 	margin-bottom:0;
+}
+.list li.infoItem{
+	padding-left:8%;
+	padding-right:8%;
+}
+.list li.infoItem span:first-child{
+	width:auto;
+}
+.list li.infoItem span:last-child{
+	float:right;
+	text-align:right;
+	color:#acacac;
+}
+.list li.infoItem input{
+	line-height:normal;
 }
 /*---------------表单列表组-------------*/
 .form-list input{
@@ -703,20 +734,31 @@ ul.list li:last-child{
 }
 
 /*--------------充值提现页------------------*/
-.form-list li.recharge{
-	padding-left:8%;
-	padding-right:8%;
+
+/*新浪支付动态图*/
+.sinaPay { 
+	position: relative; 
+	width: 150px; 
+	height: 150px; 
+	
 }
-.form-list li.recharge span:first-child{
-	width:auto;
+.sinaCircle{ 
+	position: absolute; 
+	width: 100%; 
+	height: 100%; 
+	background: url(../images/sinaCircle.png) no-repeat; 
+	background-size:100% 100%;
+	animation: spin 800ms infinite linear;
+	-webkit-animation:spin 800ms infinite linear; 
 }
-.form-list li.recharge span:last-child{
-	float:right;
-	text-align:right;
-	color:#acacac;
+
+@keyframes spin {
+  0%   { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
 }
-.form-list li.recharge input{
-	line-height:normal;
+.sinaInfo{
+	color:#989898;
+	margin-top:10px;
 }
 /*充值输入密码页*/
 .inputPW-top{
@@ -729,6 +771,8 @@ ul.list li:last-child{
 	padding-bottom:10px;
 	margin-bottom:10px;
 }
+/*线下充值页*/
+
 
 
 
