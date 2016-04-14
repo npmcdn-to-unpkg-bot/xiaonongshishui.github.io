@@ -44,7 +44,7 @@ sup {
 	text-align:center;
 	line-height:50px;
 	color:#fff;
-	font-size:18px;
+	font-size:17px;
 	border-radius:6px;
 }
 .btn-red{
@@ -85,9 +85,6 @@ sup {
     background-color: #ff6622;
     border-color: #ff6622;
  }
- .f-orange{
- 	color: #ff6622;
- }
  .f-blue{
 	color:#0a5dab;
  }
@@ -106,6 +103,9 @@ sup {
  }
  .f-red{
 	color: #d73037;
+ }
+ .f-red1{
+ 	color:#e94834;
  }
  .panel-silver{
 	border-color: #dadada;
@@ -437,6 +437,9 @@ ul.list{
 	background:#fff;
 	padding-left:0;
 }
+.firstList{
+	margin-top:14px;
+}
 ul.list li{
 	position:relative;
 	padding:1px 5px;
@@ -444,6 +447,22 @@ ul.list li{
 }
 ul.list li:last-child{
 	border-bottom:none;
+}
+.list-head{
+	height:50px;
+	line-height:50px;
+	margin:0;
+	padding-left:7%;
+	color:#a2a2a2;
+	font-size:15px;
+}
+.list-head2{
+	height:45px;
+	line-height:45px;
+	margin:0;
+	padding-left:7%;
+	color:#e94834;
+	font-size:12px;
 }
 .list-title{
 	text-indent:1.5em;
@@ -464,11 +483,26 @@ ul.list li:last-child{
 	line-height:50px;
 	margin-bottom:0;
 }
+.list li.infoItem{
+	padding-left:8%;
+	padding-right:8%;
+}
+.list li.infoItem span:first-child{
+	width:auto;
+}
+.list li.infoItem span:last-child{
+	float:right;
+	text-align:right;
+	color:#acacac;
+}
+.list li.infoItem input{
+	line-height:normal;
+}
 /*---------------表单列表组-------------*/
 .form-list input{
-	height:100%;
 	outline:none;
 	border:none;
+	line-height:normal;
 }
 .form-list input.forOne{
 	width:100%;
@@ -476,22 +510,61 @@ ul.list li:last-child{
 .form-list li{
 	position:relative;
 	height:50px;
+/*<<<<<<< HEAD
 	line-height:50px;
 }
 .form-list li.forText{
+=======
+>>>>>>> 9c82eebd5351cd1ca7f933b6de99fbba269be212*/
 	padding-left:6%;
 }
-.forText .li-wrap{
-
-}
 .form-list li span{
+	line-height:50px;
+}
+.form-list li span.indicate{
+	float:right;
+	margin-right:5%;
+}
+.form-list li.noText{
+	padding-left:7%;
+}
+.form-list li.forText{
+	padding-left:7%;
+}
+.form-list li.bC{
+	padding-left:7%;
+}
+.form-list li.bC span{
+	display:inline-block;
+	vertical-align:middle;
+	width:25%;
+}
+.form-list li.forText span{
 	display:inline-block;
 	text-align:justify;
-	width:25%;
+	width:21%;
+}
+.form-list li.setPW{
+	padding-left:2%;
+}
+.form-list li.setPW span{
+	display:inline-block;
+	width:37%;
 }
 .form-list li input{
 	width:58%;
 }
+.form-list li .code{
+	display:inline-block;
+	vertical-align:middle;
+	color:#fff;
+	padding:5px 20px;
+	margin-left:10%;
+	height:30px;
+	background:#ea522b;
+	border-radius:5px;
+}
+
 
 /*表单列表组中的按钮类*/
 
@@ -592,8 +665,21 @@ ul.list li:last-child{
 	color:#acacac;
 	font-size:14px;
 }
+.logIn-btn-hint{
+	width:80%;
+	margin:20px auto 50px;
+	font-size:12px;
+	color:#8f8f8f;
+}
 .logIn-btn{
 	margin-top:50px;
+}
+.logIn-btn-top{
+	font-size:14px;
+	color:#878787;
+}
+.logIn-btn-top a{
+	color:#e94834;
 }
 .logIn-info{
 	margin-top:10px;
@@ -617,5 +703,82 @@ ul.list li:last-child{
 	background-size:0.3rem;
 	text-indent:0.3rem;
 }
+.step{
+	width:50px;
+	height:50px;
+	margin:0 auto;
+	border-radius:100%;
+	background:#c0c0c0;
+	color:#fff;
+	line-height:50px;
+	text-align:center;
+}
+.active{
+	background:#e94834;
+}
+.steps hr{
+	float:left;
+	width:12%;
+	border-color:#c0c0c0;
+}
+.steps hr.on{
+	border-color: #e94834 ;
+}
+.set-hint{
+	padding:10px 0;
+	color:#acacac;
+}
+.set-btn-top a{
+	color:#63dcff;
+}
+/*弹出框提示样式*/
+
+.layermbtn span[type="1"]{color:#2f820e;}
+.layermbtn{line-height:39px!important;}
+.layermcont {
+    padding: 20px 30px!important;
+}
+
+/*--------------充值提现页------------------*/
+
+/*新浪支付动态图*/
+.sinaPay { 
+	position: relative; 
+	width: 150px; 
+	height: 150px; 
+	
+}
+.sinaCircle{ 
+	position: absolute; 
+	width: 100%; 
+	height: 100%; 
+	background: url(../images/sinaCircle.png) no-repeat; 
+	background-size:100% 100%;
+	animation: spin 800ms infinite linear;
+	-webkit-animation:spin 800ms infinite linear; 
+}
+
+@keyframes spin {
+  0%   { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+.sinaInfo{
+	color:#989898;
+	margin-top:10px;
+}
+/*充值输入密码页*/
+.inputPW-top{
+	padding-top:30px;
+	text-align:center;
+}
+/*充值完成页*/
+.rechargeComplete-top{
+	background-color:#fff;
+	padding-bottom:10px;
+	margin-bottom:10px;
+}
+/*线下充值页*/
+
+
 
 

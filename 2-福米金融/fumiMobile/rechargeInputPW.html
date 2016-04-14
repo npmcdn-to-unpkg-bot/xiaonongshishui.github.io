@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>注册</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript">
+	new function (){
+            var _self = this;
+            _self.width = 640;//设置默认最大宽度
+            _self.fontSize = 100;//默认字体大小
+            _self.widthProportion = function(){var p = document.getElementsByTagName("html")[0].offsetWidth/_self.width;return p>1?1:p<0.5?0.5:p;};
+            _self.changePage = function(){
+                document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+_self.widthProportion()*_self.fontSize+"px !important");
+            };
+            _self.changePage();
+            window.addEventListener("resize",function(){_self.changePage();},false);
+        };
+	</script>
+</head>
+<body>
+	<section class="logIn">
+		<p class="inputPW-top">请输入交易密码</p>
+	<form  action="" method="post" accept-charset="utf-8">
+		<ul class="list form-list">
+			<li class="noText">
+				<input type="text" placeholder="请输入交易密码">
+			</li>
+		</ul>
+	</form>
+	<div class="logIn-btn">
+		
+		<div id="" class="btn-confirm btn-red ">
+			确定	
+		</div>
+		<p class="set-btn-top text-center" style="margin-top:5px"><a href="#">取消</a></p>
+		<div class="logIn-info text-left">
+			<span class="info1">福米金融不会在任何地方泄露您的信息</span>
+			<span class="info2">账户资金由银行、新浪支付共同保障</span>
+		</div>
+	</div>
+	<footer class="text-center">
+		<div class="footer-bottom section-footer">
+			<p>客服电话：400-788-5018</p>
+			<p>&copy;福米金融  All right Reserved </p>
+		</div>
+	</footer>
+	</section>
+	
+
+<script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="layer.mobile-v1.7/layer.js"></script>
+<script type="text/javascript">
+	$("#").click(function(){
+		
+	});
+
+</script>
+</body>
+</html>

@@ -5,7 +5,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>登录/注册</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="apprise/apprise-v2.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+
 	<script type="text/javascript">
 	new function (){
             var _self = this;
@@ -30,21 +32,19 @@
 	<form  action="" method="post" accept-charset="utf-8">
 		<ul class="list form-list">
 			<li class="forText">
-				<div class="li-wrap">
-				<span>手机号码</span>
-				<input type="text" placeholder="请输入手机号码">
-				</div>
+				<span class="text-right">手机号码</span>
+				<input id="tel" type="text" placeholder="请输入手机号码">
 			</li>
 			<li class="forText">
-				<div class="li-wrap">
-				<span>校 验 码</span>
-				<input type="text" placeholder="请输入验证码(点击可刷新)">
-				</div>
+				<span>验 证 码</span>
+				<input id="verifyCode" type="text" placeholder="请输入验证码(点击可刷新)">
+				<img src='images/verify.png' class="verify" title="点击换一个验证码"  id="verify" onclick="this.src=this.src+'?t='+Math.random()"/>
+
 			</li>
 		</ul>
 	</form>
 	
-	<div class="btn-confirm btn-red logIn-btn">
+	<div id="next"class="btn-confirm btn-red logIn-btn">
 		下一步	
 	</div>
 	<div class="logIn-info text-left">
@@ -65,5 +65,82 @@
 
 <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="apprise/apprise-v2.js"></script>
+<script type="text/javascript" src="layer.mobile-v1.7/layer.js"></script>
+<script type="text/javascript">
+
+
+	$("#next").click(function(){
+		//弹出框，提示未注册用户继续注册
+		layer.open(
+					{
+	        			style: 'border:none;border-radius:5px;background-color:#fff; color:#323232;',
+					    content: '<p>此手机号码未注册</p><p>继续注册成为福米金融会员</p>',
+					    btn: ['确认', '取消'],
+					    shade:true,
+					    shadeClose: false,
+					    anim:true,
+					    fixed:true,
+					    yes: function(){
+					        layer.open({content: '你点了确认'});
+					    }, 
+					    no: function(){
+					        layer.open({content: '你选择了取消'});
+					    }
+					});
+		
+		
+		var tel = $.trim($("#tel").val());
+		var telRegex = /^(13|14|15|18|17)[0-9]{9}$/;//手机号码格式
+		var verifyCode =$.trim($('#verifyCode').val());
+		if (tel == '') {
+         	return Apprise('手机号码不能为空');
+        }
+		if(!telRegex.test(tel)){
+			return Apprise('请输入有效的手机号码');
+		}
+		 if (verifyCode == '') {
+            return Apprise('验证码不能为空');
+        }
+
+    //     $.ajax({
+    //     	url:"",
+    //     	type:"post",
+    //     	dataType:"json",
+    //     	data:{"":tel,"":verifyCode},
+    //     	success:function(){
+    //     		if(){
+
+    //     		}
+    //     		else if(){
+    //     			//Apprise('此手机号码未注册，继续注册成为福米金融会员');
+    //     			layer.open({
+    //     			style: 'border:none; background-color:#78BA32; color:#fff;',
+				//     content: '此手机号码未注册，继续注册成为福米金融会员',
+				//     btn: ['取消', '确认'],
+				//     shadeClose: false,
+				//     yes: function(){
+				//         layer.open({content: '你点了确认'});
+				//     }, 
+				//     no: function(){
+				//         layer.open({content: '你选择了取消'});
+				//     }
+				// });
+
+    //     		}
+    //     	}
+
+    //     });
+
+
+
+	});                                                                                                                                           
+
+
+	
+
+
+
+</script>
 </body>
 </html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>线下充值</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript">
+	new function (){
+            var _self = this;
+            _self.width = 640;//设置默认最大宽度
+            _self.fontSize = 100;//默认字体大小
+            _self.widthProportion = function(){var p = document.getElementsByTagName("html")[0].offsetWidth/_self.width;return p>1?1:p<0.5?0.5:p;};
+            _self.changePage = function(){
+                document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+_self.widthProportion()*_self.fontSize+"px !important");
+            };
+            _self.changePage();
+            window.addEventListener("resize",function(){_self.changePage();},false);
+        };
+	</script>
+</head>
+<body>
+	<section class="logIn">
+		<p class="list-head">收款账户</p>
+		<ul class="list form-list  clearfix">
+			<li class="infoItem">
+				<span>开户银行</span>
+				<span >招商银行上海江苏路分行</span>
+			</li>
+			<li class="infoItem">
+				<span>开户名</span>
+				<span>福米互联网金融信息服务有限公司</span>
+				<!-- 建议不要超过15个字，不然320屏挤不下 -->
+			</li>
+			<li class="infoItem">
+				<span>账户号</span>
+				<span >121916873010301</span>
+			</li>
+		</ul>
+		<p class="list-head2 ">请用网银、手机银行、支付宝或柜台汇款至上述账户</p>
+		<form action="">
+			<ul class="list form-list clearfix">
+			<li class="infoItem">
+				<span>充值金额</span>
+				<span><input type="text" name="" id="" placeholder="500元以上"></span>
+			</li>
+			<li class="infoItem">
+				<span>付款方账号</span>
+				<span><input type="text" name="" id="" placeholder="末四位数字"></span>
+			</li>
+			<li class="infoItem">
+				<span>付款方户名</span>
+				<span><input type="text" name="" id="" placeholder="付款的账户名称"></span>
+			</li>
+		</ul>
+		</form>
+		
+
+	<div class="logIn-btn">
+		
+		<div id="" class="btn-confirm btn-red ">
+			提交	
+		</div>
+		<div class="logIn-btn-hint">
+			<p>温馨提示：</p>
+			<p>在收到您的线下充值申请后一个工作日内，我们会将资金以及线下充值奖励一并充值到您的福米账户内。</p>
+		</div>
+		
+		<div class="logIn-info text-left">
+			<span class="info1">福米金融不会在任何地方泄露您的信息</span>
+			<span class="info2">账户资金由银行、新浪支付共同保障</span>
+		</div>
+	</div>
+	<footer class="text-center">
+		<div class="footer-bottom section-footer">
+			<p>客服电话：400-788-5018</p>
+			<p>&copy;福米金融  All right Reserved </p>
+		</div>
+	</footer>
+	</section>
+	
+
+<script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="layer.mobile-v1.7/layer.js"></script>
+<script type="text/javascript">
+	$("#recharge").click(function(){
+		//弹出框：新浪支付动态图
+		layer.open(
+			{
+    			style: 'border:none;border-radius:5px;background-color:#fff; color:#323232;',
+			    content: '<p>充值正在处理中...</p>',
+			    shade:true,
+			    shadeClose: false,
+			    anim:true,
+			    fixed:true
+			});
+	});
+
+</script>
+</body>
+</html>
