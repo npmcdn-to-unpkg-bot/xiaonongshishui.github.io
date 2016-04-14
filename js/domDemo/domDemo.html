@@ -15,6 +15,8 @@
 		#container img{
 			position:absolute;
 			display:block;
+			left:0;
+			border-left:1px solid #ccc;
 		}
 	</style>
 </head>
@@ -25,6 +27,16 @@
 		<img src="images/door3.png" alt="四核5寸" title="四核5寸">
 		<img src="images/door4.png" alt="5.7寸机皇" title="5.7寸机皇">
 	</div>
+	<script type="text/javascript" charset="utf-8" async defer>
+ 
+ 		window.onload = function(){
+ 			//获得容器变量
+ 			var box = document.getElementById('container');
+ 			//获得图片NodeList对象集合
+ 			var imgs = box.getElementsByTagName('img');
+ 			
+ 		}
+	</script>		
 	
 </body>
 </html>
