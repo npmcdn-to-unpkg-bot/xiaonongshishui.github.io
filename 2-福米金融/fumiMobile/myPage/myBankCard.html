@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>我的银行卡</title>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<script type="text/javascript">
+	new function (){
+            var _self = this;
+            _self.width = 640;//设置默认最大宽度
+            _self.fontSize = 100;//默认字体大小
+            _self.widthProportion = function(){var p = document.getElementsByTagName("html")[0].offsetWidth/_self.width;return p>1?1:p<0.5?0.5:p;};
+            _self.changePage = function(){
+                document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+_self.widthProportion()*_self.fontSize+"px !important");
+            };
+            _self.changePage();
+            window.addEventListener("resize",function(){_self.changePage();},false);
+        };
+	</script>
+</head>
+<body>
+	<section >
+		<ul class="list form-list firstList  myPage-icon-item clearfix">
+			<li class="infoItem">
+				<span><image src="../images/jianhang.png">建设银行</span>
+				<span>绑卡支付(尾号0168)储蓄卡</span>
+			</li>
+			<li class="infoItem" id="unbind">
+				<span><image src="../images/unbindBankCard.png">解绑银行卡</span>
+				<i class="jiantou"></i>
+			</li>
+		</ul>
+		<div class="logIn-btn" style="margin-top:200px">
+		<div class="logIn-info text-left">
+			<span class="info1">福米金融不会在任何地方泄露您的信息</span>
+			<span class="info2">账户资金由银行、新浪支付共同保障</span>
+		</div>
+	</div>
+	</section>
+
+	
+	
+
+<script type="text/javascript" src="../js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../layer.mobile-v1.7/layer.js"></script>
+<script type="text/javascript">
+	$("#unbind").click(function(){
+		//账户余额为0时才可以解绑银行卡
+		layer.open(
+					{
+	        			style: 'border:none;border-radius:5px;background-color:#fff; color:#323232;',
+					    content: '<p>账户余额为<span class="f-red">0</span>时才可以解绑银行卡</p>',
+					    btn: ['确认', '取消'],
+					    shade:true,
+					    shadeClose: false,
+					    anim:true,
+					    fixed:true,
+					    yes: function(){
+					        layer.open({content: '你点了确认'});
+					    }, 
+					    no: function(){
+					        layer.open({content: '你选择了取消'});
+					    }
+					});
+	});
+
+</script>
+</body>
+</html>

@@ -32,6 +32,15 @@ withdrawInputPW.html 提现输入交易密码页
 withdrawComplete.html 提现完成页
 
 
+我的首页
+myPage 我的首页
+pCenter 个人中心
+myBankCard 我的银行卡+弹窗
+unbindBankCard.html 解绑银行卡
+modifyPassword修改交易密码
+
+
+
 
 
 

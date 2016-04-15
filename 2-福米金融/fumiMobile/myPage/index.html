@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>我的首页</title>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<script type="text/javascript">
+	new function (){
+            var _self = this;
+            _self.width = 640;//设置默认最大宽度
+            _self.fontSize = 100;//默认字体大小
+            _self.widthProportion = function(){var p = document.getElementsByTagName("html")[0].offsetWidth/_self.width;return p>1?1:p<0.5?0.5:p;};
+            _self.changePage = function(){
+                document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+_self.widthProportion()*_self.fontSize+"px !important");
+            };
+            _self.changePage();
+            window.addEventListener("resize",function(){_self.changePage();},false);
+        };
+	</script>
+</head>
+<body>
+	<header class="header clearfix myPage-header ">
+        <!-- <a href="javascript:location.href='history.back()'" class="lastStep" title="上一步"></a> -->
+        <a href="index.html" class="home"></a>
+        <span class="person">您好，186****6161</span>
+    </header>
+	<section class="logIn" style="padding-bottom:1px;">
+		<ul class="list myPage-list">
+			<li>
+			<div class="container-fluid">
+				<div class="row">
+				<div class="col-xs-6">
+					<h5>账户余额(元)</h3>
+					<h3 class="f-red">8896.00</h3>
+				</div>
+				<div class="col-xs-6">
+					<h5>资产总额(元)</h5>
+					<h3 class="f-red">8896.00</h3>
+				</div>	
+				</div>
+			</div>
+			</li>
+			<li>
+			<div class="container-fluid">
+				<div class="row myPage-return" >
+				<div class="col-xs-6" >
+					<p>福米钱袋累计收益(元)</p>
+					<h4 class="f-red">0</h4>
+					<p>福米钱袋待收金额(元)</p>
+					<h4 >1000</h3>
+				</div>
+				<div class="col-xs-6">
+					<p>保盈计划累计收益(元)</p>
+					<h4 class="f-red">0</h4>
+					<p>保盈计划待收金额(元)</p>
+					<h4 >0</h4>
+				</div>	
+			</div>
+			</div>
+			</li>
+			
+		</ul>
+	
+		<ul class="list form-list firstList  myPage-icon-item clearfix">
+			<li class="infoItem">
+				<span><image src="../images/1recharge.png">立即充值</span>
+				<i class="jiantou"></i>
+			</li>
+			<li class="infoItem">
+				<span><image src="../images/2withdraw.png">立即提现</span>
+				<i class="jiantou"></i>
+			</li>
+			<li class="infoItem">
+				<span><image src="../images/3hongbao.png">红包/加息券</span>
+				<span>2张可用</span>
+				<i class="jiantou"></i>	
+			</li>
+		</ul>
+		<ul class="list form-list myPage-icon-item clearfix">
+			<li class="infoItem">
+				<span><image src="../images/4pCenter.png">个人中心</span>
+				<i class="jiantou"></i>
+			</li>
+			<li class="infoItem">
+				<span><image src="../images/5tradeRecord.png">交易记录</span>
+				<i class="jiantou"></i>
+			</li>
+			<li class="infoItem">
+				<span><image src="../images/6inviteFriends.png">邀请好友</span>	
+				<i class="jiantou"></i>
+			</li>
+		</ul>
+		<div class="exitBtn">
+			<img src="../images/exit.png">安全退出
+		</div>
+	</section>
+
+	
+	
+
+<script type="text/javascript" src="../js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../layer.mobile-v1.7/layer.js"></script>
+<script type="text/javascript">
+	$("#recharge").click(function(){
+		//弹出框：新浪支付动态图
+		layer.open(
+			{
+    			style: 'border:none;border-radius:5px;background-color:#fff; color:#323232;',
+			    content: '<div class="sinaPay"><div class="sinaCircle"></div><div><img src="images/sinaPay.png"></div></div><p class="sinaInfo">充值正在处理中...</p>',
+			    shade:true,
+			    shadeClose: false,
+			    anim:true,
+			    fixed:true
+			});
+	});
+
+</script>
+</body>
+</html>

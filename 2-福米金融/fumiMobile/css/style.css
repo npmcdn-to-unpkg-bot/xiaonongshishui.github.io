@@ -1,5 +1,5 @@
 body{
-	background:#edeced;
+	background:#f3f3f3;
 }
 a{color:inherit;}
 a:focus, a:hover{
@@ -30,6 +30,9 @@ sup {
  }
  .f-green{
  	color:#1e950e;
+ }
+ .fc-normal{
+	color:#323232!important;
  }
  .bg-green{
  	background-color:#1e950e;
@@ -102,7 +105,7 @@ sup {
     border-color: #d73037;
  }
  .f-red{
-	color: #d73037;
+	color: #d73037!important;
  }
  .f-red1{
  	color:#e94834;
@@ -470,6 +473,9 @@ ul.list li:last-child{
 .list-title2{
 	text-indent:35px;
 }
+.list-title3{
+	padding-left:7%;
+}
 .list-padding{
 	padding-top:20px!important;
 }
@@ -490,12 +496,31 @@ ul.list li:last-child{
 .list li.infoItem span:first-child{
 	width:auto;
 }
-.list li.infoItem span:last-child{
+.list li.infoItem span:nth-child(2){
 	float:right;
 	text-align:right;
 	color:#acacac;
 }
 .list li.infoItem input{
+	line-height:normal;
+}
+/*修改交易密码页使用*/
+.list li.infoItem2{
+	padding-left:4%;
+	padding-right:5%;
+}
+.list li.infoItem2 input{
+	width:auto;
+}
+.list li.infoItem2 span:first-child{
+	width:auto;
+}
+.list li.infoItem2 span:nth-child(2){
+	float:right;
+	text-align:left;
+	color:#acacac;
+}
+.list li.infoItem2 input{
 	line-height:normal;
 }
 /*---------------表单列表组-------------*/
@@ -510,13 +535,7 @@ ul.list li:last-child{
 .form-list li{
 	position:relative;
 	height:50px;
-/*<<<<<<< HEAD
 	line-height:50px;
-}
-.form-list li.forText{
-=======
->>>>>>> 9c82eebd5351cd1ca7f933b6de99fbba269be212*/
-	padding-left:6%;
 }
 .form-list li span{
 	line-height:50px;
@@ -525,11 +544,23 @@ ul.list li:last-child{
 	float:right;
 	margin-right:5%;
 }
+.form-list li input{
+	width:58%;
+}
 .form-list li.noText{
 	padding-left:7%;
 }
 .form-list li.forText{
 	padding-left:7%;
+}
+.form-list li.forText span{
+	display:inline-block;
+	width:21%;
+}
+.form-list li.forText span.forText-left{
+	display:inline-block;
+	width:25%;
+	margin-right:10%;
 }
 .form-list li.bC{
 	padding-left:7%;
@@ -539,11 +570,6 @@ ul.list li:last-child{
 	vertical-align:middle;
 	width:25%;
 }
-.form-list li.forText span{
-	display:inline-block;
-	text-align:justify;
-	width:21%;
-}
 .form-list li.setPW{
 	padding-left:2%;
 }
@@ -551,16 +577,14 @@ ul.list li:last-child{
 	display:inline-block;
 	width:37%;
 }
-.form-list li input{
-	width:58%;
-}
 .form-list li .code{
 	display:inline-block;
 	vertical-align:middle;
 	color:#fff;
-	padding:5px 20px;
+	padding:0 20px;
 	margin-left:10%;
 	height:30px;
+	line-height:30px;
 	background:#ea522b;
 	border-radius:5px;
 }
@@ -651,9 +675,6 @@ ul.list li:last-child{
 	color:#e26e48;
 }
 /*--------------注册/登录页---------------*/
-.logIn{
-	background:#f3f3f3;
-}
 .logo-head{
 	padding-top:50px;
 	margin-bottom:50px;
@@ -728,6 +749,9 @@ ul.list li:last-child{
 	padding:10px 0;
 	color:#acacac;
 }
+.set-hint p{
+	margin-bottom:0;
+}
 .set-btn-top a{
 	color:#63dcff;
 }
@@ -777,6 +801,73 @@ ul.list li:last-child{
 	margin-bottom:10px;
 }
 /*线下充值页*/
+
+/*----------我的首页--------------*/
+/*我的首页*/
+.myPage-header{
+	background:#a95e0c;
+}
+.myPage-header .home{
+	float:left;
+}
+.myPage-header .person{
+	float:right;
+	display:inline-block;
+	vertical-align:baseline;
+	margin-right:7%;
+	height:0.88rem;
+	line-height:0.88rem;
+    background: url(../images/pc.png) no-repeat 0 0.2rem;
+	background-size:0.5rem;
+	text-indent:0.5rem;
+	color:#fff;
+	font-size:0.24rem;
+}
+.myPage-header .person img{
+	width:0.7rem;
+}
+.myPage-icon-item li.infoItem{
+	padding-left:5%;
+}
+.myPage-icon-item li span img{
+	width:30px;
+	margin-right:8px;
+}
+.myPage-list li{
+	padding-left:4%!important;
+	padding-top:10px!important;
+}
+.myPage-list li h5,.myPage-list h4{
+	color:#858585;
+}
+.myPage-list h4{
+	margin-top:0;
+}
+.myPage-list li p{
+	color:#858585;
+	font-size:12px;
+	margin-bottom:0;
+}
+.myPage-return{
+	padding-bottom:5px
+}
+.myPage-return div:first-child{
+	border-right:1px solid #e1e1e1;
+}
+.exitBtn{
+	width:40%;
+	margin:60px auto 20px;
+	background:#bb1212;
+	height:30px;
+	border-radius:5px;
+	line-height:30px;
+	text-align:center;
+	color:#fff;
+}
+.exitBtn img{
+	width:20px;
+	margin-right:3px;
+}
 
 
 
