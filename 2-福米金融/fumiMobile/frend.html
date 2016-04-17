@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>邀请好友</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript">
+	new function (){
+            var _self = this;
+            _self.width = 640;//设置默认最大宽度
+            _self.fontSize = 100;//默认字体大小
+            _self.widthProportion = function(){var p = document.getElementsByTagName("html")[0].offsetWidth/_self.width;return p>1?1:p<0.5?0.5:p;};
+            _self.changePage = function(){
+                document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+_self.widthProportion()*_self.fontSize+"px !important");
+            };
+            _self.changePage();
+            window.addEventListener("resize",function(){_self.changePage();},false);
+        };
+	</script>
+</head>
+<body>
+	<div class="frendWarp">
+		<header>
+		<img src="images/frend-banner.png" alt="邀请好友拿大奖">
+		</header>
+		<section>
+			<div class="box">
+				<div class="top">
+					<img src="images/frend-box.png" alt="二维码">
+					<h3>邀请码：<span>106061</span></h3>
+				</div>
+				<div class="buttom">
+					<h3>邀请奖励规则：</h2>
+					<p>好友首次投资的投资收益的千分之50将直接返还至您的账作为奖励。</p>
+				</div>
+			</div>
+			<div class="frendList">
+				<h3>查看好友</h2>
+				<table>
+					<thead>
+						<tr>
+							<td></td>
+							<td>昵称</td>
+							<td>注册时间</td>
+							<td>奖励</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1.</td>
+							<td>磨人的小南瓜</td>
+							<td>2016/02/03</td>
+							<td>5元</td>
+						</tr>
+						<tr>
+							<td>2.</td>
+							<td>磨人的小南瓜</td>
+							<td>2016/02/03</td>
+							<td>5元</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+	</div>
+<script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</body>
+</html>

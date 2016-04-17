@@ -869,6 +869,84 @@ ul.list li:last-child{
 	margin-right:3px;
 }
 
+/*邀请好友*/
+.frendWarp {
+	font-size: 0.22rem;
+}
+.frendWarp h3 {
+	color: rgb(249,63,81);
+	font-size: 0.28rem;
+}
+.frendWarp header img {
+	width: 100%;
+}
+.frendWarp section .box {
+	background-color: rgb(249,241,204);
+	padding: 0 1rem;
+}
+.frendWarp section .box .top img {
+	width: 3.42rem;
+	display: block;
+	margin: 0 auto;
+}
+.frendWarp section .box .top h3 {
+	margin: 0.5rem auto 0;
+	width: 2.7rem;
+	line-height: 0.6rem;
+	background-color: white;
+	border: 2px solid rgb(249,63,81);
+	border-radius: 0.1rem;
+	text-indent: 0.3rem;
+}
+.frendWarp section .box .buttom {
+	padding: 0.3rem 0;
+}
 
 
 
+.frendWarp .frendList {
+	text-align: center;
+	background-color: rgb(255,216,217);
+}
+.frendWarp .frendList h3 {
+	margin: 0;
+	padding: 0;
+}
+.frendWarp .frendList table {
+	width: 100%;
+}
+.frendWarp .frendList table tr td:nth-of-type(1) {
+	width: 20%;
+}
+.frendWarp .frendList table tr td:nth-of-type(2) {
+	width: 30%;
+}
+.frendWarp .frendList table tr td:nth-of-type(3) {
+	width: 30%;
+}
+.frendWarp .frendList table tr td:nth-of-type(4) {
+	width: 20%;
+}
+
+
+
+/*账户安全*/
+.accountAndSafe {
+	text-align: center;
+}
+.accountAndSafe p {
+	text-align: left;
+	margin: 0;
+}
+.accountAndSafe img {
+	width: 1.7rem;
+}
+.accountAndSafe>section {
+	padding:0.6rem;
+}
+.accountAndSafe>section:nth-of-type(2n) {
+	background-color: rgb(255,252,200);
+}
+.accountAndSafe>section:nth-of-type(2n+1) {
+	background-color: white;
+}
