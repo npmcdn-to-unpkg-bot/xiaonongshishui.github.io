@@ -998,3 +998,28 @@ ul.list li:last-child{
 	color:#5490c9;
 }
 
+/*红包*/
+.hongbaoWrap ul {
+	color: red;
+}
+.hongbaoWrap ul li p {
+	color: #ccc;
+}
+.hongbaoWrap section {
+	padding: 0 0.5rem;
+}
+.hongbaoWrap .panel {
+	margin-top: 0.5rem;
+}
+.hongbaoWrap .panel-body div[class=col-xs-3] {
+	font-size: 0.8rem;
+	line-height: 2.25rem;
+}
+.hongbaoWrap .panel-body div[class=col-xs-3] span{
+	font-size: 0.35rem;
+}
+.hongbaoWrap .panel-body div[class=col-xs-9] h4{
+	text-indent: 0.35rem;
+}
+.hongbaoWrap .panel-body {
+}

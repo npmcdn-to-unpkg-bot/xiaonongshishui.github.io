@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>红包</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript">
+	new function (){
+            var _self = this;
+            _self.width = 640;//设置默认最大宽度
+            _self.fontSize = 100;//默认字体大小
+            _self.widthProportion = function(){var p = document.getElementsByTagName("html")[0].offsetWidth/_self.width;return p>1?1:p<0.5?0.5:p;};
+            _self.changePage = function(){
+                document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+_self.widthProportion()*_self.fontSize+"px !important");
+            };
+            _self.changePage();
+            window.addEventListener("resize",function(){_self.changePage();},false);
+        };
+	</script>
+</head>
+<body>
+	<div class="hongbaoWrap">
+		<header class="row">
+			<div class="col-xs-6 text-center"><h4>红包</h4></div>
+			<div class="col-xs-6 text-center"><h4>加息券</h4></div>
+		</header>
+		<section>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="col-xs-3"><span>￥</span>5.0</div>
+					<div class="col-xs-9">
+						<h4>注册红包</h4>
+						<ul>
+							<li><p>投资满1000元可用</p></li>
+							<li><p>限账号6061的用户使用</p></li>
+							<li><p>2016-04-07至2016-05-12</p></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="col-xs-3"><span>￥</span>5.0</div>
+					<div class="col-xs-9">
+						<h4>注册红包</h4>
+						<ul>
+							<li><p>投资满1000元可用</p></li>
+							<li><p>限账号6061的用户使用</p></li>
+							<li><p>2016-04-07至2016-05-12</p></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+<script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</body>
+</html>
