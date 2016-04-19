@@ -33,7 +33,7 @@ sup {
 	color:#0a5dab;
  }
  .f-green{
- 	color:#1e950e;
+ 	color:#1e950e!important;
  }
  .fc-normal{
 	color:#323232!important;
@@ -112,7 +112,7 @@ sup {
 	color: #d73037!important;
  }
  .f-red1{
- 	color:#e94834;
+ 	color:#e94834!important;
  }
  .panel-silver{
 	border-color: #dadada;
@@ -1006,15 +1006,21 @@ ul.list li:last-child{
 .myTickets header{
 	background-color:#fff;
 }
+.myTickets img {
+	width: 0.6rem;
+	height: 0.6rem;
+}
+
 .myTickets .line{
 	width:40%;
 	height:2px;
 	/*margin-left:5%;*/
 	background-color:#e26e48;
-	transition: all 1s;
+	display:none;
+/*	transition: all 1s;
 	-moz-transition:all 1s;
 	-webkit-transition:all 1s; 
-	-o-transition:all 1s; 
+	-o-transition:all 1s; */
 }
 .myTickets .ticket{
 	position:relative;
@@ -1163,3 +1169,54 @@ ul.list li:last-child{
 	color:#acacac;
 }
 
+/*交易记录*/
+.tradeList {
+	display: none;
+}
+.tradeList-head span{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.tradeList li {
+	overflow: hidden;
+}
+.tradeList li span:first-child {
+	color: #acacac;
+	float: left;
+	text-align: left;
+}
+.tradeList li span:nth-child(2) {
+	color: #acacac;
+	float: right;
+	text-align: right;
+}
+.tradeList li h4 {
+	margin: 9px 0;
+	color: black;
+}
+.tradeList li h3 {
+	margin: 5px 0;
+	color: black;
+}
+.tradeList li p {
+	margin: 2px 0;
+}
+.tradeList li {
+	padding: 0 3.5%!important;
+}
+
+.tradeLine{
+	width:19%;
+	height:2px;
+	background-color:#e26e48;
+	display:none;
+}
+.tradeTabs{
+	background: white;
+}
+.tradeTabs span{
+	display: inline-block;
+	padding: 10px 0;
+	width: 19%;
+	text-align: center;
+}

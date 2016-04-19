@@ -23,8 +23,8 @@
 <body>
 	<div class="myTickets" id="myTickets">
 		<header class="row" id="tab"> 
-			<div class="col-xs-6 text-center"><h4>红包</h4></div>
-			<div class="col-xs-6 text-center"><h4>加息券</h4></div>
+			<div class="col-xs-6 text-center"><h4><img src="images/3hongbao.png" alt="">红包</h4></div>
+			<div class="col-xs-6 text-center"><h4><img src="images/jiaxiquan.png" alt="">加息券</h4></div>
 		</header>
 		<div class="line"></div>
 
@@ -155,9 +155,8 @@
 	$(document).ready(function(){
 		document.title = "我的红包/加息券";
 		var tabIndex;
-		if(sessionStorage.getItem("tabIndex")){
-			tabIndex = sessionStorage.getItem("tabIndex");
-		}
+		tabIndex = sessionStorage.getItem('tabIndex') ? sessionStorage.getItem('tabIndex') : 0 ;
+		$(".line").css({"marginLeft":tabIndex*52+5+"%","display":"block"});
 		if(tabIndex == 0){
 			$("#redEn").show();
 			$("#addRate").hide();
@@ -165,13 +164,12 @@
 		if(tabIndex == 1){
 			$("#redEn").hide();
 			$("#addRate").show();
-			$(".line").css({"marginLeft":"57%"});
 		}
 		$("#tab").children('div').click(function(){
 			tabIndex = $(this).index();
 			sessionStorage.setItem("tabIndex",tabIndex);
 			$("#myTickets").children("section").eq(tabIndex).show().siblings("section").hide();
-			$(".line").css({"marginLeft":"5%"});
+			$(".line").animate({"marginLeft":tabIndex*52+5+"%"});
 		});
 	});
 </script>
