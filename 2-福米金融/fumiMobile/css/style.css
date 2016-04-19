@@ -5,6 +5,10 @@ a{color:inherit;}
 a:focus, a:hover{
 	text-decoration:none;
 }
+sub{
+	font-size: 50%;
+	bottom:0;
+}
 sup {
     font-size: 65%;
     vertical-align:super;
@@ -998,28 +1002,164 @@ ul.list li:last-child{
 	color:#5490c9;
 }
 
-/*红包*/
-.hongbaoWrap ul {
-	color: red;
+/*红包/加息券*/
+.myTickets header{
+	background-color:#fff;
 }
-.hongbaoWrap ul li p {
-	color: #ccc;
+.myTickets .line{
+	width:40%;
+	height:2px;
+	/*margin-left:5%;*/
+	background-color:#e26e48;
+	transition: all 1s;
+	-moz-transition:all 1s;
+	-webkit-transition:all 1s; 
+	-o-transition:all 1s; 
 }
-.hongbaoWrap section {
-	padding: 0 0.5rem;
+.myTickets .ticket{
+	position:relative;
+	overflow: hidden;
+	width:90%;
+	padding-top:10px;
+	margin: 0.5rem auto;
+	background-color:#fff;
+	box-shadow: 0 1px 1px #c1c1c1,0 0 1px #c1c1c1;
+	-moz-box-shadow: 0 1px 1px #c1c1c1,0 0 1px #c1c1c1;
+	-webkit-box-shadow: 0 1px 1px #c1c1c1,0 0 1px #c1c1c1;
 }
-.hongbaoWrap .panel {
-	margin-top: 0.5rem;
+.myTickets .ticket:before{
+	position:absolute;
+	top:-12px;
+	width:100%;
+	height:20px;
 }
-.hongbaoWrap .panel-body div[class=col-xs-3] {
-	font-size: 0.8rem;
-	line-height: 2.25rem;
+.myTickets .ticket>div{
+	float:left;
 }
-.hongbaoWrap .panel-body div[class=col-xs-3] span{
-	font-size: 0.35rem;
+.myTickets .ticket ul {
+	padding-left:0;
+	margin-left:1em;
 }
-.hongbaoWrap .panel-body div[class=col-xs-9] h4{
-	text-indent: 0.35rem;
+.myTickets .ticket ul li p {
+	color:#323232;
+	margin-bottom:0;
+	font-size:13px;
 }
-.hongbaoWrap .panel-body {
+.myTickets .ticket .tic-amount{
+	margin-right:5%;
+	padding:0 3%;
+	border-right:1px dashed #959595;
+	margin-top: 12px;
+    font-size: 36px;
+    line-height: 85px;
 }
+.myTickets .ticket .tic-message h4{
+	font-size:20px;
+}
+.myTickets .ticket .tic-message{
+	width:58%;
+}
+.tic-message-wrap{
+	width:205px;
+	margin:0 auto;
+}
+/*注册红包*/
+.myTickets .regiRedEn:before{
+	background: radial-gradient( transparent 0px, transparent 4px, #e24848 4px, #e24848 );
+	background: -webkit-radial-gradient( transparent 0px, transparent 4px, #e24848 4px, #e24848 );
+	background: -moz-radial-gradient( transparent 0px, transparent 4px, #e24848 4px, #e24848 );
+	background-size: 12px 22px;
+	background-position: -12px -10px;
+}
+.myTickets .regiRedEn .tic-amount{
+	color:#e24848;
+}
+.myTickets .regiRedEn ul{
+	color:#e24848;
+}
+/*投资红包*/
+.myTickets .investRedEn:before{
+	background: radial-gradient( transparent 0px, transparent 4px, #ac3131 4px, #ac3131 );
+	background: -webkit-radial-gradient( transparent 0px, transparent 4px, #ac3131 4px, #ac3131 );
+	background: -moz-radial-gradient( transparent 0px, transparent 4px, #ac3131 4px, #ac3131 );
+	background-size: 12px 22px;
+	background-position: -12px -10px;
+}
+.myTickets .investRedEn .tic-amount{
+	color:#ac3131;
+}
+.myTickets .investRedEn ul{
+	color:#ac3131;
+}
+/*投资加息券*/
+.myTickets .investAddRate:before{
+	background: radial-gradient( transparent 0px, transparent 4px, #e8cc0c 4px, #e8cc0c );
+	background: -webkit-radial-gradient( transparent 0px, transparent 4px, #e8cc0c 4px, #e8cc0c );
+	background: -moz-radial-gradient( transparent 0px, transparent 4px, #e8cc0c 4px, #e8cc0c );
+	background-size: 12px 22px;
+	background-position: -12px -10px;
+}
+.myTickets .investAddRate .tic-amount{
+	color:#e8cc0c;
+}
+.myTickets .investAddRate ul{
+	color:#e8cc0c;
+}
+/*已过期/未使用的ticket*/
+.myTickets .tic-invalid:before{
+	background: radial-gradient( transparent 0px, transparent 4px, #8c8c8c 4px, #8c8c8c );
+	background: -webkit-radial-gradient( transparent 0px, transparent 4px, #8c8c8c 4px, #8c8c8c );
+	background: -moz-radial-gradient( transparent 0px, transparent 4px, #8c8c8c 4px, #8c8c8c );
+	background-size: 12px 22px;
+	background-position: -12px -10px;
+}
+.myTickets .tic-invalid .tic-amount{
+	color:#8c8c8c;
+}
+.myTickets .tic-invalid ul{
+	color:#8c8c8c;
+}
+/*已过期的红包*/
+.myTickets .redEn-outDate:after{
+	position:absolute;
+	right:0;
+	bottom:0;
+	width:90px;
+	height:90px;
+	background:url(../images/redEn-outDate.png) no-repeat;
+	background-size:100%;
+}
+/*已使用的红包*/
+.myTickets .redEn-used:after{
+	position:absolute;
+	right:0;
+	bottom:0;
+	width:90px;
+	height:90px;
+	background:url(../images/redEn-used.png) no-repeat;
+	background-size:100%;
+}
+/*已过期的加息券*/
+.myTickets .addRate-outDate:after{
+	position:absolute;
+	right:0;
+	bottom:0;
+	width:90px;
+	height:90px;
+	background:url(../images/addRate-outDate.png) no-repeat;
+	background-size:100%;
+}
+/*已使用的加息券*/
+.myTickets .addRate-used:after{
+	position:absolute;
+	right:0;
+	bottom:0;
+	width:90px;
+	height:90px;
+	background:url(../images/addRate-used.png) no-repeat;
+	background-size:100%;
+}
+.load-hint{
+	color:#acacac;
+}
+
