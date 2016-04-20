@@ -1,0 +1,148 @@
+<include file="Pub:headerNew"/>
+<body>
+	<div class="myTickets" id="myTickets">
+		<header class="row" id="tab"> 
+			<div class="col-xs-6 text-center"><h4><img src="/Style/fumiMobile/images/3hongbao.png" alt="">红包</h4></div>
+			<div class="col-xs-6 text-center"><h4><img src="/Style/fumiMobile/images/jiaxiquan.png" alt="">加息券</h4></div>
+		</header>
+		<div class="line"></div>
+
+		<!-- *****************红包*********************** -->
+		<section id="redEn" style="display:none;">
+			<!-- 说明：注册红包：regiRedEn   投资红包： investRedEn
+			-->
+			<!-- 注册红包 -->
+			<div class="ticket regiRedEn clearfix">
+				<div class="tic-amount text-center"><sub>￥</sub><span>5.0</span></div>
+				<div class="tic-message ">
+					<div class="tic-message-wrap">
+						<h4>注册红包</h4>
+					<ul>
+						<li><p>投资满1000元可用</p></li>
+						<li><p>2016-04-07至2016-05-12</p></li>
+					</ul>
+					</div>
+				</div>
+			</div><!-- 注册红包div end -->
+
+			<!-- 投资红包 -->
+			<div class="ticket investRedEn clearfix">
+				<div class="tic-amount text-center"><sub>￥</sub><span>5.0</span></div>
+				<div class="tic-message">
+					<div class="tic-message-wrap">
+						<h4>投资红包</h4>
+					<ul>
+						<li><p>投资满1000元可用</p></li>
+						<li><p>2016-04-07至2016-05-12</p></li>
+					</ul>
+					</div>
+				</div>
+			</div><!-- 投资红包div end -->
+
+			<!-- 点击加载过期/已使用红包 -->
+			<p class="load-hint text-center">点击加载过期/已使用红包</p>
+
+			<!-- 过期红包 -->
+			<div class="ticket tic-invalid redEn-outDate clearfix">
+				<div class="tic-amount text-center"><sub>￥</sub><span>5.0</span></div>
+				<div class="tic-message">
+					<div class="tic-message-wrap">
+						<h4>投资红包</h4>
+					<ul>
+						<li><p>投资满1000元可用</p></li>
+						<li><p>2016-04-07至2016-05-12</p></li>
+					</ul>
+					</div>
+				</div>
+			</div><!-- 过期红包div end -->
+
+			<!-- 已使用红包 -->
+			<div class="ticket tic-invalid redEn-used clearfix">
+				<div class="tic-amount text-center"><sub>￥</sub><span>5.0</span></div>
+				<div class="tic-message">
+					<div class="tic-message-wrap">
+						<h4>投资红包</h4>
+					<ul>
+						<li><p>投资满1000元可用</p></li>
+						<li><p>2016-04-07至2016-05-12</p></li>
+					</ul>
+					</div>
+				</div>
+			</div><!-- 已使用红包div end -->
+
+		</section>
+
+
+		<!-- *********************加息券********************** -->
+		<section id="addRate" style="display:none;">
+			<!-- 投资加息券：investAddRate -->
+			<div class="ticket investAddRate clearfix">
+				<div class="tic-amount text-center"><sub>+</sub><span>0.5</span><sub>%</sub></div>
+				<div class="tic-message">
+					<div class="tic-message-wrap">
+						<h4>投资加息券</h4>
+					<ul>
+						<li><p>投资满1000元可用</p></li>
+						<li><p>2016-04-07至2016-05-12</p></li>
+					</ul>
+					</div>
+				</div>
+			</div><!-- 投资加息券div end -->
+
+			<!-- 点击加载过期/已使用 -->
+			<p class="load-hint text-center">点击加载过期/已使用加息券</p>
+			<!-- 过期的加息券 -->
+			<div class="ticket tic-invalid addRate-outDate clearfix">
+				<div class="tic-amount text-center"><sub>+</sub><span>0.5</span><sub>%</sub></div>
+				<div class="tic-message">
+					<div class="tic-message-wrap">
+						<h4>投资加息券</h4>
+					<ul>
+						<li><p>投资满1000元可用</p></li>
+						<li><p>2016-04-07至2016-05-12</p></li>
+					</ul>
+					</div>
+				</div>
+			</div><!-- 过期的加息券div end -->
+
+			<!-- 已使用的加息券 -->
+			<div class="ticket tic-invalid addRate-used clearfix">
+				<div class="tic-amount text-center"><sub>+</sub><span>0.5</span><sub>%</sub></div>
+				<div class="tic-message">
+					<div class="tic-message-wrap">
+						<h4>投资加息券</h4>
+					<ul>
+						<li><p>投资满1000元可用</p></li>
+						<li><p>2016-04-07至2016-05-12</p></li>
+					</ul>
+					</div>
+				</div>
+			</div><!-- 已使用的加息券div end -->
+
+		</section>
+	</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		document.title = "我的红包/加息券";
+		var tabIndex;
+		tabIndex = sessionStorage.getItem('tabIndex') ? sessionStorage.getItem('tabIndex') : 0 ;
+		$(".line").css({"marginLeft":tabIndex*52+5+"%","display":"block"});
+		if(tabIndex == 0){
+			$("#redEn").show();
+			$("#addRate").hide();
+		}
+		if(tabIndex == 1){
+			$("#redEn").hide();
+			$("#addRate").show();
+		}
+		$("#tab").children('div').click(function(){
+			tabIndex = $(this).index();
+			sessionStorage.setItem("tabIndex",tabIndex);
+			$("#myTickets").children("section").eq(tabIndex).show().siblings("section").hide();
+			$(".line").animate({"marginLeft":tabIndex*52+5+"%"});
+		});
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>项目信息</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript">
+	new function (){
+            var _self = this;
+            _self.width = 640;//设置默认最大宽度
+            _self.fontSize = 100;//默认字体大小
+            _self.widthProportion = function(){var p = document.getElementsByTagName("html")[0].offsetWidth/_self.width;return p>1?1:p<0.5?0.5:p;};
+            _self.changePage = function(){
+                document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+_self.widthProportion()*_self.fontSize+"px !important");
+            };
+            _self.changePage();
+            window.addEventListener("resize",function(){_self.changePage();},false);
+        };
+	</script>
+		<!-- Core CSS file -->
+	<link rel="stylesheet" href="dist/photoswipe.css"> 
+	<link rel="stylesheet" href="dist/default-skin/default-skin.css"> 
+	<!-- Core JS file -->
+	<script src="dist/photoswipe.min.js"></script> 
+	<!-- UI JS file -->
+	<script src="dist/photoswipe-ui-default.min.js"></script> 
+</head>
+<body>
+	<header class="header clearfix">
+        <a href="javascript:location.href='history.back()'" class="lastStep" title="上一步"></a>
+        <h1>项目信息</h1>
+        <a href="index.html" class="home"></a>
+    </header>
+<div class="container-fluid wrap proInfo-section">
+
+	<!-- 项目介绍 -->
+	<div class="panel panel-silver">
+	  <div class="panel-heading">
+	  	<span class="proInfo-head">项目介绍</span>
+	  </div>
+	  <div class="panel-body">
+	    <div class="row proInfo-list ">
+	    	<div class="col-xs-5 proInfo-list-text" >项目名称</div>
+	    	<div class="col-xs-7 proInfo-list-text">保理盈61中国航空工业</div>
+	    </div>
+	    <div class="row proInfo-list">
+	    	<div class="col-xs-5 proInfo-list-text">投资金额</div>
+	    	<div class="col-xs-7 proInfo-list-text">20.00万(元)</div>
+	    </div>
+	    <div class="row proInfo-list">
+	    	<div class="col-xs-5 proInfo-list-text">还款方式</div>
+	    	<div class="col-xs-7 proInfo-list-text">到期一次性还本付息</div>
+	    </div>
+	  </div>
+	</div>
+	<!-- 借款方商业概述 -->
+	<div class="panel panel-silver">
+	  <div class="panel-heading">
+	  	<span class="proInfo-head">借款方（或应收账款付款人）商业概述</span>
+	  </div>
+	  <div class="panel-body">
+	    <p>中国航空工业集团公司（简称“中航工业”）是由中央管理的国有特大型企业，是国家授权投资的机构，于2008年11月6日由原中国航空工业第一、第二集团公司重组整合而成立。集团公司设有航空装备、运输机、发动机、直升机、机载设备与系统、通用飞机、航空研究、飞行试验、贸易物流、资产管理、金融、工程建设、汽车等产业板块，下辖140余家成员单位、近30家上市公司，员工逾50万人。</p>
+	  </div>
+	</div>
+	<!-- 借款方资金用途及还款来源 -->
+	<div class="panel panel-silver">
+	  <div class="panel-heading">
+	  	<span class="proInfo-head">借款方资金用途及还款来源</span>
+	  </div>
+	  <div class="panel-body">
+	    <h5>资金用途:</h5>
+	    <p>精密零部件加工</p>
+	    <h5>还款来源:</h5>
+	    <p>1、第一还款来源：原债务人实力雄厚且财务状况良好，基于基础交易合同负有还款责任。</p>
+		<p>2、第二还款来源：保理公司管理经验丰富，资金实力雄厚，风控能力极强，基于债权转让及回购协议负有还款责任。</p>
+	  </div>
+	</div>
+	<!-- 债权合作方情况 -->
+	<div class="panel panel-silver">
+	  <div class="panel-heading">
+	  	<span class="proInfo-head">借款方资金用途及还款来源</span>
+	  </div>
+	  <div class="panel-body">
+	    <p>
+	      	深圳晟信商业保理有限公司成立于2014年10月，注册资本5亿元人民币，是由国采科技股份有限公司的子公司国采晟信有限公司主力控股的专业保理服务提供商，公司注册于深圳前海新区，管理团队均为金融行业具有资深背景和丰富投资管理经验的从业者。
+	  	</p>
+     	<p>
+     	 	公司主营国际国内保理业务，为各行业的优秀企业提供应收账款融资、买方信用调查和承保、应收账款信用机制的建立、应收账款账务管理和催收等一系列金融服务，是一家专业性强、业务全面的金融服务机构。
+     	</p>
+	  </div>
+	</div>
+	<!-- 风险控制措施 -->
+	<div class="panel panel-silver">
+	  <div class="panel-heading">
+	  	<span class="proInfo-head">风险控制措施</span>
+	  </div>
+	  <div class="panel-body">
+     <p>应收账款折价率：本次应收账款保理总额为基础交易产生的应收账款的79.84%。</p>
+     <p>项目真实性审核：保理公司实地考查相关公司，查看项目原始合同、交易对手基础材料，审核合同条款、印章真实性，收集财务报表、发票及银行对账单，确保项目真实性和合法性。</p>
+     <p>保理公司对原债务人企业-中航工业制造所尽职调查：包括但不限于财务情况调查、信用记录调查、债务情况调查、涉诉情况调查和原债权人交易历史调查。</p>
+     <p>保理公司对原债权人河北某精密机械有限公司尽职调查：包括但不限于资质、经营情况调查、财务情况调查、企业法定代表人和股东经历调查。</p>
+     <p>原债务人中航工业制造所提供第一还款来源。</p>
+     <p>原债权人河北某精密机械有限公司实际控制人提供担保。</p>
+     <p>深圳晟信商业保理有限公司及实际控制人提供担保。</p>
+     <p>该笔应收账款转让已在中登网登记。</p>
+	  </div>
+	</div>
+	
+
+	<!-- 相关资料 -->
+	<div class="panel panel-silver">
+	  <div class="panel-heading">
+	  	<span class="proInfo-head">相关资料</span>
+	  </div>
+	  <div class="panel-body">
+
+		<div class="my-gallery text-center" itemscope>
+		    <figure itemprop="associatedMedia" itemscope >
+		        <a href="Product/20160405113403752.jpg" itemprop="contentUrl" data-size="727x1000">
+		            <img src="Product/thumb_20160405113403752.jpg" itemprop="thumbnail" alt="Image description" />
+		        </a>
+		        <figcaption itemprop="caption description">第一张图片</figcaption>
+		    </figure>
+
+		   <figure itemprop="associatedMedia" itemscope >
+		        <a href="Product/20160405113417334.jpg" itemprop="contentUrl" data-size="878x638">
+		            <img src="Product/thumb_20160405113417334.jpg" itemprop="thumbnail" alt="Image description" />
+		        </a>
+		        <figcaption itemprop="caption description">第二张图片</figcaption>
+		    </figure>
+		    <figure itemprop="associatedMedia" itemscope >
+		        <a href="Product/20160405113421956.jpg" itemprop="contentUrl" data-size="457x641">
+		            <img src="Product/thumb_20160405113421956.jpg" itemprop="thumbnail" alt="Image description" />
+		        </a>
+		        <figcaption itemprop="caption description">第三张图片</figcaption>
+		    </figure>
+		    <figure itemprop="associatedMedia" itemscope >
+		        <a href="Product/20160405113424933.jpg" itemprop="contentUrl" data-size="460x642">
+		            <img src="Product/thumb_20160405113424933.jpg" itemprop="thumbnail" alt="Image description" />
+		        </a>
+		        <figcaption itemprop="caption description">第四张图片</figcaption>
+		    </figure>
+		</div><!-- my-gallery  div结束 -->
+	  </div>
+	</div><!-- 相关资料div结束 -->
+
+    <!-- 相关资料 -->
+    <div class="panel panel-silver">
+      <div class="panel-heading">
+        <span class="proInfo-head">投资记录</span>
+      </div>
+      <div class="panel-body text-center">
+        <table class="table table-striped ">
+            <thead >
+                <tr>
+                    <th class="text-center">认购人</th>
+                    <th class="text-center">认购金额</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>王**</td><td>15000.00</td></tr>
+                <tr><td>王**</td><td>15000.00</td></tr>
+                <tr><td>王**</td><td>15000.00</td></tr>
+                <tr><td>王**</td><td>15000.00</td></tr>
+            </tbody>
+        </table>
+        <!-- 分页 -->
+        <nav>
+            <ul class="pagination">
+            <li>
+              <a href="#">
+                <span>&laquo;</span>
+              </a>
+            </li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+              <a href="#">
+                <span>&raquo;</span>
+              </a>
+            </li>
+            </ul>
+        </nav>
+      </div>
+    </div>
+
+</div>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+	var initPhotoSwipeFromDOM = function(gallerySelector) {
+
+    // parse slide data (url, title, size ...) from DOM elements 
+    // (children of gallerySelector)
+    var parseThumbnailElements = function(el) {
+        var thumbElements = el.childNodes,
+            numNodes = thumbElements.length,
+            items = [],
+            figureEl,
+            linkEl,
+            size,
+            item;
+
+        for(var i = 0; i < numNodes; i++) {
+
+            figureEl = thumbElements[i]; // <figure> element
+
+            // include only element nodes 
+            if(figureEl.nodeType !== 1) {
+                continue;
+            }
+
+            linkEl = figureEl.children[0]; // <a> element
+
+            size = linkEl.getAttribute('data-size').split('x');
+
+            // create slide object
+            item = {
+                src: linkEl.getAttribute('href'),
+                w: parseInt(size[0], 10),
+                h: parseInt(size[1], 10)
+            };
+
+
+
+            if(figureEl.children.length > 1) {
+                // <figcaption> content
+                item.title = figureEl.children[1].innerHTML; 
+            }
+
+            if(linkEl.children.length > 0) {
+                // <img> thumbnail element, retrieving thumbnail url
+                item.msrc = linkEl.children[0].getAttribute('src');
+            } 
+
+            item.el = figureEl; // save link to element for getThumbBoundsFn
+            items.push(item);
+        }
+
+        return items;
+    };
+
+    // find nearest parent element
+    var closest = function closest(el, fn) {
+        return el && ( fn(el) ? el : closest(el.parentNode, fn) );
+    };
+
+    // triggers when user clicks on thumbnail
+    var onThumbnailsClick = function(e) {
+        e = e || window.event;
+        e.preventDefault ? e.preventDefault() : e.returnValue = false;
+
+        var eTarget = e.target || e.srcElement;
+
+        // find root element of slide
+        var clickedListItem = closest(eTarget, function(el) {
+            return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
+        });
+
+        if(!clickedListItem) {
+            return;
+        }
+
+        // find index of clicked item by looping through all child nodes
+        // alternatively, you may define index via data- attribute
+        var clickedGallery = clickedListItem.parentNode,
+            childNodes = clickedListItem.parentNode.childNodes,
+            numChildNodes = childNodes.length,
+            nodeIndex = 0,
+            index;
+
+        for (var i = 0; i < numChildNodes; i++) {
+            if(childNodes[i].nodeType !== 1) { 
+                continue; 
+            }
+
+            if(childNodes[i] === clickedListItem) {
+                index = nodeIndex;
+                break;
+            }
+            nodeIndex++;
+        }
+
+
+
+        if(index >= 0) {
+            // open PhotoSwipe if valid index found
+            openPhotoSwipe( index, clickedGallery );
+        }
+        return false;
+    };
+
+    // parse picture index and gallery index from URL (#&pid=1&gid=2)
+    var photoswipeParseHash = function() {
+        var hash = window.location.hash.substring(1),
+        params = {};
+
+        if(hash.length < 5) {
+            return params;
+        }
+
+        var vars = hash.split('&');
+        for (var i = 0; i < vars.length; i++) {
+            if(!vars[i]) {
+                continue;
+            }
+            var pair = vars[i].split('=');  
+            if(pair.length < 2) {
+                continue;
+            }           
+            params[pair[0]] = pair[1];
+        }
+
+        if(params.gid) {
+            params.gid = parseInt(params.gid, 10);
+        }
+
+        return params;
+    };
+
+    var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
+        var pswpElement = document.querySelectorAll('.pswp')[0],
+            gallery,
+            options,
+            items;
+
+        items = parseThumbnailElements(galleryElement);
+
+        // define options (if needed)
+        options = {
+
+            // define gallery index (for URL)
+            galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+
+            getThumbBoundsFn: function(index) {
+                // See Options -> getThumbBoundsFn section of documentation for more info
+                var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+                    pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+                    rect = thumbnail.getBoundingClientRect(); 
+
+                return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
+            }
+
+        };
+
+        // PhotoSwipe opened from URL
+        if(fromURL) {
+            if(options.galleryPIDs) {
+                // parse real index when custom PIDs are used 
+                // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
+                for(var j = 0; j < items.length; j++) {
+                    if(items[j].pid == index) {
+                        options.index = j;
+                        break;
+                    }
+                }
+            } else {
+                // in URL indexes start from 1
+                options.index = parseInt(index, 10) - 1;
+            }
+        } else {
+            options.index = parseInt(index, 10);
+        }
+
+        // exit if index not found
+        if( isNaN(options.index) ) {
+            return;
+        }
+
+        if(disableAnimation) {
+            options.showAnimationDuration = 0;
+        }
+
+        // Pass data to PhotoSwipe and initialize it
+        gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+        gallery.init();
+    };
+
+    // loop through all gallery elements and bind events
+    var galleryElements = document.querySelectorAll( gallerySelector );
+
+    for(var i = 0, l = galleryElements.length; i < l; i++) {
+        galleryElements[i].setAttribute('data-pswp-uid', i+1);
+        galleryElements[i].onclick = onThumbnailsClick;
+    }
+
+    // Parse URL and open gallery if it contains #&pid=3&gid=1
+    var hashData = photoswipeParseHash();
+    if(hashData.pid && hashData.gid) {
+        openPhotoSwipe( hashData.pid ,  galleryElements[ hashData.gid - 1 ], true, true );
+    }
+};
+
+// execute above function
+initPhotoSwipeFromDOM('.my-gallery');
+
+</script>
+
+<footer class="text-center">
+	<div class="footer-bottom">
+		<p>客服电话：400-788-5018</p>
+		<p>&copy;福米金融  All right Reserved </p>
+	</div>
+</footer>
+
+<script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

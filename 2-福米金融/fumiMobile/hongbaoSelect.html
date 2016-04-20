@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>红包</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript">
+	new function (){
+            var _self = this;
+            _self.width = 640;//设置默认最大宽度
+            _self.fontSize = 100;//默认字体大小
+            _self.widthProportion = function(){var p = document.getElementsByTagName("html")[0].offsetWidth/_self.width;return p>1?1:p<0.5?0.5:p;};
+            _self.changePage = function(){
+                document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+_self.widthProportion()*_self.fontSize+"px !important");
+            };
+            _self.changePage();
+            window.addEventListener("resize",function(){_self.changePage();},false);
+        };
+	</script>
+</head>
+<body>
+	<div class="myTickets" id="myTickets">
+		<header class="row" id="tab"> 
+			<div class="col-xs-6 text-center"><h4><img src="images/3hongbao.png" alt="">红包</h4></div>
+			<div class="col-xs-6 text-center"><h4><img src="images/jiaxiquan.png" alt="">加息券</h4></div>
+		</header>
+		<div class="line"></div>
+
+		<!-- *****************红包*********************** -->
+		<section id="redEn" style="display:none;">
+			<!-- 说明：注册红包：regiRedEn   投资红包： investRedEn
+			-->
+			<!-- 注册红包 -->
+			<div class="ticket regiRedEn clearfix" data-seclect>
+				<div class="tic-amount text-center"><sub>￥</sub><span>5.0</span></div>
+				<div class="tic-message ">
+					<div class="tic-message-wrap">
+						<h4>注册红包</h4>
+					<ul>
+						<li><p>投资满1000元可用</p></li>
+						<li><p>2016-04-07至2016-05-12</p></li>
+					</ul>
+					</div>
+				</div>
+				<span class="select">
+					<span class="select-one"></span>
+					<span class="select-two"></span>
+				</span>
+			</div><!-- 注册红包div end -->
+
+			<!-- 投资红包 -->
+			<div class="ticket investRedEn clearfix">
+				<div class="tic-amount text-center"><sub>￥</sub><span>5.0</span></div>
+				<div class="tic-message">
+					<div class="tic-message-wrap">
+						<h4>投资红包</h4>
+					<ul>
+						<li><p>投资满1000元可用</p></li>
+						<li><p>2016-04-07至2016-05-12</p></li>
+					</ul>
+					</div>
+				</div>
+				<span class="select">
+					<span class="select-one"></span>
+					<span class="select-two"></span>
+				</span>
+			</div><!-- 投资红包div end -->
+
+		</section>
+
+
+		<!-- *********************加息券********************** -->
+		<section id="addRate" style="display:none;">
+			<!-- 投资加息券：investAddRate -->
+			<div class="ticket investAddRate clearfix">
+				<div class="tic-amount text-center"><sub>+</sub><span>0.5</span><sub>%</sub></div>
+				<div class="tic-message">
+					<div class="tic-message-wrap">
+						<h4>投资加息券</h4>
+					<ul>
+						<li><p>投资满1000元可用</p></li>
+						<li><p>2016-04-07至2016-05-12</p></li>
+					</ul>
+					</div>
+				</div>
+				<div class="select">
+					<div class="select-one"></div>
+					<div class="select-two"></div>
+				</div>
+			</div><!-- 投资加息券div end -->
+
+
+		</section>
+
+		<!-- ********************下一步按钮********************** -->
+		<div class="btn-confirm">
+			下一步
+		</div>
+	</div>
+<script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		document.title = "我的红包/加息券";
+		// tab页切换
+		var tabIndex;
+		tabIndex = sessionStorage.getItem('tabIndex') ? sessionStorage.getItem('tabIndex') : 0 ;
+		$(".line").css({"marginLeft":tabIndex*52+5+"%","display":"block"});
+		if(tabIndex == 0){
+			$("#redEn").show();
+			$("#addRate").hide();
+		}
+		if(tabIndex == 1){
+			$("#redEn").hide();
+			$("#addRate").show();
+		}
+		$("#tab").children('div').click(function(){
+			tabIndex = $(this).index();
+			sessionStorage.setItem("tabIndex",tabIndex);
+			$("#myTickets").children("section").eq(tabIndex).show().siblings("section").hide();
+			$(".line").animate({"marginLeft":tabIndex*52+5+"%"});
+		});
+
+		// 选择红包和加息券
+		$(".ticket").click(function(){
+			var _this = $(this);
+			_this.attr({"data-seclect":true}).siblings(".ticket").attr({"data-seclect":false})
+			_this.parent("section").siblings("section").children(".ticket").attr({"data-seclect":false});
+			_this.find(".select .select-one").show(200,function(){
+				$(this).siblings(".select-two").show();
+			});
+			_this.siblings(".ticket").find(".select").children().hide(400);
+			_this.parent("section").siblings("section").children(".ticket").find(".select").children().fadeOut(200);
+		});
+	});
+</script>
+</body>
+</html>

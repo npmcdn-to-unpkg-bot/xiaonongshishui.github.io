@@ -6,7 +6,7 @@ index.html
 proList.html 产品列表页
 proInfo.html 产品信息页  (改的时候喊我)
 buyPro.html 购买产品页（4.19又有改版，正在改）
-hongbaoSelect.html红包/加息券页（选择页）
+hongbao.html红包/加息券页（选择页）（未完成）
 
 
 登录注册

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		abc = remove([1,2,3,3,4,2,1,5,6]);
+		console.log(abc);
+		function remove(arr){
+			for(var i = 0;i<arr.length;i++){
+				for(var j= i+1;j<arr.length;j++){
+					if(arr[i] == arr[j]){
+						arr.splice(j,1);
+					}
+				}
+			}
+			return arr;
+		}
+
+		// 啊啊啊
+		var arr = [1,2,2,3,4,1,4,2],str = ''; 
+		var result = (function unique(num, arr, str) { 
+     	return arr.length > 0 ? unique(arr.shift(), arr, str.indexOf(num) == -1 ? str += num : str) : str.split(''); 
+		})(arr.shift(), arr, str);
+
+
+// 接着
+		function removeRepeat(arr){
+		  return arr.filter(function(elem, pos) {
+		  return arr.indexOf(elem) == pos;
+	  });
+}
+
+	</script>
+</body>
+</html>

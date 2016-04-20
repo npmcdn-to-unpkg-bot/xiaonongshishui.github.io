@@ -1085,9 +1085,6 @@ ul.list li:last-child{
 .myTickets .regiRedEn ul{
 	color:#e24848;
 }
-.myTickets .regiRedEn .select{
-	border:4px solid #e24848!important;
-}
 /*投资红包*/
 .myTickets .investRedEn:before{
 	background: radial-gradient( transparent 0px, transparent 4px, #ac3131 4px, #ac3131 );
@@ -1102,9 +1099,6 @@ ul.list li:last-child{
 .myTickets .investRedEn ul{
 	color:#ac3131;
 }
-.myTickets .investRedEn .select{
-	border:4px solid #ac3131!important;
-}
 /*投资加息券*/
 .myTickets .investAddRate:before{
 	background: radial-gradient( transparent 0px, transparent 4px, #e8cc0c 4px, #e8cc0c );
@@ -1118,9 +1112,6 @@ ul.list li:last-child{
 }
 .myTickets .investAddRate ul{
 	color:#e8cc0c;
-}
-.myTickets .investAddRate .select{
-	border:4px solid #e8cc0c!important;
 }
 /*已过期/未使用的ticket*/
 .myTickets .tic-invalid:before{
@@ -1178,48 +1169,6 @@ ul.list li:last-child{
 }
 .load-hint{
 	color:#acacac;
-}
-
-.myTickets .select{
-	position:absolute;
-	top:11%;
-	right:2%;
-	background:#f3f3f3;
-	border-radius:50px;
-	-webkit-border-radius:50px;
-	-moz-border-radius:50px; 
-	border:4px solid #fff; 
-	width:40px; 
-	height:40px;
-}
-.myTickets .select-one, .myTickets .select-two{
-	display:none;
-	content:''; 
-	height:24px; 
-	width:6px; 
-	background:#46B70E; 
-	position:absolute; 
-	top:6px; 
-	left:16px;
-	border-radius:10px;
-	-webkit-border-radius:10px;
-	-moz-border-radius:10px; 
-	transform:rotate(45deg);
-	-webkit-transform:rotate(45deg);
-	-moz-transform:rotate(45deg);
-	-o-transform:rotate(45deg);
-	-ms-transform:rotate(45deg);
-}
-
-.myTickets .select-one{
-	height:12px; 
-	transform:rotate(-45deg);
-	-webkit-transform:rotate(-45deg);
-	-moz-transform:rotate(-45deg);
-	-o-transform:rotate(-45deg);
-	-ms-transform:rotate(-45deg); 
-	top:16px; 
-	left:6px;
 }
 
 /*交易记录*/

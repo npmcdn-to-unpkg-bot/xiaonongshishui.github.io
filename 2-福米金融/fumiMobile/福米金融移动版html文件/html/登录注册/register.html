@@ -1,0 +1,57 @@
+<include file="Pub:headerNew"/>
+<body>
+	<section>
+		<div class="logo-head text-center">
+		<img src="images/logo.png" title="福米金融">
+	</div>
+	<p class="logIn-hint text-center">验证码已发送到<span>135****1256</span>手机号</p>
+
+	<form  action="" method="post" accept-charset="utf-8">
+		<ul class="list form-list">
+			<li class="noText">
+				<input id="noteCode" type="text" placeholder="请输入短信验证码">
+				<div class="code">47秒</div>
+			</li>
+			<li class="noText">
+				<input id="inviteCode" type="text" placeholder="请输入邀请码(如有)">
+			</li>
+		</ul>
+	</form>
+	<div class="logIn-btn">
+		<p class="text-center logIn-btn-top">注册即代表同意<a href="#">《用户服务协议》</a></p>
+		<div id="register" class="btn-confirm btn-red ">
+			注册	
+		</div>
+		<div class="logIn-info text-left">
+			<span class="info1">福米金融不会在任何地方泄露您的信息</span>
+			<span class="info2">账户资金由银行、新浪支付共同保障</span>
+		</div>
+	</div>
+	<include file="Pub:footerNew"/>
+	</section>
+	
+<script type="text/javascript">
+	$(document).ready(function(){
+		document.title = "注册";
+	});
+	$("#register").click(function(){
+		//弹出框：提示用户注册成功
+		layer.open(
+			{
+    			style: 'border:none;border-radius:5px;background-color:#fff; color:#323232;',
+			    content: '<p>恭喜您注册成功</p><p>首次投资100元，即送5元现金红包</p>',
+			    btn: ['确定'],
+			    shade:true,
+			    shadeClose: false,
+			    anim:true,
+			    fixed:true,
+			    yes: function(){
+			    	//点击确定按钮后
+			        layer.open({content: '你点了确定'});
+			    }, 
+			});
+	});
+
+</script>
+</body>
+</html>
