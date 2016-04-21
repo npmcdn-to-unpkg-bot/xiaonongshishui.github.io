@@ -422,6 +422,10 @@ footer div[class^=col-xs-3]:nth-of-type(2) {
 footer p {
 	margin: 0;
 }
+footer .footer-bottom{
+	background-color:#e9e9e9;
+	padding:8px 0 1px;
+}
 footer .footer-bottom p{
 	font-size:12px;
 	margin-bottom:3px;
@@ -601,6 +605,21 @@ ul.list li:last-child{
 .buyPro-money{
 	padding:12px 0 1px!important;
 }
+.buyPro-item{
+	padding:0 7%!important;
+}
+.buyPro-item span:first-child{
+	float:left;
+}
+.buyPro-item span:nth-child(2){
+	float:right;
+}
+.buyPro-item .money{
+	border:1px solid #ffc8c8;
+	border-radius:5px;
+	line-height:30px;
+	margin-right:2%;
+}
 /*-----增减盒------*/
 .moreOrLess{
 	position:relative;
@@ -642,6 +661,9 @@ ul.list li:last-child{
 .confirm a{
 	color:#ed4949;
 }
+.confirm .hint{
+	font-size:12px;
+}
 /*-------------产品列表页-----------*/
 .hot{
 	background:url(../images/hot.png) 10px center no-repeat;
@@ -659,12 +681,12 @@ ul.list li:last-child{
 	font-size:16px;
 	color:#e26e48;
 }
-.proInfo-list{
-	line-height:58px;
+.proInfo-list li{
+	border-bottom:none!important;
 }
-.proInfo-list-text{
+/*.proInfo-list-text{
 	padding-left:25px;
-}
+}*/
 .proInfo-section .panel:first-child{
 	margin-top:20px;
 } 

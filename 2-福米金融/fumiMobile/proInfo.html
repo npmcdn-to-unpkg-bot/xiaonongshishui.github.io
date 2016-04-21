@@ -41,18 +41,29 @@
 	  	<span class="proInfo-head">项目介绍</span>
 	  </div>
 	  <div class="panel-body">
-	    <div class="row proInfo-list ">
-	    	<div class="col-xs-5 proInfo-list-text" >项目名称</div>
-	    	<div class="col-xs-7 proInfo-list-text">保理盈61中国航空工业</div>
-	    </div>
-	    <div class="row proInfo-list">
-	    	<div class="col-xs-5 proInfo-list-text">投资金额</div>
-	    	<div class="col-xs-7 proInfo-list-text">20.00万(元)</div>
-	    </div>
-	    <div class="row proInfo-list">
-	    	<div class="col-xs-5 proInfo-list-text">还款方式</div>
-	    	<div class="col-xs-7 proInfo-list-text">到期一次性还本付息</div>
-	    </div>
+        <ul class="list form-list proInfo-list">
+            <li class="buyPro-item">
+                <span>项目金额</span><span>20.00万(元)</span>
+            </li>
+           <li class="buyPro-item">
+                <span>预期年化收益率</span><span>8.00%+0.50%</span>
+            </li>
+            <li class="buyPro-item">
+                <span>期限</span><span>84天</span>
+            </li>
+            <li class="buyPro-item">
+                <span>起息日期</span><span>当日起息</span>
+            </li>
+            <li class="buyPro-item">
+                <span>还款方式</span><span>按天到期还款</span>
+            </li>
+            <li class="buyPro-item">
+                <span>限购份额</span><span>100000元</span>
+            </li>
+            <li class="buyPro-item">
+                <span>起投金额</span><span>1元</span>
+            </li>
+        </ul>
 	  </div>
 	</div>
 	<!-- 借款方商业概述 -->
@@ -166,8 +177,12 @@
                 <tr><td>王**</td><td>15000.00</td></tr>
             </tbody>
         </table>
+        <!-- 点击加载更多 -->
+        <div>
+            <h5 class="load-hint text-center">点击加载更多</h5>
+        </div>
         <!-- 分页 -->
-        <nav>
+       <!--  <nav>
             <ul class="pagination">
             <li>
               <a href="#">
@@ -185,7 +200,9 @@
               </a>
             </li>
             </ul>
-        </nav>
+        </nav> -->
+
+
       </div>
     </div>
 
@@ -255,6 +272,10 @@
 </div>
 
 <script type="text/javascript">
+   
+        
+ 
+   
 	var initPhotoSwipeFromDOM = function(gallerySelector) {
 
     // parse slide data (url, title, size ...) from DOM elements 
