@@ -57,19 +57,34 @@
  			var move = imgWidth - exposeWidth;
 
  			// 为每道门绑定事件
- 			for(var i = 0;i<imgs.length;i++){
- 				// 使用立即调用的函数表达式，为了获取不同的i值
- 				// (function(i){
- 					imgs[i].onmouseover = function(){
- 						// 先将每道门复位
- 						setPosition();
- 						// 打开门
- 						for(var j = 1;j<=i;j++){
- 							imgs[j].style.left = parseInt(imgs[j].style.left,10) - move +"px";
- 						}
- 					}
- 				// })(i);
- 				
+ 			// for(var i = 0;i<imgs.length;i++){
+ 			// 	// 使用立即调用的函数表达式，为了获取不同的i值
+ 			// 	(function(i){
+ 			// 		imgs[i].onmouseover = function(){
+ 			// 			// 先将每道门复位
+ 			// 			setPosition();
+ 			// 			// 打开门
+ 			// 			for(var j = 1;j<=i;j++){
+ 			// 				imgs[j].style.left = parseInt(imgs[j].style.left,10) - move +"px";
+ 			// 			}
+ 			// 		}
+ 			// 	})(i);
+ 			// 	};
+			for(var i = 0;i<imgs.length;i++){
+			// 使用立即调用的函数表达式，为了获取不同的i值
+				imgs[i].index=i;
+				imgs[i].onclick = function(){
+					// 先将每道门复位
+					open(this.index);
+				}
+		
+			};
+ 			var open = function (i){
+ 				setPosition();
+ 				for(var j = 1;j<i;j++){
+					imgs[j].style.left = parseInt(imgs[j].style.left,10) - move +"px";
+					console.log("j="+j);
+				}
  			}
  		}
 	</script>		
