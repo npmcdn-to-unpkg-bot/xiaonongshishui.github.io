@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>我的投资</title>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<script type="text/javascript">
+	new function (){
+            var _self = this;
+            _self.width = 640;//设置默认最大宽度
+            _self.fontSize = 100;//默认字体大小
+            _self.widthProportion = function(){var p = document.getElementsByTagName("html")[0].offsetWidth/_self.width;return p>1?1:p<0.5?0.5:p;};
+            _self.changePage = function(){
+                document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+_self.widthProportion()*_self.fontSize+"px !important");
+            };
+            _self.changePage();
+            window.addEventListener("resize",function(){_self.changePage();},false);
+        };
+	</script>
+</head>
+<body>
+	<section style="padding-bottom:1px;" class="myInvest">
+		<div class="investTabs" id="tab">
+		  <h4>保盈计划</h4>
+		  <h4>福米钱袋</h4>
+		</div>
+		<div class="investLine"></div>
+		<!-- ***************保赢计划********************** -->
+		<section class="investSection">
+		 <ul class="list invest-list">
+		 	<!-- #此处去投资详情页 -->
+			<li class="invest-list-head" onclick="location.href='#'">
+				<span>保学盈05-高校学生分期贷款</span>
+				<span>详情</span>
+				<i class="jiantou"></i>
+			</li>
+			<li class="container-fluid">
+				<div class="row">
+					<div class="col-xs-4">
+						<p>投资金额(元)</p>
+					</div>
+					<div class="col-xs-4">
+						<p>待收本息(元)</p>
+					</div>
+					<div class="col-xs-4">
+						<p>预期年化收益率</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<h4>2016.18</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>863.53</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>7%</h4>
+					</div>
+				</div>
+			</li>
+			<li class="container-fluid">
+				<div class="row">
+					<div class="col-xs-4">
+						<p>投资日期</p>
+					</div>
+					<div class="col-xs-4">
+						<p>投资期限</p>
+					</div>
+					<div class="col-xs-4">
+						<p>到期日期</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<h4>2016/04/05</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>20天</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>2016/04/25</h4>
+					</div>
+				</div>
+			</li>
+		 </ul>
+		 <ul class="list invest-list">
+		 	<!-- #此处去投资详情页 -->
+			<li class="invest-list-head" onclick="location.href='#'">
+				<span>保学盈05-高校学生分期贷款</span>
+				<span>详情</span>
+				<i class="jiantou"></i>
+			</li>
+			<li class="container-fluid">
+				<div class="row">
+					<div class="col-xs-4">
+						<p>投资金额(元)</p>
+					</div>
+					<div class="col-xs-4">
+						<p>待收本息(元)</p>
+					</div>
+					<div class="col-xs-4">
+						<p>预期年化收益率</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<h4>2016.18</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>863.53</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>7%</h4>
+					</div>
+				</div>
+			</li>
+			<li class="container-fluid">
+				<div class="row">
+					<div class="col-xs-4">
+						<p>投资日期</p>
+					</div>
+					<div class="col-xs-4">
+						<p>投资期限</p>
+					</div>
+					<div class="col-xs-4">
+						<p>到期日期</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<h4>2016/04/05</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>20天</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>2016/04/25</h4>
+					</div>
+				</div>
+			</li>
+		 </ul>
+		 <div class="load-hint text-center">以下是历史投资记录</div>
+		 <!-- 历史投资记录 -->
+			<ul class="list invest-list invest-list-history">
+			<li class="invest-list-head">
+				<span>保学盈05-高校学生分期贷款</span>
+			</li>
+			<li class="container-fluid">
+				<div class="row">
+					<div class="col-xs-4">
+						<p>投资金额(元)</p>
+					</div>
+					<div class="col-xs-4">
+						<p>待收本息(元)</p>
+					</div>
+					<div class="col-xs-4">
+						<p>预期年化收益率</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<h4>2016.18</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>863.53</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>7%</h4>
+					</div>
+				</div>
+			</li>
+			<li class="container-fluid">
+				<div class="row">
+					<div class="col-xs-4">
+						<p>投资日期</p>
+					</div>
+					<div class="col-xs-4">
+						<p>投资期限</p>
+					</div>
+					<div class="col-xs-4">
+						<p>到期日期</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<h4>2016/04/05</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>20天</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>2016/04/25</h4>
+					</div>
+				</div>
+			</li>
+		 </ul>
+		 <ul class="list invest-list invest-list-history">
+			<li class="invest-list-head">
+				<span>保学盈05-高校学生分期贷款</span>
+			</li>
+			<li class="container-fluid">
+				<div class="row">
+					<div class="col-xs-4">
+						<p>投资金额(元)</p>
+					</div>
+					<div class="col-xs-4">
+						<p>待收本息(元)</p>
+					</div>
+					<div class="col-xs-4">
+						<p>预期年化收益率</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<h4>2016.18</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>863.53</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>7%</h4>
+					</div>
+				</div>
+			</li>
+			<li class="container-fluid">
+				<div class="row">
+					<div class="col-xs-4">
+						<p>投资日期</p>
+					</div>
+					<div class="col-xs-4">
+						<p>投资期限</p>
+					</div>
+					<div class="col-xs-4">
+						<p>到期日期</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<h4>2016/04/05</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>20天</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>2016/04/25</h4>
+					</div>
+				</div>
+			</li>
+		 </ul>
+		</section>
+
+		<!-- ***************福米钱袋********************** -->
+		<section class="investSection">
+		 <ul class="list invest-list">
+			<li class="invest-list-head">
+				<span>福米月-0000000008</span>
+				<span>详情</span>
+				<i class="jiantou"></i>
+			</li>
+			<li class="container-fluid">
+				<div class="row">
+					<div class="col-xs-4">
+						<p>投资金额(元)</p>
+					</div>
+					<div class="col-xs-4">
+						<p>待收本息(元)</p>
+					</div>
+					<div class="col-xs-4">
+						<p>预期年化收益率</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<h4>2016.18</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>863.53</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>7%</h4>
+					</div>
+				</div>
+			</li>
+			<li class="container-fluid">
+				<div class="row">
+					<div class="col-xs-4">
+						<p>投资日期</p>
+					</div>
+					<div class="col-xs-4">
+						<p>投资期限</p>
+					</div>
+					<div class="col-xs-4">
+						<p>到期日期</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<h4>2016/04/05</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>20天</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>2016/04/25</h4>
+					</div>
+				</div>
+			</li>
+		 </ul>
+
+		 <ul class="list invest-list">
+			<li class="invest-list-head">
+				<span>季季福-0000000023</span>
+				<span>详情</span>
+				<i class="jiantou"></i>
+			</li>
+			<li class="container-fluid">
+				<div class="row">
+					<div class="col-xs-4">
+						<p>投资金额(元)</p>
+					</div>
+					<div class="col-xs-4">
+						<p>待收本息(元)</p>
+					</div>
+					<div class="col-xs-4">
+						<p>预期年化收益率</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<h4>2016.18</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>863.53</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>7%</h4>
+					</div>
+				</div>
+			</li>
+			<li class="container-fluid">
+				<div class="row">
+					<div class="col-xs-4">
+						<p>投资日期</p>
+					</div>
+					<div class="col-xs-4">
+						<p>投资期限</p>
+					</div>
+					<div class="col-xs-4">
+						<p>到期日期</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<h4>2016/04/05</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>20天</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>2016/04/25</h4>
+					</div>
+				</div>
+			</li>
+		 </ul>
+
+		 <div class="load-hint text-center">以下是历史投资记录</div>
+		 <!-- 历史投资记录 -->
+			<ul class="list invest-list invest-list-history">
+			<li class="invest-list-head">
+				<span>福米月-0000000008</span>
+			</li>
+			<li class="container-fluid">
+				<div class="row">
+					<div class="col-xs-4">
+						<p>投资金额(元)</p>
+					</div>
+					<div class="col-xs-4">
+						<p>待收本息(元)</p>
+					</div>
+					<div class="col-xs-4">
+						<p>预期年化收益率</p>
+					</div>
+				 </div>
+				<div class="row">
+					<div class="col-xs-4">
+						<h4>2016.18</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>863.53</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>7%</h4>
+					</div>
+				</div>
+			</li>
+			<li class="container-fluid">
+				<div class="row">
+					<div class="col-xs-4">
+						<p>投资日期</p>
+					</div>
+					<div class="col-xs-4">
+						<p>投资期限</p>
+					</div>
+					<div class="col-xs-4">
+						<p>到期日期</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<h4>2016/04/05</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>20天</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>2016/04/25</h4>
+					</div>
+				</div>
+			</li>
+		 </ul>
+		 <ul class="list invest-list invest-list-history">
+			<li class="invest-list-head">
+				<span>季季福-0000000023</span>
+			</li>
+			<li class="container-fluid">
+				<div class="row">
+					<div class="col-xs-4">
+						<p>投资金额(元)</p>
+					</div>
+					<div class="col-xs-4">
+						<p>待收本息(元)</p>
+					</div>
+					<div class="col-xs-4">
+						<p>预期年化收益率</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<h4>2016.18</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>863.53</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>7%</h4>
+					</div>
+				</div>
+			</li>
+			<li class="container-fluid">
+				<div class="row">
+					<div class="col-xs-4">
+						<p>投资日期</p>
+					</div>
+					<div class="col-xs-4">
+						<p>投资期限</p>
+					</div>
+					<div class="col-xs-4">
+						<p>到期日期</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<h4>2016/04/05</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>20天</h4>
+					</div>
+					<div class="col-xs-4">
+						<h4>2016/04/25</h4>
+					</div>
+				</div>
+			</li>
+		 </ul>
+		 <div class="load-hint">
+		 	没有更多数据了
+		 </div>
+		</section>
+	</section>
+
+	
+	
+
+<script type="text/javascript" src="../js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../layer.mobile-v1.7/layer.js"></script>
+<script type="text/javascript">
+	$(function(){
+		document.title="交易记录";
+		var investTabIndex;
+		investTabIndex = sessionStorage.getItem('investTabIndex') ? sessionStorage.getItem('investTabIndex') : 0 ;
+		$(".investLine").css({"display":"block","marginLeft":investTabIndex*50+"%"});
+		$(".investSection").eq(investTabIndex).show().siblings(".investSection").hide();
+		$("#tab").children('h4').click(function(){
+			investTabIndex = $(this).index();
+			$(".investSection").eq(investTabIndex).show().siblings(".investSection").hide();
+			$(".investLine").animate({"marginLeft":investTabIndex*50+"%"});
+			sessionStorage.setItem("investTabIndex",investTabIndex);
+		});
+	});
+</script>
+</body>
+</html>

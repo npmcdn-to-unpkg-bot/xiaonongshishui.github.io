@@ -1200,6 +1200,7 @@ ul.list li:last-child{
 }
 .load-hint{
 	color:#acacac;
+	text-align:center;
 }
 
 .myTickets .select{
@@ -1245,8 +1246,11 @@ ul.list li:last-child{
 }
 
 /*交易记录*/
-.tradeList {
+.tradeSection{
 	display: none;
+}
+.tradeList {
+	
 }
 .tradeList-head span{
 	padding-top: 5px;
@@ -1267,11 +1271,11 @@ ul.list li:last-child{
 }
 .tradeList li h4 {
 	margin: 9px 0;
-	color: black;
+	color: #323232;
 }
 .tradeList li h3 {
 	margin: 5px 0;
-	color: black;
+	color: #323232;
 }
 .tradeList li p {
 	margin: 2px 0;
@@ -1287,11 +1291,70 @@ ul.list li:last-child{
 	display:none;
 }
 .tradeTabs{
-	background: white;
+	background:#fff;
 }
 .tradeTabs span{
 	display: inline-block;
 	padding: 10px 0;
 	width: 19%;
 	text-align: center;
+}
+/*我的投资*/
+.investTabs{
+	background:#fff;
+}
+.investTabs h4{
+	display: inline-block;
+	padding: 10px 0;
+	width: 48%;
+	text-align: center;
+}
+.investLine{
+	width:48%;
+	height:2px;
+	background-color:#e26e48;
+	/*display:none;*/
+}
+.invest-list:first-child{
+	margin-top:10px;
+}
+.invest-list li{
+	padding:10px 7% 10px 5%!important;
+}
+.invest-list h4{
+	font-size:18px;
+	margin:0;
+}
+.invest-list .row>div[class="col-xs-4"]{
+	padding-right:5px;
+}
+.invest-list .row>div[class="col-xs-4"] p{
+	color:#acacac;
+}
+.invest-list .row>div[class="col-xs-4"]:last-child{
+	padding-left:0;
+}
+.invest-list-head span:nth-child(2){
+	float:right;
+	color:#7e7e7e;
+}
+.invest-list-history{
+	color:#acacac;
+}
+/*投资详情*/
+.invest-info-list:first-child{
+	margin-top:10px;
+}
+.invest-info-list h4{
+	font-size:18px;
+	margin:0;
+}
+.invest-info-list .row>div[class="col-xs-4"] p{
+	color:#acacac;
+}
+.invest-info-list li{
+	padding:10px 3% 10px 7%!important;
+}
+.invest-info-list .row>div[class="col-xs-4"]{
+	padding-right:5px;
 }

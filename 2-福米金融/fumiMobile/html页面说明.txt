@@ -46,6 +46,9 @@ hongbaoList.html红包/加息券页 (查看页）
 inviteFriends 邀请好友页
 accountAndSafe 账户与安全页
 
+myInvest我的投资页
+myInvestInfo我的投资详情页
+
 
 
 
