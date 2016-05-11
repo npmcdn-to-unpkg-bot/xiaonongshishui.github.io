@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<style rel="stylesheet" type="text/css">
+		#btn{
+			width:100px;
+			height:50px;
+			border-radius:5px;
+			background-color:#D73037;
+			color:#fff;
+			text-align:center;
+			line-height:50px;
+			cursor:pointer;
+			margin:0 auto;
+			padding:0 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="btn" onclick="alert1(this);">点我</div>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		
+		function alert1(that){
+			// alert("你点了我一次！！！");
+			$(that).css({"backgroundColor":"#eee"});
+			$(that).text("现在不能点我了！");
+			$(that).attr({"onclick":"false"});
+			setTimeout("alert2(that)",3000);
+		}
+		function alert2(that){
+			// alert("现在又可以点啦！");
+			$(that).css({"backgroundColor":"#D73037"});
+			$(that).attr({"onclick":"alert1(that)"});
+			$(that).text("现在可以点我啦！");
+		}
+	</script>
+	
+</body>
+</html>
