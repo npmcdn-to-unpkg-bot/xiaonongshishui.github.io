@@ -444,16 +444,13 @@
 		    			html:true,
 		    			content:'<img src="images/'+imgSrc+'" style="width:150px">'
 		    		}).on('shown.bs.popover',function(){
-		    			
 		    			that.el.css({visibility:'hidden'});
 		    			$('.popover-content').one('click',function(e){
 		    				that.el.css({visibility:'visible'});
 		    				that.el.click();
 		    			});
-		    			
 		    		});
 		    	}
-
 		    	new MyPopover('#weixin','weixinQR.jpg');
 		    	new MyPopover('#weibo','weixboQR.png');
 		  //   $("#weixin").popover({
