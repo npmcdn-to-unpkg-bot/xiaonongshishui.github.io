@@ -357,7 +357,7 @@
 	</div>
 </div>
 
-<footer class="text-center">
+<!-- <footer class="text-center">
 	<div class="panel">
 		<div class="panel-body">
 			<div class="col-xs-3 col-xs-offset-2">
@@ -376,9 +376,99 @@
 		<p>&copy;福米金融  All right Reserved 沪ICP备15025008号-1</p>
 		<p>福米互联网金融信息服务（上海）有限公司</p>
 	</div>
+</footer> -->
+<footer class="text-center">
+	<div class="index-footer-top clearfix">
+		<div class="col-xs-3 col-xs-offset-2" id="weixin" data-toggle="popover" data-placement="top" data-original-title="" title="" aria-describedby="popover830491">
+		<h6>关注微信</h6>
+		<img src="images/weixinQR.jpg" alt="福米微信">
+		</div><div class="popover fade top in" role="tooltip" id="popover830491" style="top: -172px; left: 25.6563px; display: block;"><div class="arrow" style="left: 50%;"></div><h3 class="popover-title" style="display: none;"></h3><div class="popover-content"><img src="images/weixinQR.jpg" style="width:150px"></div></div>
+		<div class="col-xs-3" id="weibo" data-toggle="popover" data-placement="top" data-html="true" data-content="<img src=&quot;images/weiboQR.png&quot; style=&quot;width:150px&quot;>" data-original-title="" title="" aria-describedby="popover122146">
+			<h6>关注微博</h6>
+			<img src="images/weiboQR.png" alt="福米微博">
+		</div><div class="popover fade top in" role="tooltip" id="popover122146" style="top: -173px; left: 125.656px; display: block;"><div class="arrow" style="left: 50%;"></div><h3 class="popover-title" style="display: none;"></h3><div class="popover-content"><img src="images/weiboQR.png" style="width:150px"></div></div>
+		<img src="images/vseal.gif" alt="" class="vsealImg">
+	</div>
+	<div class="index-footer-bottom">
+		<p>客服电话：400-788-5018</p>
+		<p>© 2015 福米金融  版权所有 </p>
+		<p>沪ICP备15025008号-1</p>
+	</div>
 </footer>
 
 <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+
+		// 汉堡按钮点击展开
+			var flag = false;
+			$("#expandBox-btn").click(function(){
+				if(!flag){
+					$("#expandBox").slideDown();
+					flag = true;
+				}
+				else{
+					$("#expandBox").slideUp();
+					flag = false;
+				}
+			});
+			// 天数改变
+			$(document).ready(function(){
+				$("#time").text(fnGetDays(2015,5,1));
+				function fnGetDays(year,month,day){
+	    			var oldDate=(new Date).setFullYear(year,month-1,day);
+	        		//var newDate=(new Date).getTime();
+	        		var newDate =new Date($.ajax({async: false}).getResponseHeader("Date"));
+	    			return parseInt((newDate-oldDate)/(1000*60*60*24));
+				}
+			});
+			
+		    $('#product-submit').click(function () {		    	
+			    var bid 	= $('#bid').val();
+		        $.post('/m/fund/validatelogin', {bid: bid}, function (response) {
+		            var response = $.parseJSON(response);
+		            if (response.status == 1) {
+		                window.location.href = '/m/fund/buyfund?bid='+bid;
+		            } else if(response.status == 2) {
+		            	window.location.href = '/m/pub/register2/';
+		            }else  {
+		                Apprise(response.message);
+		            }
+		        });
+	    });
+		    $(document).ready(function(){
+		    	function MyPopover(el,imgSrc){
+		    		var that=this;
+		    		this.el=$(el);
+		    		this.el.popover({
+		    			html:true,
+		    			content:'<img src="images/'+imgSrc+'" style="width:150px">'
+		    		}).on('show.bs.popover',function(){
+		    			that.el.css({visibility:'hidden'});
+		    			$('.popover-content').click(function(){
+		    				that.el.popover('hide');
+		    				that.el.css({visibility:'visible'});
+		    				console.log(1);
+		    			});
+		    			
+		    		});
+		    	}
+		    	new MyPopover('#weixin','weixinQR.jpg');
+		    	new MyPopover('#weibo','weixboQR.png');
+		  //   $("#weixin").popover({
+		 	// 	html: true,
+    // 			// trigger: " click hover",
+    // 			content: '<img src="images/weixinQR.jpg" style="width:150px">'
+		 	// });
+		 	// $('#weibo').popover({
+		 	// 	html: true,
+    // 			// trigger: " hover",
+    // 			content: '<img src="images/weiboQR.png" style="width:150px">'
+		 	// });
+		 	
+		    });
+		
+	    
+</script>
 </body>
 </html>
