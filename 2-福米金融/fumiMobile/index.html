@@ -443,16 +443,17 @@
 		    		this.el.popover({
 		    			html:true,
 		    			content:'<img src="images/'+imgSrc+'" style="width:150px">'
-		    		}).on('show.bs.popover',function(){
+		    		}).on('shown.bs.popover',function(){
+		    			
 		    			that.el.css({visibility:'hidden'});
-		    			$('.popover-content').click(function(){
-		    				that.el.popover('hide');
+		    			$('.popover-content').one('click',function(e){
 		    				that.el.css({visibility:'visible'});
-		    				console.log(1);
+		    				that.el.click();
 		    			});
 		    			
 		    		});
 		    	}
+
 		    	new MyPopover('#weixin','weixinQR.jpg');
 		    	new MyPopover('#weibo','weixboQR.png');
 		  //   $("#weixin").popover({
