@@ -65,8 +65,14 @@
 
 		var cardCanvas = document.getElementById("guaguaka");
 		var gray = cardCanvas.getContext("2d");
+		var datas = gray.getImageData(0,0,300,100);
+			console.log("datas: " + Object.prototype.toString.call(datas));
+			console.log(datas);
+			
+		
 		drawGuaguaka("guaguaka");
 		openCard("guaguaka");
+
 		
 		function drawGuaguaka(id){
 			gray.beginPath();
@@ -74,15 +80,26 @@
 			gray.fillRect(0,0,300,100);
 			gray.fill();
 			gray.closePath();
+			gray.globalCompositeOperation = "destination-out";
+			
 		}
 
 		function openCard(id){
 			cardCanvas.addEventListener("touchstart",function(e){
-				this.addEventListener("touchmove",function(e){
+				cardCanvas.addEventListener("touchmove",function(e){
 					console.log(1);
 					console.log("clientX: "+ e.targetTouches[0].clientX);
 					console.log("clientY: "+ e.targetTouches[0].clientY);
-					gray.clearRect(e.targetTouches[0].clientX,e.targetTouches[0].clientY,10,10);
+					var position = getMousePos(cardCanvas,e);
+					console.log(position);
+					gray.fillStyle = "#f00";
+					gray.arc(position.x,position.y,10,0,2*Math.PI);
+					gray.fill();
+					gray.closePath();
+					var datas = gray.getImageData(0,0,300,100);
+					console.log("datas: " + Object.prototype.toString.call(datas));
+					console.log(datas);
+					// gray.clearRect(position.x,position.y,10,10);
 				});
 			});
 		}
@@ -90,12 +107,19 @@
 
 		// 获取鼠标相对于矩形的坐标
 		 function getMousePos(canvas, evt) {
-   var rect = canvas.getBoundingClientRect();
-   return {
-     x: evt.clientX - rect.left * (canvas.width / rect.width),
-     y: evt.clientY - rect.top * (canvas.height / rect.height)
-   }
- }
+   			var rect = canvas.getBoundingClientRect();
+   			console.log("rect.height" + rect.height);
+   			console.log("offsetLeft: " + canvas.offsetLeft);
+   			console.log("clientLeft: " + canvas.clientLeft);
+   			console.log("offsetParent: " + canvas.offsetParent.className);
+   			console.log("document.body.scrollLeft " + document.body.scrollLeft);
+		   return {
+		     x: evt.targetTouches[0].clientX - rect.left * (canvas.width / rect.width),
+		     y: evt.targetTouches[0].clientY - rect.top * (canvas.height / rect.height)
+		   }
+ 		}
+
+ 		// 计算面积
 
 			
 		
