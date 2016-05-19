@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>canvas</title>
+	<style type="text/css" rel="stylesheet">
+		.card{
+			position:relative;
+			width:300px;
+			height:100px;
+			margin:0 auto;
+			background-color:#fd8261;
+			color:#fff;
+			line-height:100px;
+			text-align:center;
+		}
+		#guaguaka{
+			position:absolute;
+			
+			top:0;
+			left:0;
+			
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<h1>饼状图</h1>
+		<canvas id="canvas1"></canvas>
+		<canvas id="canvas2"></canvas>
+		
+	</section>
+	<section>
+		<div class="card">
+			<h1>恭喜您中奖啦！</h1>
+			<canvas id="guaguaka"></canvas>
+		</div>
+	</section>
+	<section id="canvas3"></section>
+	
+
+	<script type="text/javascript">
+		draw("canvas1",[20,30,40,10],["red","blue","yellow","pink"]);
+		draw("canvas2",[10,90],["blue","yellow"]);
+
+		function draw(id,data,colors){
+			var canvas = document.getElementById(id);
+			var context = canvas.getContext("2d");
+			var i;
+			var startPoint = 0;
+			for(i=0;i < data.length;i++){
+				context.fillStyle = colors[i];
+				context.strokeStyle = colors[i];
+				context.beginPath();
+				context.moveTo(100,100);
+				context.arc(100,100,50,startPoint,startPoint + 2*Math.PI*(data[i]/100));
+				context.fill();
+				context.stroke();
+				context.closePath();
+				startPoint += 2*Math.PI*(data[i]/100);
+			}
+		}
+
+
+		var cardCanvas = document.getElementById("guaguaka");
+		var gray = cardCanvas.getContext("2d");
+		drawGuaguaka("guaguaka");
+		openCard("guaguaka");
+		
+		function drawGuaguaka(id){
+			gray.beginPath();
+			gray.fillStyle = "#999";
+			gray.fillRect(0,0,300,100);
+			gray.fill();
+			gray.closePath();
+		}
+
+		function openCard(id){
+			cardCanvas.addEventListener("touchstart",function(e){
+				this.addEventListener("touchmove",function(e){
+					console.log(1);
+					console.log("clientX: "+ e.targetTouches[0].clientX);
+					console.log("clientY: "+ e.targetTouches[0].clientY);
+					gray.clearRect(e.targetTouches[0].clientX,e.targetTouches[0].clientY,10,10);
+				});
+			});
+		}
+
+
+		// 获取鼠标相对于矩形的坐标
+		 function getMousePos(canvas, evt) {
+   var rect = canvas.getBoundingClientRect();
+   return {
+     x: evt.clientX - rect.left * (canvas.width / rect.width),
+     y: evt.clientY - rect.top * (canvas.height / rect.height)
+   }
+ }
+
+			
+		
+	</script>
+</body>
+</html>

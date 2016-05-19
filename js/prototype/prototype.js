@@ -77,3 +77,18 @@ var f1 = new Foo("AAA",1990);
 
 console.log(f1.name);
 console.log(f1.year);
+
+
+
+function fn(){
+	var max = 10;
+
+	return function bar(x){
+		if(x > max){
+			console.log(x);
+		}
+	}
+}
+var f1 = fn(),
+max = 100;
+f1(15);
