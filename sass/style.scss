@@ -1,0 +1,62 @@
+$red:red;
+@mixin horizontal-list($spacing:10px){
+	li{
+		float:left;
+		margin-right:$spacing;
+	}
+}
+
+
+ul.nav{
+	float:right;
+	background-color:$red;
+	li{
+		float:left;
+		a{
+			color:#111;
+		}
+		&.current{
+			font-weight:bold;
+		}
+	}
+}
+#header ul.nav{
+	@include horizontal-list;
+}
+#footer ul.nav{
+	@include horizontal-list(20px);
+	margin-top:1em;
+}
+
+.error{
+	border:1px #ff0;
+	background:#fdd;
+}
+.error .instrusion{
+	font-size:1.2em;
+	font-weight:bold;
+}
+.badError{
+	@extend .error;
+	border-width:3px;
+}
+
+
+
+
+%button-reset{
+	margin:0;
+	padding:0.5em 1.2em;
+	text-decoration:none;
+	cursor:pointer;
+}
+.save{
+	@extend %button-reset;
+	color:white;
+	background:blue;
+}
+.delete{
+	@extend %button-reset;
+	color:white;
+	background:red;
+}

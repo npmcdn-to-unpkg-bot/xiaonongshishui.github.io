@@ -92,3 +92,20 @@ function fn(){
 var f1 = fn(),
 max = 100;
 f1(15);
+
+
+
+
+var singleton = function(){
+	var pv = 10;
+	function pf(){
+		return false;
+	}
+	return {
+		publicP:true,
+		pM:function(){
+			pv++;
+			return pf();
+		}
+	}
+}
