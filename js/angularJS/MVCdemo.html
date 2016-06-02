@@ -1,18 +1,96 @@
 <!doctype html>
-<html ng-app="HelloAngular">
+<html>
 <head>
 	<meta charset="utf-8">
 	<title></title>
 </head>
 <body>
-	<div ng-controller="helloAngular">
-		<p>{{greeting.text}},Angular</p>
+	<div ng-app="HelloAngular">
+		<div ng-controller="helloAngular">
+			<input type="text" ng-model="greeting.text" />
+			<p>{{greeting.text}},Angular</p>
+		</div>
+
+		<div ng-controller="firstController">
+			<p>单价：<input type="text" ng-model="iphone.money"></p>
+			<p>个数：<input type="text" ng-model="iphone.num"></p>
+			<p>单价*个数：{{sum() | currency :"￥"}}</p>
+			<p>运费：{{iphone.fre | currency :"￥"}}</p>
+			<p>总额：{{sum() + iphone.fre | currency:"￥"}}</p>
+		</div>
+
+		<div ng-controller = "EventController">
+			Root scope
+			<tt>MyEvent</tt>count:{{count}}
+			<ul>
+				<li ng-repeat="i in [1]" ng-controller="EventController">
+					<button ng-click="$emit('MyEvent')">
+						<!-- $emit('MyEvent'); -->
+						只能向parent controller传递event与data
+					</button>
+					<button ng-click="$broadcast('MyEvent')">
+						<!-- $broadcast('MyEvent'); -->
+						只能向child controller传递event与data
+					</button><br />
+					Middle scope
+					<tt>MyEvent</tt>count:{{count}}
+					<ul>
+						<li ng-repeat="item in [1,2]" ng-controller="EventController">
+							Leaf scope
+							<tt>MyEvent</tt>count:{{count}}
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<hello>
+			<div>这是里面的模板</div>
+		</hello>
+		<div hello>啊哈哈哈哈哈哈哈真好玩</div>
+		
+
+		<div ng-controller="MyCtrl">
+			<loader>滑动中</loader>	
+
+			<h1>控制器中的input{{flavor}}</h1>
+			<p><input type="text" ng-model="flavor"></p>
+			<h1>指令中的</h1>
+			<drink flavoraaa="flavor"></drink>
+		</div>
+		<div>
+			<superman strength speed light>动感超人1号</superman>
+		</div>
+		<div>
+			<superman strength speed >动感超人2号</superman>
+		</div>
+		<div>
+			<superman strength>动感超人3号</superman>
+		</div>
 	</div>
+
+
 	<div>
-		<input type="text" ng-model="greeting.text" />
-		<p>{{greeting.text}},Angular</p>
+		<form name="myForm"  ng-submit="save()" ng-controller="TestFormModule">
+			<input type="text" name="userName" ng-model="user.userName" required>
+			<input type="password" name="password" ng-model="user.password" required>
+			<input type="submit" ng-disabled="myForm.$invalid">
+		</form>
 	</div>
-</body>
+
+		
+	
+
+
+
 <script type="text/javascript" src="js/angular.js"></script>
 <script type="text/javascript" src="js/HelloAngular_MVC.js"></script>
+<script type="text/javascript">
+	// function EventController($scope) {
+	// 	$scope.count = 0;
+	// 	$scope.$on('MyEvent',function(){
+	// 		$scope.count++;
+	// 	});
+	// }
+</script>
+</body>
 </html>
