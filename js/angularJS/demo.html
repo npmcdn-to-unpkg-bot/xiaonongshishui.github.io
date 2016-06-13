@@ -13,6 +13,24 @@
 		</accordion>
 	</div>
 		
+	<div ng-controller="MainController">
+		Outside myDirective:{{myProperty}}
+		<div my-directive ng-init="myProperty='wow,this is cool'">
+			inside myDirective；{{myProperty}}
+		</div>
+	</div>
+	<div ng-controller="loadDataCtrl">
+		<ul>
+			<li ng-repeat="user in users">
+				{{user.name}}
+			</li>
+		</ul>
+	</div>
+	<div ng-controller="ServiceController">
+		<label for="">用户名</label>
+		<input type="text" ng-model="username" placeholder="请输入用户名">
+		<pre ng-show="username">{{users}}</pre>
+	</div>
 	
 
 
