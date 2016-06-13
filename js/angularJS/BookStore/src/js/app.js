@@ -1,0 +1,19 @@
+routerApp.config(function($stateProvider,$urlRouterProvider){
+	$urlRouterProvider.otherwise('/index');
+	$stateProvider
+		.state('index',{
+			url:'/index',
+			views:{
+				'':{
+					templateUrl:'templates/home.html'
+				},
+				'main@index':{
+					templateUrl:'templates/loginForm.html'
+				}
+			}
+		})
+		.state('booklist',{
+			url:'/{bookType:[0-9]{1,4}}',
+			views:{}
+		})
+});
