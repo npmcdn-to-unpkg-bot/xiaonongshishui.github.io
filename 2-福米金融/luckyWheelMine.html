@@ -1,0 +1,248 @@
+<include file="Public:m_headerNew" />
+<body style="background-color:#9a1616;">
+	<div class="luckyWheel">
+		<section class="part1">
+			<div class="top">
+				<img src="/Style/fumiMobile/images/luckyWheel-top.jpg" alt="">
+			</div>
+			<div class="container-fluid text-center board">
+				<div class="countDown">
+					<i id="countH">00</i><span>:</span><i id="countM">00</i><span>:</span><i id="countS">00</i>
+				</div>
+				<div class="row">
+					<div class="col-xs-3 text-right">
+						<h3>第<span class="num">5</span>期</h3>
+					</div>
+					<div class="col-xs-4">
+						<h3><span>10:00</span>整</h3>
+					</div>
+					<!-- 活动进行中状态 -->
+					<div class="col-xs-5" style="display:none">
+						<h3><span>活动进行中...</span></h3>
+					</div>
+					<!-- 倒计时状态 -->
+					<div class="col-xs-5" >
+						<h3>倒计时:<span><time id="countMiniH">00</time>:<time id="countMiniM">00</time>:<time id="countMiniS">00</time></span></h3>
+					</div>
+					<!-- 待开始状态 -->
+					<div class="col-xs-5" style="display:none">
+						<h3><span>待开始...</span></h3>
+					</div>
+
+			</div>
+			</div>
+			<div class="wheelBox text-center">
+				<img  class="wheel" id="wheel" src="/Style/fumiMobile/images/luckyLight.png" alt="">
+				<img  class="prize" src="/Style/fumiMobile/images/prize.png" alt="">
+				<img  class="pin" id="pin" src="/Style/fumiMobile/images/pin.png" alt="">
+				<!-- *******转盘按钮不能抽奖类名：.startBtn基础上添加.startBtn-no ***********-->
+				<div class="startBtn" id="startBtn"><span>开始抽奖</span></div>
+			</div>
+			<div class="shadow text-center">
+				<img  src="/Style/fumiMobile/images/luckyShadow.png" alt="">
+			</div>
+			<p class="text-center" style="color:#fff">我的抽奖记录</p>
+			<h3 class="title">您还有<span>3</span>次抽奖机会，快来试试手气</h3>
+		</section>
+		<section class="part2">
+			<div class="content">
+				<h3>中奖名单</h3>
+				<div id="winList" class="winList">
+				</div>	
+				<h3>活动规则</h3>
+				<p>1、活动规则活动规则活动规则活动规则活动规则活动规则活动规则活动规则</p>
+				<p>1、活动规则活动规则活动规则活动规则活动规则活动规则活动规则活动规则</p>
+				<p>1、活动规则活动规则活动规则活动规则活动规则活动规则活动规则活动规则</p>
+				<p>1、活动规则活动规则活动规则活动规则活动规则活动规则活动规则活动规则</p>
+				<p>1、活动规则活动规则活动规则活动规则活动规则活动规则活动规则活动规则</p>
+			</div>
+		</section>
+		<!-- 弹出框 -->
+		<div class="share-popup win-popup" id="winPop">
+			<div class="content clearfix">
+				<div class=" win-note">
+					<i class="bedge"><span>福米抽奖</span></i>
+					<h3>+0.2%加息券</h3>
+					<h3>+0.2%加息券</h3>
+					<h3>+0.2%加息券</h3>
+				</div>
+				<div class="back">
+					
+				</div>
+				<div class="top text-center">
+					<div class="share-btn share-btn-red" onclick="">注册并登陆领取</div>
+					<img src="/Style/fumiMobile/images/win-pop.png" alt="">
+					
+				</div>
+				<div class="close" >
+					<img src="/Style/fumiMobile/images/close.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="/Style/fumiMobile/js/jQueryRotate.2.2.js"></script>
+<script type="text/javascript" src="/Style/fumiMobile/js/jquery.easing.min.js"></script>
+<script type="text/javascript">
+
+	$(function(){
+		// 大转盘点击按钮抽奖
+		$("#startBtn").click(function(){
+			$(this).addClass("startBtn-pressed").find("span").text("等待开奖");
+
+			var a = Math.floor(Math.random() * 360);
+				 $("#pin").rotate({
+					 	duration:3000,
+					 	angle: 0, 
+            			animateTo:1440+a,
+						easing: $.easing.easeOutSine,
+						callback: function(){
+							$("#startBtn").removeClass("startBtn-pressed").find('span').text("开始抽奖");
+							console.log('中奖了！');
+						}
+		});
+	 });
+		// 获奖名单
+		var winListBox = $("#winList");
+		var scrollList = {
+			table:function(row,col,className){
+				var table = document.createElement('table'),tr,td;
+				for(var i=0;i<row;i++){
+					tr = document.createElement('tr');
+					for(var j=0;j<col;j++){
+						td=document.createElement('td');
+						$(td).appendTo(tr);
+					}
+					$(tr).appendTo(table);
+				} 
+				$(table).attr({"class":className});
+				return table;
+			},
+
+			datas:[{
+				num:"132****1251",
+				win:"抽中了1台iphone6"
+			},{
+				num:"132****1252",
+				win:"抽中了2台iphone6"
+			},{
+				num:"132****1253",
+				win:"抽中了3台iphone6"
+			},{
+				num:"132****1254",
+				win:"抽中了4台iphone6"
+			},{
+				num:"132****1255",
+				win:"抽中了5台iphone6"
+			}],
+
+			autoScroll:function(obj){
+				obj.find("table").animate({marginTop:"-36px"},500,
+					function(){
+						$(this).css({marginTop:"0px"}).find("tr:first-child").appendTo(obj.find("table"));
+					});
+			},
+			init:function(obj){
+				var table = this.table(this.datas.length,2,"table text-center");
+				$(table).appendTo(obj);
+				for(var i=0;i<this.datas.length;i++){
+					$(table).find("td:first-child").eq(i).text(this.datas[i].num);
+					$(table).find("td:last-child").eq(i).text(this.datas[i].win);
+				}
+			},
+			scrollBegin:function(obj){
+				setInterval(function(){scrollList.autoScroll(obj)},3000);
+			}
+		};
+		scrollList.init(winListBox);
+		scrollList.scrollBegin(winListBox);
+		// 大转盘点亮小灯
+		var luckyWheel = {
+			flag:true,
+			lighting:function(obj){
+				setInterval(function(){
+					if(this.flag){
+						obj.addClass("wheelTurn");
+					}else{
+						obj.removeClass("wheelTurn");
+					}
+					this.flag = !this.flag;
+				},300);
+			}
+		}
+		luckyWheel.lighting($("#wheel"));
+
+		// 倒计时
+		function CountDown(hour,min,sec){
+			this.hour = hour;
+			this.min = min;
+			this.sec = sec;
+		}
+		CountDown.prototype.init = function(objArr,callback){
+			this.callback = callback || "";
+			this.count(objArr);
+		}
+		CountDown.prototype.count = function(objArr,callback){
+			var _this = this;
+			var timer = setInterval(function(){
+					if(_this.sec){
+						console.log("111"+_this.sec)
+						_this.sec--;
+					}else{
+						_this.sec = 59;
+						if(_this.min){
+							console.log("111"+_this.min)
+							_this.min--;
+						}else{
+							if(_this.hour){
+								_this.hour--;
+							}
+						}
+					}
+
+					_this.hourStr = _this.hour<10 ?"0"+_this.hour:_this.hour;
+					_this.minStr = _this.min<10 ?"0"+_this.min:_this.min;
+					_this.secStr = _this.sec<10 ?"0"+_this.sec:_this.sec;
+					$(objArr[0]).text(_this.hourStr);
+					$(objArr[1]).text(_this.minStr);
+					$(objArr[2]).text(_this.secStr);
+					if(_this.sec == 0&&_this.min == 0&&_this.hour == 0){
+					clearInterval(timer);
+					if(typeof _this.callback ){_this.callback();}
+				}
+				},1000);
+				
+		}
+		// 新建CountDown对象，传入基础参数：时，分，秒
+		// 大的倒计时
+		var countDown1 = new CountDown(1,20,10);
+		// 初始化开始倒计时 init()方法两个参数，要操作的dom，倒计时结束时的回调函数
+		countDown1.init(["#countH","#countM","#countS"],function(){alert("抽奖结束啦！")});
+		// 小的倒计时
+		var countDown2 = new CountDown(3,50,30);
+		countDown2.init(["#countMiniH","#countMiniM","#countMiniS"],function(){"开始抽奖啦！"});
+
+
+		
+		// 注册领取弹出框
+		pop("#winPop");
+
+		function pop(id){
+		var $close = $(id).find(".close");
+		$close.click(function(){
+		$(id).hide(50);
+		});}
+
+		// 抽奖次数未用完
+		layer.open({
+			style: 'border:none;border-radius:5px;background-color:rgba(255,255,255,0.8); color:#323232;',
+		    content: '<p >您还有1次抽奖机会未使用</p><p style="margin:0">使用完了再看吧！</p>',
+		    shade:true,
+		    shadeClose: true,
+		    anim:true,
+		    fixed:true
+		});
+	});
+
+</script>
+</html>
