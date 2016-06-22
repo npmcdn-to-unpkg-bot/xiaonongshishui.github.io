@@ -7,7 +7,35 @@
 </head>
 <body style="padding:50px">
 	
-<div class="poster-main">
+<div class="carousel poster-main" data-setting='{
+		"width":800,
+		"height":270,
+		"posterWidth":640,
+		"posterHeight":270,
+		"verticalAlign":"middle",
+		"scale":0.9,
+		"speed":500
+}'>
+	<ul class="poster-list">
+		<li class="poster-item"><a href="#"><img src="images/1.jpg" alt="" width="100%"></a></li>
+		<li class="poster-item"><a href="#"><img src="images/2.jpg" alt="" width="100%"></a></li>
+		<li class="poster-item"><a href="#"><img src="images/3.jpg" alt="" width="100%"></a></li>
+		<li class="poster-item"><a href="#"><img src="images/4.jpg" alt="" width="100%"></a></li>
+		<li class="poster-item"><a href="#"><img src="images/5.jpg" alt="" width="100%"></a></li>
+		<li class="poster-item"><a href="#"><img src="images/6.jpg" alt="" width="100%"></a></li>
+	</ul>
+	<div class="poster-btn poster-prev-btn"><h1>&lt;</h1></div>
+	<div class="poster-btn poster-next-btn"><h1>&gt;</h1></div>
+</div>
+<div class="carousel poster-main" data-setting='{
+		"width":800,
+		"height":270,
+		"posterWidth":640,
+		"posterHeight":270,
+		"verticalAlign":"middle",
+		"scale":0.9,
+		"speed":500
+}'>
 	<ul class="poster-list">
 		<li class="poster-item"><a href="#"><img src="images/1.jpg" alt="" width="100%"></a></li>
 		<li class="poster-item"><a href="#"><img src="images/2.jpg" alt="" width="100%"></a></li>
@@ -21,8 +49,14 @@
 </div>
 
 
-
 <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="carousel.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//Carousel
+		// var carousel = new Carousel($(".carosel")); 
+		Carousel.init($(".carousel"));
+	})
+</script>
 </body>
 </html>

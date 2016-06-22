@@ -36,6 +36,60 @@
 			$(that).attr({"onclick":"alert1(that)"});
 			$(that).text("现在可以点我啦！");
 		}
+
+		function outerFunc(base){
+			var punc = "!";
+
+			return function(ext){
+				return base + ext + punc;
+			}
+		}
+		function processNested(){
+			var baseString = outerFunc("Hello");
+
+			var newString = baseString("World!");
+			alert(newString);
+
+		}
+		function leakMemory(){
+			var el = document.getElementById('el');
+			var newObj = {"el":el};
+			el.newObj = newObj;
+		}
+
+
+
+		function checkColor(element,index,array){
+			return (element >= 0 && element < 256);
+		}
+		function checkCount(elemnt,index,array){
+			return (element.length == 3)
+		}
+		function testingCallbacks(){
+			var colors = new Array();
+			colors[0] = [0,262,255];
+			colcors[1] = [255,255,255];
+			colcors[2] = [255,0,0];
+			colcors[3] = [0,255,0];
+			colcors[4] = [0,0,255];
+			colcors[5] = [-5,999,255];
+			colcors[6] = [255,255,12345];
+			var testedColors = new Array();
+			for (var i in colors){
+				testedColors[i] = colors[i].filter(checkColor);
+			}
+
+			document.writeln("<h3>First check</h3>");
+
+			for(i in testedColors){
+				document.writeln(testedColors[i] + "<br />");
+			}
+			var newTested = testedColors.filter(checkCount);
+			document.writeln("<br /><h3>Second</h3>");
+			for(i in newTested){
+				document.writeln(newTested[i] + "<br />");
+			}
+		}
 	</script>
 	
 </body>

@@ -39,6 +39,7 @@ body{color:#666;background-color:#fff;font:12px/1.5 "微软雅黑";}
 	color:#fff;
 	text-align:center;
 	cursor:pointer;
+	opacity:0.8;
 }
 .poster-main .poster-btn h1{
 	margin-top:88px;
