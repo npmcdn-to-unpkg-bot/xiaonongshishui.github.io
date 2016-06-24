@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas画大转盘</title>
+</head>
+<body>
+	<canvas class="item" id="wheelCanvas" width="422px" height="422px"></canvas>	
+</body>
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		drawWheel();
+	});
+
+	var settings = {
+		prizes:["0.5%加息券","不要灰心","0.25%加息券","10元红包","5000元体验金","谢谢参与","5元红包","10000元体验金"],
+		bgColors:["#ffd570","#ffeb8c","#ffd570","#ffeb8c","#ffd570","#ffeb8c","#ffd570","#ffeb8c"],
+		outsideRadius:192,//大转盘外圆的半径
+		textRadius:155,//奖品位置距离圆心的距离
+		insideRadius:68,//大转盘内圆的半径
+		startAngle:0//开始角度
+	};
+
+	function drawWheel(){
+		var canvas = document.getElementById("wheelCanvas");
+		var context = canvas.getContext("2d");
+		//在给定矩形内清空一个矩形
+		context.clearRect(0,0,422,422);
+		var part = settings.prizes.length;
+		//根据奖品个数计算圆周角度
+		var arc = Math.PI*2/part;
+		console.log(part);
+		console.log(arc);
+		//strokeStyle 属性设置或返回用于笔触的颜色、渐变或模式(边框的样式)
+		context.strokeStyle = "#fff";
+		context.font = "16px Microsoft Yahei";
+		//arc(x,y,radius,起始角,结束角,绘制方向) 方法创建弧/曲线（用于创建圆或部分圆）
+		for(var i= 0;i<5;i++){
+			var angle = settings.startAngle + arc*i;
+			console.log(angle);
+			context.fillStyle = settings.bgColors[i];
+			console.log(settings.bgColors[i]);
+			context.beginPath();
+			context.moveTo(211,211);
+			context.arc(211,211,settings.outsideRadius,angle,angle+arc,true);
+
+			// context.arc(211,211,settings.insideRadius,angle,angle+arc,true);
+			console.log("angle"+angle + "angle+arc" + (angle+arc));
+			context.fill();
+			context.stroke();
+			// 保存之前的画布状态
+			context.save();
+
+
+			// 绘制奖品
+			context.fillStyle = "#ae6112";
+			var text = settings.prizes[i];
+			var line_height = 17;
+			//translate方法重新映射画布上的 (0,0) 位置
+			context.translate(211 + Math.cos(angle + arc/2)*settings.textRadius,211 + Math.sin(angle + arc/2)*settings.textRadius);
+			//rotate方法旋转当前的绘图
+			context.rotate(angle + arc/2 + Math.PI/2);
+			context.fillText(text, -context.measureText(text).width / 2, 0);
+			context.restore();
+		}
+
+
+
+
+
+
+	}
+</script>
+</html>
