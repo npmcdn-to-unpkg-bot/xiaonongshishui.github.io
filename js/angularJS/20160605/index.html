@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<p>We can access:{{rootProperty}}</p>
+	<div ng-controller="ParentController">
+		<p>We can access:{{rootProperty}} and {{parentProperty}}</p>
+		<div ng-controller="ChildController">
+			<p>
+				We can access:
+				{{rootProperty}} and {{parentProperty}} and {{childProperty}}
+			</p>
+			<p>{{fullSentenceFormChild}}</p>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../js/angular.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+</body>
+</html>

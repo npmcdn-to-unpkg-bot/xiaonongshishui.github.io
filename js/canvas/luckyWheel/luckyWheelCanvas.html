@@ -7,7 +7,7 @@
 <body>
 	<canvas class="item" id="wheelCanvas" width="422px" height="422px"></canvas>	
 </body>
-<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-1.11.3.js"></script>
 <script type="text/javascript">
 	$(function(){
 		drawWheel();
@@ -36,14 +36,14 @@
 		context.strokeStyle = "#fff";
 		context.font = "16px Microsoft Yahei";
 		//arc(x,y,radius,起始角,结束角,绘制方向) 方法创建弧/曲线（用于创建圆或部分圆）
-		for(var i= 0;i<5;i++){
+		for(var i= 0;i<part;i++){
 			var angle = settings.startAngle + arc*i;
 			console.log(angle);
 			context.fillStyle = settings.bgColors[i];
 			console.log(settings.bgColors[i]);
 			context.beginPath();
 			context.moveTo(211,211);
-			context.arc(211,211,settings.outsideRadius,angle,angle+arc,true);
+			context.arc(211,211,settings.outsideRadius,angle,angle+arc);
 
 			// context.arc(211,211,settings.insideRadius,angle,angle+arc,true);
 			console.log("angle"+angle + "angle+arc" + (angle+arc));
@@ -58,11 +58,14 @@
 			var text = settings.prizes[i];
 			var line_height = 17;
 			//translate方法重新映射画布上的 (0,0) 位置
-			context.translate(211 + Math.cos(angle + arc/2)*settings.textRadius,211 + Math.sin(angle + arc/2)*settings.textRadius);
+			// context.translate(211 + Math.cos(angle + arc/2)*settings.textRadius,211 + Math.sin(angle + arc/2)*settings.textRadius);
+			// context.moveTo(211 + Math.cos(angle + arc/2)*settings.textRadius,211 + Math.sin(angle + arc/2)*settings.textRadius);
 			//rotate方法旋转当前的绘图
-			context.rotate(angle + arc/2 + Math.PI/2);
-			context.fillText(text, -context.measureText(text).width / 2, 0);
+			// context.rotate(angle + arc/2 + Math.PI/2);
+			// context.fillText(text, -context.measureText(text).width / 2, 0);
+			context.fillText(text, 211+Math.cos(angle + arc/2)*settings.textRadius-context.measureText(text).width / 2, 211+Math.sin(angle + arc/2)*settings.textRadius);
 			context.restore();
+
 		}
 
 
