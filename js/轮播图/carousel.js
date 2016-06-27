@@ -2,6 +2,7 @@
 	
 	var Carousel = function(poster){
 		//保存单个旋转木马对象
+		console.log(this);
 		this.poster = poster;//整个幻灯片区域
 		this.posterItemMain = poster.find("ul.poster-list");
 		this.nextBtn = poster.find("div.poster-next-btn");
@@ -43,18 +44,21 @@
 				width:this.settings.posterWidth,
 				height:this.settings.posterHeight
 			});
-			// 计算上下切换按钮的宽度
+			// 计算上下切换按钮的宽度(整个宽度减去中间内容的宽度再除以2)
 			var w = (this.settings.width - this.settings.posterWidth)/2;
 			this.nextBtn.css({
 				width:w,
-				height:this.settings.height
+				height:this.settings.height,
+				zIndex:Math.ceil(this.posterItems.size()/2)
 			});
 			this.prevBtn.css({
 				width:w,
-				height:this.settings.height
+				height:this.settings.height,
+				zIndex:Math.ceil(this.posterItems.size()/2)
 			});
 			this.posterFirstItem.css({
-				left:w
+				left:w,
+				zIndex:Math.floor(this.posterItems.size()/2)
 			});
 		}
 	};

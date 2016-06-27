@@ -5,21 +5,23 @@
 	<title>canvas画大转盘</title>
 </head>
 <body>
-	<canvas class="item" id="wheelCanvas" width="422px" height="422px"></canvas>	
+	<img src="dianfanbao.png" alt="" style="display:none" id="dianfanbao">
+	<canvas class="item" id="wheelCanvas" width="422px" height="422px"></canvas>
+	
 </body>
 <script type="text/javascript" src="jquery-1.11.3.js"></script>
 <script type="text/javascript">
-	$(function(){
+	window.onload = function(){
 		drawWheel();
-	});
+	};
 
 	var settings = {
-		prizes:["0.5%加息券","不要灰心","0.25%加息券","10元红包","5000元体验金","谢谢参与","5元红包","10000元体验金"],
-		bgColors:["#ffd570","#ffeb8c","#ffd570","#ffeb8c","#ffd570","#ffeb8c","#ffd570","#ffeb8c"],
+		prizes:["100M手机流量","0.25%加息券","10元话费","0.5%加息券","5000元体验金","30M手机流量","50元投资红包","20000元体验金","50元话费","300元电饭煲"],
+		bgColors:["#ffd570","#ffeb8c","#ffd570","#ffeb8c","#ffd570","#ffeb8c","#ffd570","#ffeb8c","#ffd570","#ffeb8c"],
 		outsideRadius:192,//大转盘外圆的半径
 		textRadius:155,//奖品位置距离圆心的距离
 		insideRadius:68,//大转盘内圆的半径
-		startAngle:0//开始角度
+		startAngle:1.5*Math.PI//开始角度
 	};
 
 	function drawWheel(){
@@ -34,7 +36,7 @@
 		console.log(arc);
 		//strokeStyle 属性设置或返回用于笔触的颜色、渐变或模式(边框的样式)
 		context.strokeStyle = "#fff";
-		context.font = "16px Microsoft Yahei";
+		context.font = " bold 16px Microsoft Yahei";
 		//arc(x,y,radius,起始角,结束角,绘制方向) 方法创建弧/曲线（用于创建圆或部分圆）
 		for(var i= 0;i<part;i++){
 			var angle = settings.startAngle + arc*i;
@@ -58,13 +60,63 @@
 			var text = settings.prizes[i];
 			var line_height = 17;
 			//translate方法重新映射画布上的 (0,0) 位置
-			// context.translate(211 + Math.cos(angle + arc/2)*settings.textRadius,211 + Math.sin(angle + arc/2)*settings.textRadius);
+			context.translate(211 + Math.cos(angle + arc/2)*settings.textRadius,211 + Math.sin(angle + arc/2)*settings.textRadius);
 			// context.moveTo(211 + Math.cos(angle + arc/2)*settings.textRadius,211 + Math.sin(angle + arc/2)*settings.textRadius);
 			//rotate方法旋转当前的绘图
-			// context.rotate(angle + arc/2 + Math.PI/2);
-			// context.fillText(text, -context.measureText(text).width / 2, 0);
-			context.fillText(text, 211+Math.cos(angle + arc/2)*settings.textRadius-context.measureText(text).width / 2, 211+Math.sin(angle + arc/2)*settings.textRadius);
+			context.rotate(angle + arc/2 + Math.PI/2);
+			var textNew = prizeText(text,["元","%","M"]);
+			console.log(textNew);
+			console.log(textNew.__proto__);
+			console.log(textNew instanceof String)
+			console.log(Object.prototype.toString.call(textNew));
+			if(textNew instanceof Array){
+				console.log("lalalal1");
+				if(text.indexOf("电饭煲") != -1){
+					context.font = " bold 14px Microsoft Yahei";
+					context.fillStyle = "#E9622B";
+					// var img = new Image();
+					// img.src = "dianfanbao.png";
+					var img = document.getElementById("dianfanbao");
+					console.log(img);
+					context.fillText(textNew[0], -context.measureText(textNew[0]).width, 0);
+					// img.onload = function(){
+					// 	context.drawImage(img,0,0,30,30);
+					// }
+					context.drawImage(img,5,-22,30,30);
+					context.fillStyle = "#ae6112";
+					context.font = " bold 16px Microsoft Yahei";
+				}else{
+					context.fillText(textNew[0], -context.measureText(textNew[0]).width / 2, 0);
+				}
+				for(var j = 0;j < textNew[1].length;j++){
+					context.fillText(textNew[1][j],-context.measureText(textNew[1][j]).width / 2,line_height*(j+1)+3);
+				}
+			}
+			else{
+				console.log("lalalal2");
+				for(var j = 0;j < textNew.length;j++){
+					context.fillText(textNew[j],-context.measureText(textNew[j]).width / 2,line_height*j);
+				}
+			}
+			
+			// context.fillText(text, 211+Math.cos(angle + arc/2)*settings.textRadius-context.measureText(text).width / 2, 211+Math.sin(angle + arc/2)*settings.textRadius);
 			context.restore();
+			function prizeText(text,arr){
+				var arrNew = [];
+				for(var i =0;i< arr.length;i++){
+					if(text.indexOf(arr[i]) != -1){
+						var index = text.indexOf(arr[i]);
+						var str1 = text.substr(0,index+1);
+						console.log(str1);
+						var str2 = text.substr(index+1)
+						console.log(str2);
+						arrNew = [str1,str2];
+						return arrNew;
+					}
+				}
+				return text;
+				
+			}
 
 		}
 
