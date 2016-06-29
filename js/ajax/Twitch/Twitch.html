@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Twitch Streamers</title>
+	<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css">
+	<style type="text/css">
+		.wrapper{
+			width:800px;
+			margin:0 auto;
+		}
+		.title{
+			position:relative;
+			height:120px;
+			text-transform:uppercase;
+			background-color:#5C5457;
+			color:#fff;
+		}
+		.title h1{
+			margin:0;
+			line-height:120px;
+			font-weight:bold;
+			font-size:40px;
+		}
+		.title .tips{
+			position:absolute;
+			right:0;
+			top:20px;
+			overflow:hidden;
+		}
+		.title .tip{
+			text-align:left;
+			margin-bottom:10px;
+			width:110px;
+			height:25px;
+			line-height:25px;
+			background-color:#ccc;
+			border-radius:5px 0 0 5px;
+			cursor:pointer;
+		}
+		.title .tip span:first-child{
+			display:inline-block;
+			width:10px;
+			height:10px;
+			border-radius:50%;
+			margin:0 25px 0 10px;
+		}
+		.bgC-all,.all{
+			background-color:#5C5457;
+		}
+		.bgC-online,.online{
+			background-color:#B8CCA6;
+		}
+		.bgC-offline,.offline{
+			background-color:#4A5E82;
+		}
+		.twitch-table tr>td:first-child{
+			width:20%;
+		}
+		.twitch-table tr>td:nth-child(2){
+			width:20%;
+		}
+		.twitch-table{
+			font-size:18px;
+			color:#fff;
+			font-family:Arial Sans-serif;
+		}
+		.twitch-table tr{
+			height:60px;
+			line-height:60px;
+		}
+		.twitch-table td{
+			vertical-align:middle!important;
+		}
+		.twitch-table img{
+			width:50px;
+			height:50px;
+		}
+		.move{
+			transform:translateX(80px);
+		}
+
+	</style>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="title text-center">
+		<h1>Twitch Streamers</h1>
+		<div class="tips">
+			<div class="tip tip-all" id="all"><span class="bgC-all"></span><span>All</span></div>
+			<div class="tip tip-online" id="online"><span class="bgC-online"></span><span>ONLINE</span></div>
+			<div class="tip tip-offline" id="offline"><span class="bgC-offline"></span><span>OFFLINE</span></div>
+		</div>
+		
+		</div>
+		<table class="table text-center twitch-table" id="list">
+		</table>
+		<!-- '"ESL_SC2,OgamingSC2, "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"' -->
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			// 标签
+			var flag = true;
+			tab($("#all"),$("#online"),$("#offline"));
+			bind($("#online"),"online","offline");
+			bind($("#offline"),"offline","online");
+			function tab(all,online,offline){
+				// online.css({marginRight:"-20px"});
+				// offline.css({marginRight:"-20px"});
+				online.addClass("move");
+				offline.addClass("move");
+
+			}
+			function bind(obj,type1,type2){
+				obj.mouseenter(function(){
+					obj.removeClass("move");
+				});
+				obj.mouseleave(function(){
+					obj.addClass("move");
+				});
+				obj.click(function(){
+					console.log($("."+type1).siblings());
+					$("."+type1).show();
+					$("."+type2).hide();
+				});
+			}
+			
+
+
+
+
+
+
+			// 获取信息
+			getInfo({
+				channels:["ESL_SC2","OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas","Habathcx","Test_channel"],
+				table:$("#list"),
+				textLen:45
+			});
+
+			
+			function getInfo(settings){
+				var defaultSettings = {
+					channels:["ESL_SC2","OgamingSC2", "cretetion"],
+					table:$("#list"),
+					textLen:45
+				}
+				settings = $.extend(defaultSettings,settings);
+				settings.channels.forEach(function(ele,index){
+				var img = "";
+				var status = "";
+				var className = "";
+				$.ajax({
+				method:"GET",
+				url:"https://api.twitch.tv/kraken/streams/" + ele,
+				success:function(data){
+					// console.log(data);
+					if(data.stream == null){
+						status = "offline";
+						className = "offline";
+					}else{
+						status = data.stream.game + " :"+data.stream.channel.status;
+						if(status.length > settings.textLen){
+							status = status.substring(0,settings.textLen) + "...";
+						}
+						className = "online";
+					}
+					$.ajax({
+						method:"GET",
+						url:"https://api.twitch.tv/kraken/channels/" + ele,
+						success:function(data){
+							console.log(data);
+							var src = data.logo?data.logo:"https://dummyimage.com/50x50/ecf0e7/5c5457.jpg&text=0x3F";
+							img = "<img src='"+src+"'>";
+							var html = "<tr class="+"'"+className+"'"+"><td>"+img+"</td><td>"+ele+"</td><td>"+status+"</td></tr>"
+							settings.table.append(html);
+						}
+					});
+					
+				}
+
+			});
+			});
+			}
+			
+		});
+
+	</script>
+	
+</body>
+</html>
