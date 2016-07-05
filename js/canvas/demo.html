@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas绘图</title>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<script type="text/javascript">
+		var canvas = document.getElementById("canvas");
+		canvas.width = 800;
+		canvas.height = 600;
+		var ctx = canvas.getContext("2d");
+		// ctx.moveTo(100,100);
+		// ctx.lineTo(500,300);
+		// ctx.lineWidth = 20;
+		// ctx.strokeStyle = "#058";
+		// ctx.stroke();
+		var i;
+		var settings = {
+			x : 100,
+			y : 200,
+			num : 3,
+			colors : ["red","green","pink"]
+		}
+		// jiantou(settings);
+		//绘制了三角形
+		function jiantou(settings){
+			ctx.lineWidth = 20;
+			for(i = 0;i < settings.num;i++){
+				ctx.beginPath();
+				ctx.moveTo(settings.x,settings.y);
+				ctx.lineTo(settings.x+settings.y,400);
+				ctx.lineTo(settings.x,600);
+				ctx.closePath();
+				ctx.strokeStyle = settings.colors[i];
+				ctx.fillStyle = settings.colors[i];
+				ctx.fill();
+				ctx.stroke();
+				settings.x += 230;
+			}
+		}
+
+
+		// 绘制矩形
+		// ctx.fillStyle = "rgba(0,255,0,0.2)"
+		// ctx.fillRect(0,0,500,300);
+		// ctx.stroke();
+		
+		//画一个五角星
+		var starSettings = {
+			lineWidth:30,
+			lineJoin:"round",
+			fillStyle:"yellow",
+			strokeStyle:"yellow",
+			degStart:18,
+			degEnd:54,
+			r : 100,
+			R : 200,
+			origin : [400,300],
+			rot: 0
+		};
+		// drawStar(starSettings);
+		function drawStar(settings){
+			ctx.save();
+			ctx.lineWidth = settings.lineWidth;
+			ctx.lineJoin = settings.lineJoin;
+			ctx.translate(settings.origin[0],settings.origin[1]);
+			ctx.beginPath();
+			for(var j = 0;j<5;j++){
+				ctx.lineTo(Math.cos((settings.degStart + j*72 + settings.rot) * Math.PI/180 )*settings.R,-Math.sin((settings.degStart + j*72 + settings.rot)* Math.PI/180)*settings.R);
+				ctx.lineTo(Math.cos((settings.degEnd + j*72 + settings.rot)* Math.PI/180)*settings.r,-Math.sin((settings.degEnd + j*72 + settings.rot)* Math.PI/180)*settings.r);
+			}
+			ctx.closePath();
+			ctx.fillStyle = settings.fillStyle;
+			ctx.strokeStyle = settings.strokeStyle;
+			ctx.fill();
+			ctx.stroke();
+			ctx.restore();
+		}
+		//画一片星空
+		ctx.fillStyle = "black";
+		ctx.fillRect(0,0,800,600);
+		var stars = {
+			lineWidth:10,
+			lineJoin:"miter",
+			fillStyle:"yellow",
+			strokeStyle:"yellow",
+			degStart:18,
+			degEnd:54,
+			r : 2.5,
+			R : 5,
+			origin : [400,300],
+			rot: 0
+		};
+		for(var o = 0;o<300;o++){
+			stars.origin = [parseInt(Math.random()*800),parseInt(Math.random()*600)];
+			stars.rot = parseInt(Math.random()*360);
+			drawStar(stars);
+			console.log(stars.origin);  
+		}
+		drawStar(stars);
+		drawStar(stars);
+		console.log(stars.rot);      
+
+		
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+  {
+  "name": "baidu-background-location",    // plugin名称
+  "version": "1.0.0",                 // 版本号
+  "description": "Cordova custom Plugin",   // plugin描述
+  "cordova": {
+    "id": "cordova-plugin-custom",    // plugin的id，这个很重要。要和plugin目录名一致
+    "platforms": [                    // 插件支持的平台
+      "android"                    // 该插件支持android和ios
+    ]
+  },
+  "keywords": [                       // 用于在cordova plugin search被查找出来
+    "cordova",
+    "custom"
+  ],
+  "author": "249420986@qq.com",        // 作者
+  "license": "Apache 2.0"             // 开源协议
+}

@@ -1,0 +1,56 @@
+<ion-view view-title="主页">
+    <ion-content class="home">
+        <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+        <div class="item  home-avatar noborder">
+            <img ng-src="{{user.avatar_url}}" alt="" ng-click="uploadAvatar()"/>
+            <p style="text-align:center;color:#fff;font-weight:bolder;">{{user.name}}</p>
+        </div>
+        <!--<div class="item">-->
+            <!--<label for="">-->
+                <!--间隔:-->
+                <!--<input type="text" ng-model="geo.interval"/>-->
+            <!--</label>-->
+        <!--</div>-->
+        <!--<div class="item">-->
+            <!--<button class="button button-full" ng-click="start()">开始</button>-->
+        <!--</div>-->
+        <!--<div class="item">-->
+            <!--<button class="button button-full" ng-click="stop()">停止</button>-->
+        <!--</div>-->
+        <div class="list list-inset nomargin">
+            <div class="item item-avatar-left item-icon-right listborder" ui-sref="account">
+                <img src="img/account.png" class="noneBorderRadius"/>
+
+                <h2 class="home_title">个人信息</h2>
+                <i class="icon ion-chevron-right icon-accessory con-float-r"></i>
+            </div>
+            <div class="item item-avatar-left item-icon-right listborder" ui-sref="picture">
+                <img src="img/camera.png" class="noneBorderRadius"/>
+
+                <h2 class="home_title">拍照上传</h2>
+                <i class="icon ion-chevron-right icon-accessory con-float-r"></i>
+            </div>
+            <div class="item item-avatar-left item-icon-right listborder" ui-sref="password">
+                <img src="img/password.png" class="noneBorderRadius"/>
+
+                <h2 class="home_title">修改密码</h2>
+                <i class="icon ion-chevron-right icon-accessory con-float-r"></i>
+            </div>
+            <div class="item item-avatar-left item-toggle listborder">
+                <img src="img/working.png" class="noneBorderRadius"/>
+
+                <h2 class="home_title">工作状态<b class="startmonitor-on">已开启</b></h2>
+                <!-- <label class="toggle">
+                    <input type="checkbox" >
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label> -->
+            </div>
+
+            <ion-item class="card-but item">
+                <button class="button button-full button-assertive" ng-click="logOut()">退出登录</button>
+            </ion-item>
+        </div>
+    </ion-content>
+</ion-view>

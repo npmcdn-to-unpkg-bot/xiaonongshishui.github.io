@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="phonegap.plugins.SYLocation"
+        version="0.0.3">
+    <name>SYLocation</name>
+    <description>SunYu Location Plugin for Phonegap</description>
+    <license>MIT</license>
+    <keywords>SunYu, location, phonegap</keywords>
+    
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+ 
+    <!-- ios -->
+    <platform name="ios">
+        
+        <js-module src="www/sylocation.js" name="MyLocation">
+            <clobbers target="window.myLocation" />
+        </js-module>
+        
+        <config-file target="config.xml" parent="/*">
+            <feature name="SYLocationManager">
+                <param name="ios-package" value="SYLocationManager"/>
+            </feature>
+        </config-file>
+        
+        <config-file target="*-Info.plist" parent="UIBackgroundModes">
+            <array>
+                <string>location</string>
+                <string>audio</string>
+                <string>App provides Voice over IP services</string>
+                
+            </array>
+        </config-file>
+        
+        <config-file target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
+            <string>${EXECUTABLE_NAME} Would Like to Use Your Current Lovation Even In Background.</string>
+        </config-file>
+ 
+ 
+        <header-file src="src/ios/MMPDeepSleepPreventer/MMPDeepSleepPreventer.h" />
+        <source-file src="src/ios/MMPDeepSleepPreventer/MMPDeepSleepPreventer.m" />
+        
+        
+        <resource-file src="src/ios/MMPDeepSleepPreventer/MMPSilence.wav"/>
+        
+ 
+        <header-file src="src/ios/AppDelegate+EnterBackground.h" />
+        <source-file src="src/ios/AppDelegate+EnterBackground.m" />
+        
+        
+        <header-file src="src/ios/SYGeographicInformation.h" />
+        <header-file src="src/ios/SYLocationManager.h" />
+        
+        <source-file src="src/ios/SYLocationManager.m" />
+        <source-file src="src/ios/SYGeographicInformation.m" />
+        
+        
+        <framework src="src/ios/BaiduMap_IOSSDK/BaiduMapAPI_Base.framework" custom="true" />
+        <framework src="src/ios/BaiduMap_IOSSDK/BaiduMapAPI_Utils.framework" custom="true" />
+        
+        
+        <framework src="CoreLocation.framework" weak="true" />
+        <framework src="QuartzCore.framework" weak="true" />
+        <framework src="OpenGLES.framework" weak="true" />
+        <framework src="SystemConfiguration.framework" weak="true" />
+        <framework src="Security.framework" weak="true" />
+        <framework src="CoreTelephony.framework" weak="true" />
+        <framework src="CoreGraphics.framework" weak="true" />
+        <framework src="libsqlite3.0.tbd" weak="true" />
+        <framework src="libstdc++.6.0.9.tbd" weak="true" />
+        
+        
+        
+    </platform>         
+</plugin>

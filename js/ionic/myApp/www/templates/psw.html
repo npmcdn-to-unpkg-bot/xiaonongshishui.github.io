@@ -1,0 +1,27 @@
+<ion-view view-title="修改密码">
+    <ion-content>
+        <div class="card">
+            <div class="list list-borderless padding pass-word">
+                <label class="item item-input">
+                    <span  class="input-label" style="text-indent: 16px; width:30%;max-width:90px;">原密码：</span>
+                    <input type="password" placeholder="请输入您的密码" id="activeInput" ng-model="data.password">
+                </label>
+                <label class="item item-input">
+                    <span  class="input-label" style="width:30%;max-width:90px;">新的密码：</span>
+                    <input type="password" placeholder="请输入您的新密码" id="activeInput" ng-model="data.password1">
+                </label>
+                <label class="item item-input">
+                    <span  class="input-label" style="width:30%;max-width:90px;">确认密码：</span>
+                    <input type="password" placeholder="确保两次完全相同" id="activeInput" ng-model="data.password2">
+                </label>
+            </div>
+        </div>
+        <div class="padding">
+            <button class="button button-block button-assertive" ng-click="resetPassword(data)">
+                保存修改
+            </button>
+        </div>
+    </ion-content>
+</ion-view>
+
+

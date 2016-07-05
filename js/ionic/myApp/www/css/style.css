@@ -1,1 +1,108 @@
 /* Empty. Add your own CSS if you like */
+.account img.noneBorderRadius{
+    border-radius: 0; !important;
+}
+.home img.noneBorderRadius{
+    border-radius: 0; !important;
+}
+.home-avatar {
+    background: url("../img/bg.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+.home-avatar img{
+    margin: 5% auto 2% auto;
+    display: block;
+    width: 28%;
+    height: 28%;
+    border-radius: 50%;
+    border: 2px solid #ec6876;
+    box-shadow: 0px 0px 2px #fff;
+}
+h2.home_title{
+    margin-top: 12px;
+}
+.startmonitor-on {
+    background-color: #41ae77 !important;
+    font-size: 12px;
+    color: #fff;
+    padding: 0px 6px;
+    border-radius: 4px;
+    margin-left: 10px;
+    position: absolute;
+    right: 5%;
+    top: 22px;
+    z-index: 1;
+    height: 28px;
+    line-height: 28px;
+}
+.startmonitor-off {
+    background-color: #ef473a !important;
+    font-size: 12px;
+    color: #fff;
+    padding: 0px 6px;
+    border-radius: 4px;
+    margin-left: 10px;
+    position: absolute;
+    right: 5%;
+    top: 22px;
+    z-index: 1;
+    height: 28px;
+    line-height: 28px;
+}
+.listborder{border:none; border-top:1px solid #ccc;border-bottom: 1px solid #aaa;}
+.nomargin{margin:0 !important;}
+.noborder{border:none !important;}
+.button{border-radius: 4px;}
+.bee-detail-list{
+    padding:10px 20px !important; background-color: #fff !important; overflow: hidden; margin-bottom: 5px !important;border-bottom: 1px solid #ddd !important;
+}
+.bee-detail-list span{
+    text-align: right;float: right; width: 75% !important;
+}
+.bee-detail-list b{
+    font-size: 14px; float: left; width: 25% !important;
+}
+.bee-detail-listt{
+    background-color: #444 !important;color: #fff !important;margin-bottom: 0px !important;padding:10px 20px !important;
+}
+#activeInput {
+    padding-left: 10px;
+    border-radius: 5px;
+    background: #eee;
+    flex: none;
+    margin-left: 0px;
+    display: inline-block;
+    width: 65%;
+    border: 1px solid #ccc !important;
+    background: -webkit-linear-gradient(#eee, #fff) !important;
+    background: -o-linear-gradient(#eee, #fff) !important;
+    background: -moz-linear-gradient(#eee, #fff) !important;
+    background: linear-gradient(#eee, #fff) !important;
+}
+.input-label {
+    /* display: table; */
+    padding: 7px 10px 7px 0px;
+    max-width: 200px;
+    width: 35%;
+    color: #444;
+    font-size: 16px;
+}
+.login_bg{
+    background: -webkit-linear-gradient(bottom left,#d9314b,#e4655e,#e87c5f,#df6e42,#d2592c,#d1582b); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(bottom left,#d9314b,#e4655e,#e87c5f,#df6e42,#d2592c,#d1582b); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(bottom left,#d9314b,#e4655e,#e87c5f,#df6e42,#d2592c,#d1582b); /* Firefox 3.6 - 15 */
+    background: linear-gradient(bottom left,#d9314b,#e4655e,#e87c5f,#df6e42,#d2592c,#d1582b); /* 标准的语法（必须放在最后） */
+}
+.wid{
+    width:80%;margin:0 auto; overflow:hidden;border-radius:10px; background-color:#f5f5f5;
+}
+.wid1{
+    width:80%;margin:0 auto;
+}
+.text-right{
+    text-align:right;line-height:auto;
+}
+.nobg{background:transparent;}
+.pdl5{padding-left:5% !important;}
+.center{width:100%; height:420px; display:table-cell;vertical-align: middle;text-align: center;}
+.center img{width:90%;height:auto;margin:5%;vertical-align: middle;}

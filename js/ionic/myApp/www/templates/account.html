@@ -1,0 +1,63 @@
+<ion-view view-title="个人信息">
+    <ion-nav-buttons side="right">
+        <a class="button icon ion-edit" ng-click="toggle()">编辑</a>
+    </ion-nav-buttons>
+    <ion-content class="account">
+        <div class="list list-inset nomargin" ng-if="!edit">
+            <div class="item item-avatar item-icon-right">
+                <img ng-src="{{user.avatar_url}}" alt="" ng-click="uploadAvatar()">
+
+                <h2 style="font-weight: bold">{{user.name}}</h2>
+
+                <p href="tel:{{user.cellphone}}">{{user.cellphone}}</p>
+            </div>
+
+            <div class="bee-detail">
+                <div class="item item-divider bee-detail-listt"><b>个人信息</b></div>
+                <div class="item item-divider bee-detail-list"><b>身份证号</b><span>{{user.identity}}</span></div>
+                <div class="item item-divider bee-detail-list"><b>银行户名</b><span>{{user.depositname}}</span></div>
+                <div class="item item-divider bee-detail-list"><b>开户银行</b><span>{{user.depositbank}}</span></div>
+                <div class="item item-divider bee-detail-list"><b>银行账号</b><span>{{user.cardNo}}</span></div>
+            </div>
+        </div>
+
+
+        <div class="list list-inset nomargin" ng-if="edit">
+            <div class="item item-avatar item-icon-right">
+                <img ng-src="{{user.avatar_url}}" alt="" ng-click="uploadAvatar()">
+
+                <h2 style="font-weight: bold">{{user.name}}</h2>
+
+                <p href="tel:{{user.cellphone}}">{{user.cellphone}}</p>
+            </div>
+
+            <div class="bee-detail">
+                <div class="item item-divider bee-detail-listt"><b>个人信息</b></div>
+                <div class="item item-divider bee-edit-list"><b>姓名</b>
+                    <span><input type="text" placeholder="" ng-model="user.name" id="activeInput"></span>
+                </div>
+                <div class="item item-divider bee-edit-list"><b>身份证号</b>
+                    <span><input type="text" placeholder="" ng-model="user.identity" id="activeInput"></span>
+                </div>
+                <div class="item item-divider bee-edit-list"><b>银行户名</b>
+                    <span><input type="text" placeholder="" ng-model="user.depositname" id="activeInput"></span>
+                </div>
+                <div class="item item-divider bee-edit-list"><b>开户银行</b>
+                    <span><input type="text" placeholder="" ng-model="user.depositbank" id="activeInput"></span>
+                </div>
+                <div class="item item-divider bee-edit-list"><b>银行账号</b>
+                    <span><input type="text" placeholder="" ng-model="user.cardNo" id="activeInput"></span>
+                </div>
+            </div>
+
+            <div class="item card-but noborder">
+                <button class="button button-block button-assertive" ng-click="save()">
+                    保存修改
+                </button>
+            </div>
+        </div>
+
+
+    </ion-content>
+</ion-view>
+

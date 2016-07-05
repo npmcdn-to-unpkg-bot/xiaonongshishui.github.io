@@ -29,6 +29,7 @@
 			overflow:hidden;
 		}
 		.title .tip{
+			position:relative;
 			text-align:left;
 			margin-bottom:10px;
 			width:110px;
@@ -101,36 +102,44 @@
 	<script type="text/javascript">
 		$(function(){
 			// 标签
-			var flag = true;
-			tab($("#all"),$("#online"),$("#offline"));
-			bind($("#online"),"online","offline");
-			bind($("#offline"),"offline","online");
-			function tab(all,online,offline){
-				// online.css({marginRight:"-20px"});
-				// offline.css({marginRight:"-20px"});
-				online.addClass("move");
-				offline.addClass("move");
-
+			setStart([$("#online"),$("#offline")]);
+			move([$("#online"),$("#offline")],"online","offline");
+			$("#all").click(function(){
+				$("#list").find('tr').show();
+			});
+			function setStart(objArr){
+				objArr.forEach(function(ele){
+					ele.css({right:"-80px"}).find('span:nth-child(2)').hide();
+				});
 			}
-			function bind(obj,type1,type2){
-				obj.mouseenter(function(){
-					obj.removeClass("move");
+
+			function move(objArr,type1,type2){
+				var flag = true;
+				var moveArguments = arguments;
+				objArr.forEach(function(ele,index){
+					console.log(index);
+					ele.mouseenter(function(){
+					ele.animate({right:0},500,function(){
+						ele.find("span:nth-child(2)").show();
+					})})
+					.mouseleave(function(){
+					ele.animate({right:-80},500,function(){
+						ele.find("span:nth-child(2)").hide();
+					});
 				});
-				obj.mouseleave(function(){
-					obj.addClass("move");
+					ele.click(function(){
+						console.log(index);
+						if(index == 0){
+							console.log(111);
+							$('#list').find("."+type1).show().siblings("."+type2).hide();
+						}else{
+							$('#list').find("."+type2).show().siblings("."+type1).hide();
+						}
 				});
-				obj.click(function(){
-					console.log($("."+type1).siblings());
-					$("."+type1).show();
-					$("."+type2).hide();
+				
 				});
 			}
 			
-
-
-
-
-
 
 			// 获取信息
 			getInfo({

@@ -1,0 +1,72 @@
+<!-- <ion-view view-title="派单通登录">
+    <ion-content class=" login-con-bac">
+        <form name="loginForm" novalidate>
+            <div class="list ">
+                <label class="item item-input">
+                    <i class="icon ion-android-person placeholder-icon "></i>
+                    <input type="text" name="name" placeholder="请输入用户名" ng-model="user.cellphone">
+                </label><br/>
+                <label class="item item-input">
+                    <i class="icon ion-android-lock placeholder-icon "></i>
+                    <input type="password" name="password" placeholder="请输入密码" ng-model="user.password" >
+                </label>
+            </div>
+            <div class="item item-toggle">
+                记住密码
+                <label class="toggle toggle-calm">
+                    <input type="checkbox" checked="" ng-model="user.remember" ng-checked="user.remember">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </div>
+            <div class="padding dl-button">
+                <button class="button button-block button-positive" ng-click="login()">登录</button>
+            </div>
+        </form>
+    </ion-content>
+</ion-view> -->
+
+
+<ion-view title="派单通登录">
+    <ion-content class="login_bg">
+        <br/>
+        <center><img width="160" height="160" src="img/icon_logo.png"/></center>
+        <br/>
+        <br/>
+    <form name="loginForm" novalidate>
+        <div class="list wid">
+            <label class="item item-input noborder bg_input">
+                <!-- <img src="img/name.png" width="25" height="20"/> -->
+                <i class="icon ion-android-person placeholder-icon font-color-red font-size20 login-icon-wh"></i>
+                <input class="pl10 pdl5" type="text" placeholder="请输入您的账号" ng-model="user.cellphone">
+            </label>
+
+            <div style="height:1px;"></div>
+            <label class="item item-input noborder bg_input bg-input-bor">
+                <!-- <img src="img/password.png" width="25" height="20"/> -->
+                <i class="icon ion-android-lock placeholder-icon font-color-red font-size20 login-icon-wh"></i>
+                <input class="pl10 pdl5" type="password" placeholder="请输入您的密码" ng-model="user.password">
+            </label>
+        </div>
+        <br>
+       <!--  <p class="wid1 text-right color-white"><input type="checkbox" checked="" ng-model="user.remember" ng-checked="user.remember">&nbsp;&nbsp;记住密码</p> -->
+            <div class="item item-toggle wid1 nobg noborder">
+                <span style="text-align:right;color:#fff;">记住密码</span>
+                <label class="toggle toggle-calm">
+                    <input type="checkbox" checked="" ng-model="user.remember" ng-checked="user.remember">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </div>
+        <br>
+
+        <div class="padding wid1 nopadding">
+            <button class="button button-block button-assertive" ng-click="login()">
+                立即登录
+            </button>
+        </div>
+    </form>
+    </ion-content>
+</ion-view>
