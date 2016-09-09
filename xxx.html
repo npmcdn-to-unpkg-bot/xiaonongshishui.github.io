@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  function convert(num) {
+    var romanNum = [];
+    var x;
+    var num = num.toString();
+    var length = num.length;
+  for(var i = length-1;i>= 0;i--){
+      switch(i){
+        case 2:
+          point1 = "C";
+          point2 = "D";
+          point3 = "M";
+          break;
+        case 1:
+          point1 = "X";
+          point2 = "L";
+          point3 = "C";
+          break;
+        case 0:
+          point1 = "I";
+          point2 = "V";
+          point3 = "X";
+          break;
+        default:
+          point1 = "M";
+          break;
+      }
+
+        if(i < 3){
+          if(num[length-i-1] < 4){
+             for(x = 0;x<num[length-i-1];x++){
+              romanNum.push(point1);
+             } 
+          }else if(num[length-i-1] == 4){
+            romanNum.push(point1);
+            romanNum.push(point2);
+          }else if(num[length-i-1] == 9){
+            romanNum.push(point1);
+            romanNum.push(point3);
+          }
+          else{
+              romanNum.push(point2);
+            for(x = 0;x<num[length-i-1]-5;x++){
+              romanNum.push(point1);
+             } 
+          }
+      }else{
+         for(x = 0;x<num[length-i-1];x++){
+            romanNum.push(point1);
+           } 
+      }
+
+  }   
+    
+ 
+  romanNum = romanNum.join("");
+   console.log(romanNum);
+  return romanNum;
+}
+
+convert(36);
+convert(8425);
+convert(9);
+
+
+
+function myReplace(str, before, after) {
+  var strArr = str.split(" ");
+  var beforeIndex = strArr.indexOf(before);
+  var newAfter = after.split("");
+  console.log(beforeIndex);
+  if(before.charCodeAt(0) <= 90 && before.charCodeAt(0) >= 65){
+    newAfter[0] = after.charAt(0).toUpperCase();
+  }else if (before.charCodeAt(0) <= 122 && before.charCodeAt(0) >= 97){
+    newAfter[0] = after.charAt(0).toLowerCase();
+  }
+  after = newAfter.join("");
+  strArr[beforeIndex] = after;
+  str = strArr.join(" ");
+  console.log(str);
+  return str;
+}
+
+myReplace("A quick brown fox Jumped over the lazy dog", "Jumped", "leaped");
+
+
+
+
+function translatePigLatin(str) {
+  var strArr = str.split("");
+  var  vowel = ["a","e","i","o","u"];
+  var consonant = ["ck","ch","ph","th","wh","tr","dr","ts","ds","qu","gl"];
+  if(vowel.indexOf(str.charAt(0)) != -1){
+    strArr.push("way");
+  }else if(consonant.indexOf(str.substring(0,2)) != -1){
+    strArr = strArr.concat(strArr.splice(0,2));
+    console.log(strArr);
+     strArr.push("ay");
+  }else{
+     strArr = strArr.concat(strArr.shift(0));
+     strArr.push("ay");
+  }
+ 
+  str = strArr.join("");
+  console.log(str);
+  return str;
+}
+
+translatePigLatin("glove");
+translatePigLatin("aliforniacay");
+
+
+
+function pairElement(str) {
+ strArr = str.split("");
+ var i;
+ for(i = 0;i<strArr.length;i++){
+  strArr[i] = strArr[i].split("");
+    switch(strArr[i][0]){
+      case "A":
+      strArr[i].push("T");
+      break;
+      case "T":
+      strArr[i].push("A");
+      break;
+      case "C":
+      strArr[i].push("G");
+      break;
+      case "G":
+      strArr[i].push("C");
+      break;
+      default:
+      break;
+    }
+ }
+ console.log(strArr);
+  return str;
+}
+
+pairElement("GCGA");
+
+
+
+
+function fearNotLetter(str) {
+    var strArr = str.split("");
+    var i;
+    strArr = strArr.sort();
+    for(i = 0;i<strArr.length;i++){
+      if(str.charCodeAt(i+1)-str.charCodeAt(i) > 1){
+        console.log(strArr[i+1]);
+            return String.fromCharCode(str.charCodeAt(i)+1);
+          }else{
+          continue;
+          }
+      return undefined;
+    }
+  }
+  var a = fearNotLetter("abce");
+  console.log(a);
+  </script>
+</body>
+</html>
+
+
+
